@@ -1,4698 +1,684 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
-<meta name="theme-color" content="#080b18">
-<meta name="description" content="ATIK // NEXUS — Futuristic Digital Identity">
-<title>ATIK // NEXUS</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>MD. ATIKUL ISLAM // ATIK NEXUS AI PORTFOLIO</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#050712;
-  --bg2:#080b18;
-  --panel:rgba(10,16,35,.78);
-  --panel2:rgba(8,12,27,.92);
-  --cyan:#00eaff;
-  --blue:#1687ff;
-  --purple:#8b5cff;
-  --pink:#ff27d9;
-  --gold:#ffd84d;
-  --green:#00ffae;
-  --red:#ff426f;
-  --text:#eaf7ff;
-  --muted:#8294ad;
-  --line:rgba(0,234,255,.20);
-  --shadow:0 0 35px rgba(0,234,255,.12);
-}
-
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
-  background:
-    radial-gradient(circle at 50% 20%,rgba(0,234,255,.08),transparent 30%),
-    radial-gradient(circle at 15% 80%,rgba(139,92,255,.08),transparent 30%),
-    var(--bg);
-  color:var(--text);
-  font-family:Rajdhani,sans-serif;
-  min-height:100vh;
-  overflow-x:hidden;
-}
-
-body:before{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  z-index:999;
-  background:repeating-linear-gradient(
-    to bottom,
-    transparent 0,
-    transparent 3px,
-    rgba(255,255,255,.018) 4px
-  );
-}
-
-#matrix{
-  position:fixed;
-  inset:0;
-  z-index:-3;
-  width:100%;
-  height:100%;
-}
-
-.no-motion *{
-  animation:none!important;
-  transition:none!important;
-}
-
-::-webkit-scrollbar{width:5px}
-::-webkit-scrollbar-track{background:#050712}
-::-webkit-scrollbar-thumb{
-  background:linear-gradient(var(--cyan),var(--purple));
-  border-radius:10px;
-}
-
-button,input,textarea,select{font:inherit}
-button{cursor:pointer}
-
-#loader{
-  position:fixed;
-  inset:0;
-  z-index:10000;
-  background:#03050d;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-direction:column;
-  transition:.7s;
-}
-
-#loader.hide{
-  opacity:0;
-  visibility:hidden;
-}
-
-.loader-logo{
-  font-family:Orbitron;
-  font-size:clamp(22px,6vw,50px);
-  letter-spacing:5px;
-  color:var(--cyan);
-  text-shadow:0 0 25px var(--cyan);
-  animation:pulse 1.4s infinite alternate;
-}
-
-.loader-line{
-  width:240px;
-  height:2px;
-  margin-top:25px;
-  background:linear-gradient(90deg,transparent,var(--cyan),transparent);
-  animation:load 1.5s infinite;
-}
-
-@keyframes pulse{to{filter:brightness(1.8)}}
-@keyframes load{0%{transform:scaleX(.1)}100%{transform:scaleX(1)}}
-
-header{
-  position:fixed;
-  top:0;
-  left:0;
-  right:0;
-  height:70px;
-  z-index:500;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 25px;
-  background:rgba(3,7,18,.74);
-  backdrop-filter:blur(18px);
-  border-bottom:1px solid rgba(0,234,255,.13);
-}
-
-.brand{
-  font-family:Orbitron;
-  font-size:15px;
-  font-weight:800;
-  letter-spacing:2px;
-  color:#fff;
-  cursor:pointer;
-  user-select:none;
-}
-
-.brand span{color:var(--cyan)}
-.brand small{
-  display:block;
-  color:var(--muted);
-  font-size:7px;
-  letter-spacing:4px;
-  margin-top:3px;
-}
-
-.header-right{
-  display:flex;
-  align-items:center;
-  gap:8px;
-}
-
-.nav{
-  display:flex;
-  gap:3px;
-}
-
-.nav button,
-.admin-trigger{
-  border:1px solid transparent;
-  color:#9eb1c8;
-  background:transparent;
-  padding:8px 10px;
-  font-family:Orbitron;
-  font-size:9px;
-  letter-spacing:1px;
-  border-radius:6px;
-}
-
-.nav button:hover,
-.admin-trigger:hover{
-  color:var(--cyan);
-  border-color:var(--line);
-  background:rgba(0,234,255,.05);
-}
-
-.admin-trigger{
-  width:36px;
-  height:36px;
-  padding:0;
-  font-size:19px;
-}
-
-.menu-btn{
-  display:none;
-  border:1px solid var(--line);
-  background:rgba(0,234,255,.05);
-  color:var(--cyan);
-  width:40px;
-  height:40px;
-  border-radius:7px;
-}
-
-main{position:relative}
-
-.hero{
-  min-height:100vh;
-  padding:100px 20px 60px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  position:relative;
-}
-
-.hero-content{
-  width:min(1150px,100%);
-  text-align:center;
-  position:relative;
-}
-
-.kicker{
-  font-family:Share Tech Mono;
-  color:var(--cyan);
-  font-size:11px;
-  letter-spacing:4px;
-  margin-bottom:12px;
-}
-
-.hero h1{
-  font-family:Orbitron;
-  font-size:clamp(30px,7vw,75px);
-  line-height:1;
-  letter-spacing:5px;
-  text-shadow:0 0 35px rgba(0,234,255,.22);
-}
-
-.hero h1 span{
-  background:linear-gradient(90deg,var(--cyan),#fff,var(--purple),var(--pink));
-  -webkit-background-clip:text;
-  color:transparent;
-}
-
-.hero-sub{
-  margin:15px 0 35px;
-  color:#a5b8ce;
-  font-size:clamp(13px,2vw,18px);
-  letter-spacing:2px;
-}
-
-.identity{
-  display:flex;
-  justify-content:center;
-  margin:10px auto 35px;
-}
-
-.avatar-box{
-  width:min(330px,78vw);
-  height:min(330px,78vw);
-  border-radius:50%;
-  position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  cursor:pointer;
-}
-
-.avatar-box:before,
-.avatar-box:after{
-  content:"";
-  position:absolute;
-  border-radius:50%;
-  inset:-8px;
-  border:1px solid rgba(0,234,255,.45);
-  box-shadow:0 0 25px rgba(0,234,255,.16);
-  animation:spin 15s linear infinite;
-}
-
-.avatar-box:after{
-  inset:-23px;
-  border-color:rgba(139,92,255,.3);
-  animation-direction:reverse;
-  animation-duration:20s;
-}
-
-@keyframes spin{to{transform:rotate(360deg)}}
-
-.avatar-inner{
-  width:72%;
-  height:72%;
-  border-radius:50%;
-  overflow:hidden;
-  position:relative;
-  border:1px solid rgba(0,234,255,.6);
-  background:radial-gradient(circle,#112541,#050712 70%);
-  box-shadow:
-    inset 0 0 45px rgba(0,234,255,.15),
-    0 0 45px rgba(0,234,255,.16);
-}
-
-.avatar-inner img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
-.robot-core{
-  position:absolute;
-  inset:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-direction:column;
-  color:var(--cyan);
-  font-size:65px;
-}
-
-.robot-core small{
-  font-family:Share Tech Mono;
-  font-size:8px;
-  letter-spacing:3px;
-  margin-top:7px;
-}
-
-.avatar-box.has-image .robot-core{display:none}
-
-.avatar-hint{
-  position:absolute;
-  bottom:-48px;
-  left:50%;
-  transform:translateX(-50%);
-  white-space:nowrap;
-  font-family:Share Tech Mono;
-  font-size:9px;
-  color:var(--cyan);
-  opacity:.75;
-}
-
-.hud-grid{
-  margin:55px auto 0;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:10px;
-  max-width:920px;
-}
-
-.hud-btn{
-  min-height:64px;
-  border:1px solid rgba(0,234,255,.2);
-  background:rgba(8,15,33,.62);
-  color:#c6d8e8;
-  border-radius:9px;
-  font-family:Orbitron;
-  font-size:9px;
-  letter-spacing:1px;
-  padding:10px;
-  transition:.25s;
-}
-
-.hud-btn i{
-  display:block;
-  color:var(--cyan);
-  font-size:17px;
-  margin-bottom:6px;
-}
-
-.hud-btn:hover{
-  transform:translateY(-3px);
-  border-color:var(--cyan);
-  color:#fff;
-  box-shadow:0 0 25px rgba(0,234,255,.12);
-}
-
-.ai-panel{
-  width:min(850px,100%);
-  margin:45px auto 0;
-  border:1px solid rgba(0,234,255,.2);
-  background:rgba(6,12,27,.72);
-  backdrop-filter:blur(15px);
-  border-radius:15px;
-  padding:18px;
-  box-shadow:var(--shadow);
-}
-
-.ai-head{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  text-align:left;
-}
-
-.ai-orb{
-  width:42px;
-  height:42px;
-  border-radius:50%;
-  display:grid;
-  place-items:center;
-  color:var(--cyan);
-  border:1px solid var(--cyan);
-  box-shadow:0 0 20px rgba(0,234,255,.22);
-}
-
-.ai-title{
-  font-family:Orbitron;
-  font-size:11px;
-  letter-spacing:2px;
-}
-
-.ai-status{
-  color:var(--green);
-  font-family:Share Tech Mono;
-  font-size:8px;
-  margin-top:3px;
-}
-
-.ai-output{
-  text-align:left;
-  min-height:58px;
-  margin:15px 0;
-  padding:13px;
-  border-left:2px solid var(--cyan);
-  background:rgba(0,234,255,.035);
-  color:#cbdbea;
-  font-size:14px;
-  line-height:1.6;
-}
-
-.ai-controls{
-  display:flex;
-  gap:8px;
-  flex-wrap:wrap;
-}
-
-.ai-btn{
-  border:1px solid rgba(0,234,255,.3);
-  background:rgba(0,234,255,.05);
-  color:var(--cyan);
-  border-radius:7px;
-  padding:9px 12px;
-  font-family:Orbitron;
-  font-size:9px;
-}
-
-.ai-btn:hover{
-  background:rgba(0,234,255,.13);
-  box-shadow:0 0 18px rgba(0,234,255,.1);
-}
-
-.command-row{
-  display:flex;
-  gap:8px;
-  margin-top:9px;
-}
-
-.command-row input{
-  flex:1;
-  min-width:0;
-}
-
-input,textarea,select{
-  width:100%;
-  border:1px solid rgba(0,234,255,.2);
-  background:rgba(0,0,0,.28);
-  color:#eaf7ff;
-  outline:none;
-  border-radius:7px;
-  padding:11px;
-}
-
-textarea{
-  min-height:100px;
-  resize:vertical;
-}
-
-input:focus,textarea:focus,select:focus{
-  border-color:var(--cyan);
-  box-shadow:0 0 15px rgba(0,234,255,.08);
-}
-
-.quick-title{
-  color:#647c96;
-  font-family:Share Tech Mono;
-  font-size:8px;
-  margin-top:12px;
-  text-align:left;
-  letter-spacing:2px;
-}
-
-.quick{
-  display:flex;
-  flex-wrap:wrap;
-  gap:6px;
-  margin-top:7px;
-}
-
-.quick button{
-  border:1px solid rgba(255,255,255,.1);
-  background:rgba(255,255,255,.025);
-  color:#9db0c4;
-  padding:6px 9px;
-  border-radius:5px;
-  font-size:10px;
-}
-
-section.content-section{
-  width:min(1100px,92%);
-  margin:0 auto;
-  padding:100px 0;
-}
-
-.section-head{
-  text-align:center;
-  margin-bottom:35px;
-}
-
-.section-head .mini{
-  color:var(--cyan);
-  font-family:Share Tech Mono;
-  font-size:9px;
-  letter-spacing:4px;
-}
-
-.section-head h2{
-  font-family:Orbitron;
-  font-size:clamp(22px,5vw,38px);
-  margin-top:8px;
-}
-
-.section-head p{
-  color:#71869e;
-  margin-top:8px;
-}
-
-.info-card{
-  background:var(--panel);
-  border:1px solid var(--line);
-  border-radius:14px;
-  padding:25px;
-  box-shadow:var(--shadow);
-}
-
-.about-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:15px;
-}
-
-.stat-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:10px;
-  margin-top:15px;
-}
-
-.stat{
-  border:1px solid rgba(0,234,255,.13);
-  padding:15px;
-  border-radius:8px;
-  background:rgba(0,234,255,.025);
-}
-
-.stat b{
-  display:block;
-  font-family:Orbitron;
-  color:var(--cyan);
-  font-size:10px;
-  margin-bottom:5px;
-}
-
-.stat span{
-  color:#b8c9d9;
-  font-size:13px;
-}
-
-.projects-grid,
-.store-grid,
-.skills-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:15px;
-}
-
-.project-card,
-.product-card,
-.skill-card{
-  background:var(--panel);
-  border:1px solid rgba(0,234,255,.15);
-  border-radius:12px;
-  overflow:hidden;
-  transition:.25s;
-}
-
-.project-card:hover,
-.product-card:hover,
-.skill-card:hover{
-  transform:translateY(-4px);
-  border-color:var(--cyan);
-  box-shadow:0 0 30px rgba(0,234,255,.1);
-}
-
-.card-top{
-  padding:22px;
-  min-height:150px;
-  background:
-    radial-gradient(circle at 80% 20%,rgba(139,92,255,.12),transparent 35%),
-    rgba(0,234,255,.025);
-}
-
-.card-icon{
-  color:var(--cyan);
-  font-size:22px;
-  margin-bottom:13px;
-}
-
-.card-top h3{
-  font-family:Orbitron;
-  font-size:13px;
-  letter-spacing:1px;
-}
-
-.card-top p{
-  color:#8094a9;
-  font-size:12px;
-  line-height:1.5;
-  margin-top:9px;
-}
-
-.card-bottom{
-  padding:12px 16px;
-  display:flex;
-  gap:7px;
-  flex-wrap:wrap;
-  border-top:1px solid rgba(255,255,255,.06);
-}
-
-.card-bottom button,
-.card-bottom a{
-  text-decoration:none;
-  border:1px solid rgba(0,234,255,.2);
-  color:var(--cyan);
-  background:rgba(0,234,255,.035);
-  padding:7px 9px;
-  border-radius:5px;
-  font-size:9px;
-  font-family:Orbitron;
-}
-
-.product-image{
-  height:150px;
-  background:linear-gradient(135deg,#0c1730,#080b18);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
-}
-
-.product-image img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
-.product-image i{
-  font-size:42px;
-  color:var(--purple);
-}
-
-.price{
-  color:var(--gold);
-  font-family:Orbitron;
-  font-size:14px;
-  margin-top:9px;
-}
-
-.skills-grid{
-  grid-template-columns:repeat(4,1fr);
-}
-
-.skill-card{
-  padding:18px;
-}
-
-.skill-card i{
-  color:var(--cyan);
-  font-size:20px;
-}
-
-.skill-card h3{
-  margin-top:10px;
-  font-family:Orbitron;
-  font-size:10px;
-}
-
-.skill-card p{
-  color:#7f93a9;
-  font-size:11px;
-  margin-top:5px;
-}
-
-.edu-list{
-  display:grid;
-  gap:12px;
-}
-
-.edu-item{
-  display:flex;
-  gap:15px;
-  padding:17px;
-  background:var(--panel);
-  border:1px solid var(--line);
-  border-radius:10px;
-}
-
-.edu-icon{
-  color:var(--cyan);
-  font-size:21px;
-}
-
-.edu-item h3{
-  font-family:Orbitron;
-  font-size:11px;
-}
-
-.edu-item p{
-  color:#8094aa;
-  margin-top:5px;
-  font-size:12px;
-}
-
-.social-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
-}
-
-.social{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  padding:16px;
-  text-decoration:none;
-  color:#bcd0e0;
-  background:var(--panel);
-  border:1px solid var(--line);
-  border-radius:9px;
-}
-
-.social i{
-  color:var(--cyan);
-}
-
-.contact-box{
-  text-align:center;
-}
-
-.contact-line{
-  margin:9px;
-  color:#a8bdcf;
-}
-
-.contact-line i{
-  color:var(--cyan);
-  width:25px;
-}
-
-footer{
-  text-align:center;
-  padding:35px 15px 50px;
-  color:#4e637b;
-  font-family:Share Tech Mono;
-  font-size:9px;
-  letter-spacing:2px;
-}
-
-/* MODAL */
-.modal{
-  position:fixed;
-  inset:0;
-  z-index:4000;
-  background:rgba(0,0,0,.78);
-  backdrop-filter:blur(12px);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  padding:15px;
-}
-
-.modal.show{display:flex}
-
-.modal-box{
-  width:min(900px,100%);
-  max-height:92vh;
-  overflow:auto;
-  background:#070c1d;
-  border:1px solid rgba(0,234,255,.3);
-  border-radius:14px;
-  box-shadow:0 0 60px rgba(0,234,255,.12);
-}
-
-.modal-head{
-  position:sticky;
-  top:0;
-  z-index:2;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:16px 20px;
-  background:rgba(5,9,22,.95);
-  border-bottom:1px solid rgba(0,234,255,.12);
-}
-
-.modal-head h3{
-  font-family:Orbitron;
-  font-size:12px;
-  letter-spacing:2px;
-}
-
-.close{
-  width:32px;
-  height:32px;
-  border-radius:6px;
-  border:1px solid rgba(255,255,255,.1);
-  background:transparent;
-  color:#aaa;
-}
-
-.modal-body{padding:20px}
-
-/* ADMIN */
-#adminModal{z-index:9000}
-
-.admin-box{
-  width:min(1050px,100%);
-  max-height:94vh;
-  overflow:auto;
-  background:#050914;
-  border:1px solid rgba(139,92,255,.35);
-  border-radius:14px;
-}
-
-.admin-login{
-  width:min(430px,100%);
-}
-
-.admin-brand{
-  text-align:center;
-  padding:30px 20px;
-}
-
-.admin-brand i{
-  color:var(--purple);
-  font-size:35px;
-  margin-bottom:12px;
-}
-
-.admin-brand h2{
-  font-family:Orbitron;
-  font-size:17px;
-  letter-spacing:3px;
-}
-
-.admin-brand p{
-  color:#667a92;
-  font-size:11px;
-  margin-top:7px;
-}
-
-.admin-form{
-  padding:20px;
-}
-
-.form-group{
-  margin-bottom:12px;
-}
-
-.form-group label{
-  display:block;
-  color:#8195aa;
-  font-family:Share Tech Mono;
-  font-size:9px;
-  letter-spacing:1px;
-  margin-bottom:5px;
-}
-
-.full-btn{
-  width:100%;
-  padding:12px;
-  border-radius:7px;
-  border:1px solid var(--cyan);
-  color:var(--cyan);
-  background:rgba(0,234,255,.06);
-  font-family:Orbitron;
-  font-size:10px;
-}
-
-.login-error{
-  min-height:20px;
-  color:var(--red);
-  font-size:11px;
-  text-align:center;
-  margin-top:8px;
-}
-
-.admin-header{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:15px 20px;
-  border-bottom:1px solid rgba(139,92,255,.18);
-  background:rgba(10,8,28,.8);
-}
-
-.admin-header strong{
-  font-family:Orbitron;
-  color:#fff;
-  font-size:12px;
-  letter-spacing:2px;
-}
-
-.admin-header span{
-  color:var(--green);
-  font-family:Share Tech Mono;
-  font-size:8px;
-}
-
-.admin-tabs{
-  display:flex;
-  gap:4px;
-  overflow:auto;
-  padding:10px;
-  border-bottom:1px solid rgba(255,255,255,.05);
-}
-
-.admin-tab{
-  flex:0 0 auto;
-  padding:9px 12px;
-  border:1px solid rgba(255,255,255,.08);
-  color:#8295aa;
-  background:transparent;
-  border-radius:6px;
-  font-family:Orbitron;
-  font-size:8px;
-}
-
-.admin-tab.active{
-  color:var(--cyan);
-  border-color:var(--cyan);
-  background:rgba(0,234,255,.06);
-}
-
-.admin-content{padding:18px}
-
-.admin-page{display:none}
-.admin-page.active{display:block}
-
-.admin-card{
-  border:1px solid rgba(0,234,255,.12);
-  background:rgba(10,15,31,.72);
-  border-radius:10px;
-  padding:17px;
-  margin-bottom:14px;
-}
-
-.admin-card h3{
-  font-family:Orbitron;
-  font-size:11px;
-  margin-bottom:13px;
-  color:#d7ebfa;
-}
-
-.form-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:10px;
-}
-
-.form-grid .full{grid-column:1/-1}
-
-.admin-actions{
-  display:flex;
-  gap:7px;
-  flex-wrap:wrap;
-  margin-top:12px;
-}
-
-.admin-list{
-  display:grid;
-  gap:8px;
-  margin-top:10px;
-}
-
-.admin-list-item{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:10px;
-  padding:12px;
-  border:1px solid rgba(255,255,255,.07);
-  border-radius:7px;
-  background:rgba(255,255,255,.015);
-}
-
-.admin-list-item strong{
-  font-size:12px;
-}
-
-.admin-list-item small{
-  display:block;
-  color:#6e8196;
-  margin-top:3px;
-}
-
-.danger{
-  border-color:rgba(255,66,111,.3)!important;
-  color:var(--red)!important;
-}
-
-.success{
-  color:var(--green)!important;
-}
-
-.toggle-row{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:10px 0;
-  border-bottom:1px solid rgba(255,255,255,.05);
-  color:#a9bacb;
-  font-size:12px;
-}
-
-.toggle-row input{
-  width:auto;
-  accent-color:var(--cyan);
-}
-
-.file-drop{
-  border:1px dashed rgba(0,234,255,.3);
-  border-radius:8px;
-  padding:18px;
-  text-align:center;
-  color:#71879e;
-  margin-top:8px;
-}
-
-.file-drop i{
-  color:var(--cyan);
-  font-size:24px;
-  display:block;
-  margin-bottom:7px;
-}
-
-.badge{
-  display:inline-block;
-  font-family:Share Tech Mono;
-  font-size:8px;
-  padding:4px 6px;
-  border-radius:4px;
-  color:var(--green);
-  border:1px solid rgba(0,255,174,.25);
-  margin-left:5px;
-}
-
-/* TOAST */
-#toast{
-  position:fixed;
-  z-index:12000;
-  bottom:20px;
-  left:50%;
-  transform:translate(-50%,20px);
-  opacity:0;
-  pointer-events:none;
-  background:#081125;
-  border:1px solid var(--cyan);
-  color:#dffbff;
-  padding:11px 16px;
-  border-radius:8px;
-  font-family:Share Tech Mono;
-  font-size:10px;
-  transition:.3s;
-  max-width:90%;
-  text-align:center;
-}
-
-#toast.show{
-  opacity:1;
-  transform:translate(-50%,0);
-}
-
-/* MOBILE */
-@media(max-width:800px){
-  header{padding:0 13px}
-  .nav{
-    position:absolute;
-    top:69px;
-    left:10px;
-    right:10px;
-    display:none;
-    flex-direction:column;
-    background:rgba(5,9,22,.97);
-    border:1px solid var(--line);
-    border-radius:9px;
-    padding:7px;
-  }
-
-  .nav.open{display:flex}
-
-  .nav button{
-    width:100%;
-    text-align:left;
-    padding:12px;
-  }
-
-  .menu-btn{display:block}
-
-  .header-right{gap:5px}
-
-  .hud-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .about-grid,
-  .projects-grid,
-  .store-grid{
-    grid-template-columns:1fr;
-  }
-
-  .skills-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .social-grid{
-    grid-template-columns:1fr;
-  }
-
-  .form-grid{
-    grid-template-columns:1fr;
-  }
-
-  .form-grid .full{
-    grid-column:auto;
-  }
-}
-
-@media(max-width:430px){
-  .hero{padding-left:13px;padding-right:13px}
-  .hero h1{letter-spacing:2px}
-  .hud-btn{font-size:8px}
-  .skills-grid{grid-template-columns:1fr 1fr}
-}
-</style>
-</head>
-
+:root{--bg-color:#030712;--card-bg:rgba(8,15,30,.75);--card-border:rgba(0,240,255,.3);--cyan-glow:#00f0ff;--blue-glow:#0066ff;--purple-glow:#7000ff;--text-main:#e2f1ff;--text-dim:#8ab4f8;--font-head:'Orbitron',sans-serif;--font-sub:'Rajdhani',sans-serif;--font-mono:'Share Tech Mono',monospace}
+*{box-sizing:border-box;margin:0;padding:0;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent}
+body{background-color:var(--bg-color);color:var(--text-main);font-family:var(--font-sub);overflow-x:hidden;min-height:100vh;background-image:radial-gradient(circle at 50% 50%,rgba(0,102,255,.15) 0%,transparent 60%),radial-gradient(circle at 80% 20%,rgba(112,0,255,.1) 0%,transparent 40%);position:relative}
+#bg-canvas{position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:0;pointer-events:none}
+.hud-overlay{position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:1;pointer-events:none;background:linear-gradient(rgba(18,16,16,0) 50%,rgba(0,0,0,.25) 50%),linear-gradient(90deg,rgba(255,0,0,.03),rgba(0,255,0,.01),rgba(0,0,255,.03));background-size:100% 3px,6px 100%;opacity:.6}
+.scanline{position:fixed;top:0;left:0;width:100%;height:4px;background:rgba(0,240,255,.3);box-shadow:0 0 15px var(--cyan-glow);z-index:2;animation:scan 8s linear infinite;pointer-events:none;opacity:.7}
+@keyframes scan{0%{top:-10px}100%{top:100vh}}
+#loader{position:fixed;inset:0;background:var(--bg-color);z-index:9999;display:flex;flex-direction:column;justify-content:center;align-items:center;transition:opacity .8s ease,visibility .8s}
+.loader-ring{width:120px;height:120px;border:3px solid transparent;border-top-color:var(--cyan-glow);border-bottom-color:var(--purple-glow);border-radius:50%;animation:spin 1.5s linear infinite;position:relative}
+.loader-ring::before{content:'';position:absolute;inset:8px;border:2px solid transparent;border-left-color:var(--blue-glow);border-right-color:var(--cyan-glow);border-radius:50%;animation:spin-reverse 1s linear infinite}
+@keyframes spin{100%{transform:rotate(360deg)}}@keyframes spin-reverse{100%{transform:rotate(-360deg)}}
+.loader-text{font-family:var(--font-mono);color:var(--cyan-glow);margin-top:25px;letter-spacing:2px;font-size:.9rem;text-align:center}
+header{position:fixed;top:0;left:0;width:100%;z-index:100;padding:15px 30px;display:flex;justify-content:space-between;align-items:center;background:rgba(3,7,18,.85);backdrop-filter:blur(10px);border-bottom:1px solid rgba(0,240,255,.2)}
+.brand-logo{font-family:var(--font-head);font-size:1.2rem;font-weight:800;color:#fff;text-transform:uppercase;letter-spacing:2px;display:flex;align-items:center;gap:10px}.brand-logo i{color:var(--cyan-glow)}
+.nav-links{display:flex;gap:20px;list-style:none}
+.nav-links a{color:var(--text-dim);text-decoration:none;font-weight:600;font-size:.95rem;letter-spacing:1px;text-transform:uppercase;padding:6px 12px;border:1px solid transparent;transition:.3s}
+.nav-links a:hover{color:var(--cyan-glow);border-color:var(--cyan-glow);background:rgba(0,240,255,.05);box-shadow:0 0 10px rgba(0,240,255,.2)}
+.menu-btn{display:none;font-size:1.5rem;color:var(--cyan-glow);cursor:pointer}
+.main-container{position:relative;z-index:10;max-width:1400px;margin:0 auto;padding:100px 20px 40px;min-height:100vh;display:flex;flex-direction:column}
+.hero-header{text-align:center;margin-bottom:20px}
+.hero-title{font-family:var(--font-head);font-size:2.2rem;font-weight:900;letter-spacing:4px;color:#fff;text-shadow:0 0 20px rgba(0,240,255,.6);margin-bottom:5px;text-transform:uppercase}
+.hero-subtitle{font-family:var(--font-mono);color:var(--cyan-glow);font-size:1rem;letter-spacing:2px;margin-bottom:10px}
+.hero-desc{font-size:1.1rem;color:var(--text-dim);font-weight:500}
+.avatar-matrix-section{position:relative;display:flex;justify-content:center;align-items:center;margin:30px 0;min-height:480px}
+.avatar-center-wrapper{position:relative;width:340px;height:340px;display:flex;justify-content:center;align-items:center;z-index:5}
+.ring-outer{position:absolute;inset:-30px;border:2px dashed rgba(0,240,255,.4);border-radius:50%;animation:spin 20s linear infinite}
+.ring-middle{position:absolute;inset:-15px;border:2px solid transparent;border-top-color:var(--cyan-glow);border-bottom-color:var(--purple-glow);border-radius:50%;animation:spin-reverse 12s linear infinite}
+.ring-glow{position:absolute;inset:0;border-radius:50%;box-shadow:0 0 40px var(--blue-glow),inset 0 0 20px var(--cyan-glow);border:2px solid var(--cyan-glow)}
+.avatar-box{position:relative;width:280px;height:280px;border-radius:50%;overflow:hidden;cursor:pointer;box-shadow:0 0 30px rgba(0,240,255,.5);transition:transform .4s cubic-bezier(.175,.885,.32,1.275);background:#000}
+.avatar-box:hover{transform:scale(1.03);box-shadow:0 0 50px rgba(0,240,255,.8)}
+.avatar-img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.avatar-fallback{width:100%;height:100%;background:linear-gradient(135deg,#051329,#0a2246);display:flex;flex-direction:column;justify-content:center;align-items:center;color:var(--cyan-glow)}
+.switching-overlay{position:absolute;inset:0;background:rgba(0,240,255,.2);display:flex;justify-content:center;align-items:center;color:#fff;font-family:var(--font-mono);font-weight:bold;font-size:.8rem;letter-spacing:2px;opacity:0;pointer-events:none;transition:opacity .2s;border-radius:50%;backdrop-filter:blur(4px)}
+.avatar-box.switching .switching-overlay{opacity:1}
+.hud-badge-top{position:absolute;top:-50px;background:rgba(0,15,30,.9);border:1px solid var(--cyan-glow);padding:5px 15px;border-radius:20px;font-family:var(--font-mono);font-size:.75rem;color:var(--cyan-glow);box-shadow:0 0 10px rgba(0,240,255,.3);display:flex;align-items:center;gap:8px;z-index:10}
+.status-dot{width:8px;height:8px;background:var(--cyan-glow);border-radius:50%;box-shadow:0 0 8px var(--cyan-glow);animation:pulse-dot 1.5s infinite alternate}
+@keyframes pulse-dot{0%{opacity:.3;transform:scale(.8)}100%{opacity:1;transform:scale(1.2)}}
+.hud-badge-bottom{position:absolute;bottom:-60px;background:rgba(0,15,30,.9);border:1px solid var(--cyan-glow);padding:8px 18px;border-radius:8px;text-align:center;z-index:10;box-shadow:0 0 15px rgba(0,240,255,.3)}
+.hud-badge-bottom .name{font-family:var(--font-head);font-weight:700;font-size:.9rem;color:#fff;letter-spacing:1px}
+.hud-badge-bottom .sub{font-family:var(--font-mono);font-size:.65rem;color:var(--cyan-glow)}
+.hud-nodes-container{position:absolute;width:100%;max-width:1000px;height:100%;pointer-events:none;display:flex;justify-content:space-between;align-items:center}
+.hud-col{display:flex;flex-direction:column;gap:20px;pointer-events:auto}
+.hud-card-btn{background:var(--card-bg);border:1px solid var(--card-border);padding:12px 20px;border-radius:6px;color:#fff;font-family:var(--font-head);font-size:.85rem;letter-spacing:1px;cursor:pointer;display:flex;align-items:center;gap:12px;width:190px;backdrop-filter:blur(5px);transition:.3s;box-shadow:0 4px 15px rgba(0,0,0,.4)}
+.hud-card-btn i{color:var(--cyan-glow);font-size:1.1rem;width:20px;text-align:center}
+.hud-card-btn:hover{border-color:var(--cyan-glow);background:rgba(0,240,255,.15);box-shadow:0 0 20px rgba(0,240,255,.4);transform:translateX(5px)}
+.hud-col.right .hud-card-btn:hover{transform:translateX(-5px)}
+.ai-assistant-wrapper{max-width:800px;margin:40px auto 20px;background:var(--card-bg);border:1px solid var(--cyan-glow);border-radius:12px;padding:20px;box-shadow:0 0 25px rgba(0,240,255,.2);backdrop-filter:blur(8px);position:relative;width:100%}
+.ai-header{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(0,240,255,.2);padding-bottom:10px;margin-bottom:15px}
+.ai-title{font-family:var(--font-head);font-size:1rem;color:var(--cyan-glow);display:flex;align-items:center;gap:10px}
+.ai-status-indicator{font-family:var(--font-mono);font-size:.75rem;padding:3px 10px;border-radius:12px;background:rgba(0,240,255,.1);color:var(--cyan-glow);border:1px solid var(--cyan-glow)}
+.ai-display-box{background:rgba(2,8,20,.8);border:1px solid rgba(0,240,255,.15);border-radius:8px;padding:15px;min-height:80px;margin-bottom:15px;font-family:var(--font-mono);font-size:.95rem;line-height:1.5;position:relative}
+.ai-visualizer{display:flex;align-items:center;gap:4px;height:20px;position:absolute;top:15px;right:15px}
+.v-bar{width:3px;height:100%;background:var(--cyan-glow);border-radius:2px;opacity:.3}
+.v-bar.active{animation:wave .8s ease-in-out infinite alternate;opacity:1}
+.v-bar:nth-child(2){animation-delay:.2s}.v-bar:nth-child(3){animation-delay:.4s}.v-bar:nth-child(4){animation-delay:.1s}
+@keyframes wave{0%{height:20%}100%{height:100%}}
+.ai-controls{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.ai-btn{background:rgba(0,240,255,.1);border:1px solid var(--cyan-glow);color:#fff;padding:8px 16px;border-radius:4px;font-family:var(--font-sub);font-weight:600;font-size:.85rem;letter-spacing:1px;cursor:pointer;transition:.3s;display:flex;align-items:center;gap:6px}
+.ai-btn:hover{background:var(--cyan-glow);color:#000;box-shadow:0 0 15px var(--cyan-glow)}
+.ai-btn-primary{background:var(--cyan-glow);color:#000;font-weight:bold}
+.section-modal{position:fixed;inset:0;z-index:500;background:rgba(3,7,18,.92);backdrop-filter:blur(15px);display:flex;justify-content:center;align-items:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .4s}
+.section-modal.active{opacity:1;pointer-events:auto}
+.modal-content{background:var(--card-bg);border:1px solid var(--cyan-glow);border-radius:12px;width:100%;max-width:900px;max-height:85vh;overflow-y:auto;padding:30px;box-shadow:0 0 40px rgba(0,240,255,.3);position:relative;transform:translateY(30px);transition:transform .4s}
+.section-modal.active .modal-content{transform:translateY(0)}
+.modal-close{position:absolute;top:20px;right:20px;font-size:1.5rem;color:var(--cyan-glow);cursor:pointer;width:35px;height:35px;border:1px solid var(--cyan-glow);border-radius:50%;display:flex;justify-content:center;align-items:center}
+.modal-close:hover{background:var(--cyan-glow);color:#000}
+.sec-title{font-family:var(--font-head);font-size:1.8rem;color:#fff;margin-bottom:25px;display:flex;align-items:center;gap:12px;border-bottom:2px solid var(--cyan-glow);padding-bottom:10px;text-transform:uppercase}
+.sec-title i{color:var(--cyan-glow)}
+.filter-bar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px}
+.filter-btn{background:rgba(255,255,255,.05);border:1px solid rgba(0,240,255,.3);color:var(--text-dim);padding:6px 14px;border-radius:4px;cursor:pointer;font-family:var(--font-mono);font-size:.8rem;transition:.3s}
+.filter-btn.active,.filter-btn:hover{background:var(--cyan-glow);color:#000;border-color:var(--cyan-glow)}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
+.project-card{background:rgba(5,15,30,.8);border:1px solid rgba(0,240,255,.2);border-radius:8px;padding:20px;transition:.3s;display:flex;flex-direction:column;justify-content:space-between}
+.project-card:hover{border-color:var(--cyan-glow);transform:translateY(-5px);box-shadow:0 5px 20px rgba(0,240,255,.2)}
+.project-head{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.project-icon{width:40px;height:40px;background:rgba(0,240,255,.1);border:1px solid var(--cyan-glow);border-radius:6px;display:flex;justify-content:center;align-items:center;color:var(--cyan-glow);font-size:1.2rem}
+.project-title{font-family:var(--font-head);font-size:1rem;color:#fff}
+.project-desc{font-size:.85rem;color:var(--text-dim);margin-bottom:15px;line-height:1.4}
+.project-tech{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:15px}
+.tech-tag{font-family:var(--font-mono);font-size:.7rem;background:rgba(112,0,255,.2);border:1px solid rgba(112,0,255,.5);color:#d8b4fe;padding:2px 8px;border-radius:3px}
+.project-btn{background:transparent;border:1px solid var(--cyan-glow);color:var(--cyan-glow);padding:8px 12px;border-radius:4px;font-family:var(--font-mono);font-size:.8rem;cursor:pointer;text-align:center;text-decoration:none;transition:.3s}
+.project-btn:hover{background:var(--cyan-glow);color:#000}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+.skill-item{background:rgba(0,0,0,.4);border:1px solid rgba(0,240,255,.15);padding:15px;border-radius:6px}
+.skill-info{display:flex;justify-content:space-between;font-family:var(--font-mono);margin-bottom:8px}
+.skill-name{color:#fff;font-weight:bold}.skill-val{color:var(--cyan-glow)}
+.skill-bar-bg{height:8px;background:rgba(255,255,255,.1);border-radius:4px;overflow:hidden}
+.skill-bar-fill{height:100%;background:linear-gradient(90deg,var(--blue-glow),var(--cyan-glow));box-shadow:0 0 10px var(--cyan-glow);border-radius:4px}
+.timeline{position:relative;padding-left:30px;border-left:2px solid var(--cyan-glow)}
+.timeline-item{position:relative;margin-bottom:30px}
+.timeline-item::before{content:'';position:absolute;left:-36px;top:0;width:10px;height:10px;border-radius:50%;background:var(--cyan-glow);box-shadow:0 0 10px var(--cyan-glow)}
+.timeline-year{font-family:var(--font-mono);color:var(--cyan-glow);font-size:.85rem;margin-bottom:5px}
+.timeline-deg{font-family:var(--font-head);font-size:1.1rem;color:#fff;margin-bottom:5px}
+.timeline-inst{color:var(--text-dim);font-size:.9rem}
+.social-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:15px}
+.social-card{background:rgba(255,255,255,.03);border:1px solid rgba(0,240,255,.2);padding:15px;border-radius:8px;display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none;transition:.3s}
+.social-card i{font-size:1.5rem;color:var(--cyan-glow)}
+.social-card:hover{border-color:var(--cyan-glow);background:rgba(0,240,255,.1);transform:translateY(-3px)}
+.contact-form{display:flex;flex-direction:column;gap:15px}
+.form-group{display:flex;flex-direction:column;gap:5px}
+.form-group label{font-family:var(--font-mono);color:var(--cyan-glow);font-size:.85rem}
+.form-input{background:rgba(0,0,0,.5);border:1px solid rgba(0,240,255,.3);padding:12px;border-radius:4px;color:#fff;font-family:var(--font-sub);font-size:1rem;outline:none;user-select:text;-webkit-user-select:text}
+.form-input:focus{border-color:var(--cyan-glow);box-shadow:0 0 10px rgba(0,240,255,.2)}
+textarea.form-input{min-height:100px;resize:vertical}
+#toast{position:fixed;bottom:20px;right:20px;background:rgba(8,15,30,.95);border:1px solid var(--cyan-glow);color:#fff;padding:12px 20px;border-radius:6px;font-family:var(--font-mono);font-size:.85rem;box-shadow:0 0 20px rgba(0,240,255,.4);z-index:10000;opacity:0;transform:translateY(20px);transition:.3s;pointer-events:none;display:flex;align-items:center;gap:10px}
+#toast.show{opacity:1;transform:translateY(0)}
+@media(max-width:992px){.hud-nodes-container{position:relative;max-width:100%;flex-direction:column;gap:15px;margin-top:30px}.hud-col{width:100%;flex-direction:row;flex-wrap:wrap;justify-content:center}.hud-card-btn{width:45%;min-width:150px}.hud-col.right .hud-card-btn:hover,.hud-card-btn:hover{transform:translateY(-3px)}.avatar-matrix-section{flex-direction:column;min-height:auto}}
+@media(max-width:768px){.nav-links{position:fixed;top:60px;right:-100%;width:250px;height:calc(100vh - 60px);background:rgba(3,7,18,.95);backdrop-filter:blur(10px);border-left:1px solid var(--cyan-glow);flex-direction:column;padding:30px 20px;transition:right .4s}.nav-links.open{right:0}.menu-btn{display:block}.hero-title{font-size:1.6rem}.avatar-center-wrapper{width:260px;height:260px}.avatar-box{width:210px;height:210px}.hud-card-btn{width:100%}.modal-content{padding:20px}}
+#axStat{padding:10px 6px;cursor:default}
+</style><script>function handleImageError(i){window._imgErr=i}</script></head>
 <body>
-
-<canvas id="matrix"></canvas>
-
-<div id="loader">
-  <div class="loader-logo">WELCOME, ATIK</div>
-  <div class="loader-line"></div>
-</div>
-
-<header>
-  <div class="brand" id="brandTrigger" title="ATIK // NEXUS">
-    ATIK <span>// NEXUS</span>
-    <small>DIGITAL IDENTITY SYSTEM</small>
-  </div>
-
-  <div class="header-right">
-    <nav class="nav" id="nav">
-      <button onclick="goTo('home')">HOME</button>
-      <button onclick="goTo('about')">ABOUT</button>
-      <button onclick="goTo('projects')">PROJECTS</button>
-      <button onclick="goTo('store')">STORE</button>
-      <button onclick="goTo('skills')">SKILLS</button>
-      <button onclick="goTo('education')">EDUCATION</button>
-      <button onclick="goTo('contact')">CONTACT</button>
-    </nav>
-
-    <button class="admin-trigger" id="adminTrigger" title="Admin Control Center">
-      ⋮
-    </button>
-
-    <button class="menu-btn" onclick="toggleMenu()">
-      <i class="fa-solid fa-bars"></i>
-    </button>
-  </div>
-</header>
-
-<main>
-
-<section class="hero" id="home">
-  <div class="hero-content">
-
-    <div class="kicker">SYSTEM ONLINE // DIGITAL IDENTITY DETECTED</div>
-
-    <h1><span id="heroName">MD. ATIKUL ISLAM</span></h1>
-
-    <div class="hero-sub" id="heroTitle">
-      Student | Digital Creator | Web & Technology Enthusiast
-    </div>
-
-    <div class="identity">
-      <div class="avatar-box" id="avatarBox" onclick="openVoicePanel()">
-        <div class="avatar-inner">
-          <img id="profileImage" src="profile.jpg" alt="ATIK" onerror="handleImageError(this)">
-          <div class="robot-core">
-            <i class="fa-solid fa-robot"></i>
-            <small>ATIK AI CORE</small>
-          </div>
-        </div>
-        <div class="avatar-hint">TAP TO SPEAK WITH NEXUS</div>
-      </div>
-    </div>
-
-    <div class="hud-grid">
-      <button class="hud-btn" onclick="openInfo('about')">
-        <i class="fa-solid fa-user-astronaut"></i>ABOUT ME
-      </button>
-
-      <button class="hud-btn" onclick="openInfo('websites')">
-        <i class="fa-solid fa-globe"></i>MY WEBSITES
-      </button>
-
-      <button class="hud-btn" onclick="openInfo('projects')">
-        <i class="fa-solid fa-code"></i>MY PROJECTS
-      </button>
-
-      <button class="hud-btn" onclick="openInfo('skills')">
-        <i class="fa-solid fa-microchip"></i>MY SKILLS
-      </button>
-
-      <button class="hud-btn" onclick="openInfo('education')">
-        <i class="fa-solid fa-graduation-cap"></i>EDUCATION
-      </button>
-
-      <button class="hud-btn" onclick="openInfo('social')">
-        <i class="fa-solid fa-share-nodes"></i>SOCIAL MEDIA
-      </button>
-
-      <button class="hud-btn" onclick="openInfo('contact')">
-        <i class="fa-solid fa-envelope"></i>CONTACT
-      </button>
-
-      <button class="hud-btn" onclick="openInfo('goals')">
-        <i class="fa-solid fa-rocket"></i>FUTURE GOALS
-      </button>
-    </div>
-
-    <div class="ai-panel">
-      <div class="ai-head">
-        <div class="ai-orb">
-          <i class="fa-solid fa-robot"></i>
-        </div>
-
-        <div>
-          <div class="ai-title" id="aiName">ATIK // NEXUS</div>
-          <div class="ai-status">● AI CORE READY</div>
-        </div>
-      </div>
-
-      <div class="ai-output" id="aiOutput">
-        Hello. I'm Atik's Digital Assistant. Ask me anything about Atik or control the website using your voice or text.
-      </div>
-
-      <div class="ai-controls">
-        <button class="ai-btn" onclick="startListening()">
-          <i class="fa-solid fa-microphone"></i> TAP TO SPEAK
-        </button>
-
-        <button class="ai-btn" onclick="stopSpeaking()">
-          <i class="fa-solid fa-volume-xmark"></i> STOP
-        </button>
-      </div>
-
-      <div class="command-row">
-        <input id="commandInput" placeholder="Type a command or question...">
-        <button class="ai-btn" onclick="submitCommand()">SEND</button>
-      </div>
-
-      <div class="quick-title">QUICK COMMANDS</div>
-
-      <div class="quick">
-        <button onclick="quickCommand('about')">ABOUT ATIK</button>
-        <button onclick="quickCommand('projects')">PROJECTS</button>
-        <button onclick="quickCommand('skills')">SKILLS</button>
-        <button onclick="quickCommand('contact')">CONTACT</button>
-        <button onclick="quickCommand('store')">STORE</button>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<section class="content-section" id="about">
-  <div class="section-head">
-    <div class="mini">01 // IDENTITY</div>
-    <h2>ABOUT ME</h2>
-    <p>Digital profile of the person behind the Nexus.</p>
-  </div>
-
-  <div class="about-grid">
-    <div class="info-card">
-      <p id="aboutText"></p>
-
-      <div class="stat-grid">
-        <div class="stat">
-          <b>NAME</b>
-          <span id="statName"></span>
-        </div>
-        <div class="stat">
-          <b>ROLE</b>
-          <span id="statRole"></span>
-        </div>
-        <div class="stat">
-          <b>LOCATION</b>
-          <span id="statLocation"></span>
-        </div>
-        <div class="stat">
-          <b>STATUS</b>
-          <span>ONLINE / LEARNING</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="info-card">
-      <div class="kicker">DIGITAL MISSION</div>
-      <h3 style="font-family:Orbitron;margin:10px 0">BUILD • LEARN • CREATE</h3>
-      <p id="goalsText" style="color:#8295aa;line-height:1.7"></p>
-    </div>
-  </div>
-</section>
-
-<section class="content-section" id="projects">
-  <div class="section-head">
-    <div class="mini">02 // WORKSPACE</div>
-    <h2>PROJECTS & WEBSITES</h2>
-    <p>Digital systems created and explored by Atik.</p>
-  </div>
-
-  <div class="projects-grid" id="projectsGrid"></div>
-</section>
-
-<section class="content-section" id="store">
-  <div class="section-head">
-    <div class="mini">03 // DIGITAL MARKET</div>
-    <h2>DIGITAL STORE</h2>
-    <p>Websites, software, applications and digital products.</p>
-  </div>
-
-  <div class="store-grid" id="storeGrid"></div>
-</section>
-
-<section class="content-section" id="skills">
-  <div class="section-head">
-    <div class="mini">04 // CAPABILITIES</div>
-    <h2>SKILL MATRIX</h2>
-    <p>Technologies and abilities.</p>
-  </div>
-
-  <div class="skills-grid" id="skillsGrid"></div>
-</section>
-
-<section class="content-section" id="education">
-  <div class="section-head">
-    <div class="mini">05 // KNOWLEDGE</div>
-    <h2>EDUCATION</h2>
-  </div>
-
-  <div class="edu-list" id="educationList"></div>
-</section>
-
-<section class="content-section" id="social">
-  <div class="section-head">
-    <div class="mini">06 // DIGITAL NETWORK</div>
-    <h2>SOCIAL MEDIA</h2>
-  </div>
-
-  <div class="social-grid" id="socialGrid"></div>
-</section>
-
-<section class="content-section" id="contact">
-  <div class="section-head">
-    <div class="mini">07 // COMMUNICATION</div>
-    <h2>CONTACT</h2>
-  </div>
-
-  <div class="info-card contact-box">
-    <div class="contact-line">
-      <i class="fa-solid fa-envelope"></i>
-      <span id="contactEmail"></span>
-    </div>
-
-    <div class="contact-line">
-      <i class="fa-solid fa-phone"></i>
-      <span id="contactPhone"></span>
-    </div>
-
-    <div class="contact-line">
-      <i class="fa-solid fa-location-dot"></i>
-      <span id="contactLocation"></span>
-    </div>
-  </div>
-</section>
-
+<canvas id="bg-canvas"></canvas><div class="hud-overlay"></div><div class="scanline"></div>
+<div id="loader"><div class="loader-ring"></div><div class="loader-text">INITIALIZING ATIK AI...</div></div>
+<header><div class="brand-logo"><i class="fa-solid fa-microchip"></i> ATIK // NEXUS</div>
+<div class="menu-btn" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></div>
+<ul class="nav-links" id="nav-links"><li><a href="#" onclick="closeMenu();switchSection('home')">HOME</a></li><li><a href="#" onclick="closeMenu();switchSection('about')">ABOUT</a></li><li><a href="#" onclick="closeMenu();switchSection('projects')">PROJECTS</a></li><li><a href="#" onclick="closeMenu();switchSection('skills')">SKILLS</a></li><li><a href="#" onclick="closeMenu();switchSection('education')">EXPERIENCE</a></li><li><a href="#" onclick="closeMenu();switchSection('social')">SOCIAL</a></li><li><a href="#" onclick="closeMenu();switchSection('contact')">CONTACT</a></li></ul></header>
+<main class="main-container">
+<div class="hero-header"><h1 class="hero-title" id="display-name">MD. ATIKUL ISLAM</h1><div class="hero-subtitle" id="display-ai-name">ATIK // NEXUS</div><div class="hero-desc" id="display-title">Student | Digital Creator | Web &amp; Technology Enthusiast</div></div>
+<div class="ax-dual"><button class="ax-dbtn" onclick="switchSection('apps')"><i class="fa-solid fa-user-astronaut"></i><b>MY APPS</b><small id="axCntApps">APPS</small></button><button class="ax-dbtn" onclick="switchSection('websites')"><i class="fa-solid fa-user-astronaut"></i><b>MY WEBSITES</b><small id="axCntWeb">WEBSITES</small></button></div>
+<div class="avatar-matrix-section"><div class="hud-nodes-container">
+<div class="hud-col left">
+<button class="hud-card-btn" onclick="switchSection('about')"><i class="fa-solid fa-user-gear"></i> ABOUT ME</button>
+<button class="hud-card-btn" onclick="switchSection('websites')"><i class="fa-solid fa-laptop-code"></i> MY WEBSITES</button>
+<button class="hud-card-btn" onclick="switchSection('projects')"><i class="fa-solid fa-diagram-project"></i> MY PROJECTS</button>
+<button class="hud-card-btn" onclick="switchSection('skills')"><i class="fa-solid fa-network-wired"></i> MY SKILLS</button></div>
+<div class="avatar-center-wrapper"><div class="ring-outer"></div><div class="ring-middle"></div><div class="ring-glow"></div>
+<div class="hud-badge-top"><div class="status-dot"></div><span id="ai-status-tag">ATIK AI • ONLINE</span></div>
+<div class="avatar-box" id="avatar-box" onclick="cycleProfileImage()"><img id="avatar-img" class="avatar-img" src="profile.jpg" alt="MD. ATIKUL ISLAM" onerror="handleImageError(this)"><div class="switching-overlay">IDENTITY SWITCHING...</div></div>
+<div class="hud-badge-bottom"><div class="name">TAP PROFILE TO SWITCH</div><div class="sub">AI MODE MATRIX</div></div></div>
+<div class="hud-col right">
+<button class="hud-card-btn" onclick="switchSection('education')"><i class="fa-solid fa-graduation-cap"></i> EXPERIENCE</button>
+<button class="hud-card-btn" onclick="switchSection('social')"><i class="fa-solid fa-share-nodes"></i> SOCIAL MEDIA</button>
+<button class="hud-card-btn" onclick="switchSection('contact')"><i class="fa-solid fa-headset"></i> CONTACT</button>
+<button class="hud-card-btn" onclick="switchSection('goals')"><i class="fa-solid fa-bullseye"></i> FUTURE GOALS</button></div></div></div>
+<div class="ai-assistant-wrapper"><div class="ai-header"><div class="ai-title"><i class="fa-solid fa-robot"></i> ATIK DIGITAL AI ASSISTANT</div><div class="ai-status-indicator" id="speech-status">● AI READY</div></div>
+<div class="ai-display-box" id="ai-text-box">"আসসালামু আলাইকুম। আমি Atik-এর Digital AI Assistant। আপনাকে স্বাগতম।"<div class="ai-visualizer"><div class="v-bar"></div><div class="v-bar"></div><div class="v-bar"></div><div class="v-bar"></div></div></div>
+<div class="ai-controls"><button class="ai-btn ai-btn-primary" onclick="activateAIGreet()"><i class="fa-solid fa-volume-high"></i> TALK TO ATIK AI</button>
+<button class="ai-btn" onclick="aiQuickCommand('about')">ABOUT ATIK</button><button class="ai-btn" onclick="aiQuickCommand('projects')">PROJECTS</button><button class="ai-btn" onclick="aiQuickCommand('skills')">SKILLS</button><button class="ai-btn" onclick="aiQuickCommand('contact')">CONTACT</button>
+<button class="ai-btn" onclick="stopSpeaking()"><i class="fa-solid fa-stop"></i> STOP</button></div></div>
 </main>
-
-<footer>
-  ATIK // NEXUS • DIGITAL IDENTITY SYSTEM • ALL SYSTEMS NOMINAL
-</footer>
-
-
-<!-- GENERAL INFO MODAL -->
-<div class="modal" id="infoModal" onclick="outsideClose(event,'infoModal')">
-  <div class="modal-box">
-    <div class="modal-head">
-      <h3 id="infoTitle">NEXUS</h3>
-      <button class="close" onclick="closeModal('infoModal')">×</button>
-    </div>
-    <div class="modal-body" id="infoBody"></div>
-  </div>
-</div>
-
-
-<!-- VOICE MODAL -->
-<div class="modal" id="voiceModal" onclick="outsideClose(event,'voiceModal')">
-  <div class="modal-box">
-    <div class="modal-head">
-      <h3>ATIK // NEXUS VOICE INTERFACE</h3>
-      <button class="close" onclick="closeModal('voiceModal')">×</button>
-    </div>
-
-    <div class="modal-body">
-      <div class="info-card" style="text-align:center">
-        <div style="font-size:50px;color:var(--cyan);margin-bottom:15px">
-          <i class="fa-solid fa-robot"></i>
-        </div>
-
-        <div id="voiceStatus" style="color:var(--green);font-family:Share Tech Mono;font-size:10px">
-          READY
-        </div>
-
-        <button class="ai-btn" style="margin-top:18px" onclick="startListening()">
-          <i class="fa-solid fa-microphone"></i> START LISTENING
-        </button>
-
-        <button class="ai-btn" style="margin-top:18px" onclick="stopSpeaking()">
-          STOP VOICE
-        </button>
-
-        <div id="voiceTranscript" style="margin-top:20px;color:#8ca2b8;min-height:35px"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- ADMIN MODAL -->
-<div class="modal" id="adminModal" onclick="outsideClose(event,'adminModal')">
-
-  <!-- LOGIN -->
-  <div class="admin-box admin-login" id="adminLoginBox">
-
-    <div class="admin-brand">
-      <i class="fa-solid fa-shield-halved"></i>
-      <h2>NEXUS CONTROL CENTER</h2>
-      <p>AUTHORIZED ADMIN ACCESS</p>
-    </div>
-
-    <div class="admin-form">
-
-      <div class="form-group">
-        <label>ADMIN USERNAME</label>
-        <input id="adminUsername" autocomplete="off" placeholder="Username">
-      </div>
-
-      <div class="form-group">
-        <label>ADMIN PASSWORD</label>
-        <input id="adminPassword" type="password" placeholder="Password">
-      </div>
-
-      <button class="full-btn" onclick="adminLogin()">
-        <i class="fa-solid fa-unlock"></i> AUTHENTICATE
-      </button>
-
-      <div class="login-error" id="loginError"></div>
-
-      <div style="text-align:center;margin-top:15px;color:#4e6178;font-size:9px">
-        LOCAL CONTROL MODE
-      </div>
-    </div>
-  </div>
-
-
-  <!-- PANEL -->
-  <div class="admin-box" id="adminPanelBox" style="display:none">
-
-    <div class="admin-header">
-      <div>
-        <strong>NEXUS ADMIN // CONTROL</strong>
-        <span style="margin-left:8px">● AUTHORIZED</span>
-      </div>
-
-      <button class="ai-btn danger" onclick="adminLogout()">LOGOUT</button>
-    </div>
-
-    <div class="admin-tabs">
-
-      <button class="admin-tab active" data-tab="profile" onclick="adminTab('profile')">
-        PROFILE
-      </button>
-
-      <button class="admin-tab" data-tab="ai" onclick="adminTab('ai')">
-        AI / CONTENT
-      </button>
-
-      <button class="admin-tab" data-tab="commands" onclick="adminTab('commands')">
-        COMMANDS
-      </button>
-
-      <button class="admin-tab" data-tab="projects" onclick="adminTab('projects')">
-        PROJECTS
-      </button>
-
-      <button class="admin-tab" data-tab="storeAdmin" onclick="adminTab('storeAdmin')">
-        STORE
-      </button>
-
-      <button class="admin-tab" data-tab="files" onclick="adminTab('files')">
-        FILES
-      </button>
-
-      <button class="admin-tab" data-tab="socialAdmin" onclick="adminTab('socialAdmin')">
-        SOCIAL
-      </button>
-
-      <button class="admin-tab" data-tab="structure" onclick="adminTab('structure')">
-        STRUCTURE
-      </button>
-
-      <button class="admin-tab" data-tab="settings" onclick="adminTab('settings')">
-        SETTINGS
-      </button>
-
-    </div>
-
-
-    <div class="admin-content">
-
-      <!-- PROFILE -->
-      <div class="admin-page active" id="tab-profile">
-
-        <div class="admin-card">
-          <h3>IDENTITY / PROFILE</h3>
-
-          <div class="form-grid">
-
-            <div class="form-group">
-              <label>NAME</label>
-              <input id="fName">
-            </div>
-
-            <div class="form-group">
-              <label>AI NAME</label>
-              <input id="fAiName">
-            </div>
-
-            <div class="form-group full">
-              <label>TITLE</label>
-              <input id="fTitle">
-            </div>
-
-            <div class="form-group">
-              <label>EMAIL</label>
-              <input id="fEmail">
-            </div>
-
-            <div class="form-group">
-              <label>PHONE</label>
-              <input id="fPhone">
-            </div>
-
-            <div class="form-group full">
-              <label>LOCATION</label>
-              <input id="fLocation">
-            </div>
-
-            <div class="form-group full">
-              <label>ABOUT</label>
-              <textarea id="fAbout"></textarea>
-            </div>
-
-            <div class="form-group full">
-              <label>FUTURE GOALS</label>
-              <textarea id="fGoals"></textarea>
-            </div>
-
-            <div class="form-group full">
-              <label>PROFILE IMAGE URL / FILE NAME</label>
-              <input id="fProfileImage">
-            </div>
-
-          </div>
-
-          <div class="admin-actions">
-            <button class="ai-btn" onclick="saveProfile()">SAVE PROFILE</button>
-          </div>
-        </div>
-
-      </div>
-
-
-      <!-- AI -->
-      <div class="admin-page" id="tab-ai">
-
-        <div class="admin-card">
-          <h3>AI PERSONALITY / RESPONSES</h3>
-
-          <div class="form-group">
-            <label>GREETING</label>
-            <textarea id="fGreeting"></textarea>
-          </div>
-
-          <div class="form-group">
-            <label>ABOUT RESPONSE</label>
-            <textarea id="fAiAbout"></textarea>
-          </div>
-
-          <div class="form-group">
-            <label>PROJECT RESPONSE</label>
-            <textarea id="fAiProjects"></textarea>
-          </div>
-
-          <div class="form-group">
-            <label>SKILLS RESPONSE</label>
-            <textarea id="fAiSkills"></textarea>
-          </div>
-
-          <div class="form-group">
-            <label>CONTACT RESPONSE</label>
-            <textarea id="fAiContact"></textarea>
-          </div>
-
-          <div class="form-group">
-            <label>UNKNOWN QUESTION RESPONSE</label>
-            <textarea id="fAiUnknown"></textarea>
-          </div>
-
-          <div class="admin-actions">
-            <button class="ai-btn" onclick="saveAI()">SAVE AI</button>
-          </div>
-        </div>
-
-
-        <div class="admin-card">
-          <h3>PRIORITY ANNOUNCEMENT</h3>
-
-          <div class="form-group">
-            <label>MESSAGE TO SPEAK FIRST</label>
-            <textarea id="priorityAnnouncement"></textarea>
-          </div>
-
-          <div class="toggle-row">
-            <span>Enable priority announcement</span>
-            <input type="checkbox" id="priorityEnabled">
-          </div>
-
-          <div class="toggle-row">
-            <span>Speak announcement on visitor entry</span>
-            <input type="checkbox" id="priorityOnEntry">
-          </div>
-
-          <div class="admin-actions">
-            <button class="ai-btn" onclick="savePriority()">SAVE PRIORITY</button>
-          </div>
-        </div>
-
-
-        <div class="admin-card">
-          <h3>VOICE SETTINGS</h3>
-
-          <div class="form-grid">
-
-            <div class="form-group">
-              <label>SPEECH LANGUAGE</label>
-              <select id="speechLanguage">
-                <option value="bn-BD">Bangla</option>
-                <option value="en-US">English</option>
-                <option value="ja-JP">Japanese</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label>SPEECH RATE</label>
-              <input id="speechRate" type="number" min=".5" max="2" step=".1">
-            </div>
-
-          </div>
-
-          <div class="toggle-row">
-            <span>Assistant enabled</span>
-            <input type="checkbox" id="assistantEnabled">
-          </div>
-
-          <div class="toggle-row">
-            <span>Auto greeting</span>
-            <input type="checkbox" id="autoGreeting">
-          </div>
-
-          <div class="admin-actions">
-            <button class="ai-btn" onclick="saveVoiceSettings()">SAVE VOICE SETTINGS</button>
-          </div>
-        </div>
-
-      </div>
-
-
-      <!-- COMMANDS -->
-      <div class="admin-page" id="tab-commands">
-
-        <div class="admin-card">
-
-          <h3>CREATE CUSTOM AI COMMAND</h3>
-
-          <div class="form-grid">
-
-            <div class="form-group">
-              <label>TRIGGER WORD / PHRASE</label>
-              <input id="cmdTrigger" placeholder="Example: show my work">
-            </div>
-
-            <div class="form-group">
-              <label>ACTION</label>
-              <select id="cmdAction">
-                <option value="none">No action</option>
-                <option value="home">Open Home</option>
-                <option value="about">Open About</option>
-                <option value="projects">Open Projects</option>
-                <option value="store">Open Store</option>
-                <option value="skills">Open Skills</option>
-                <option value="education">Open Education</option>
-                <option value="social">Open Social</option>
-                <option value="contact">Open Contact</option>
-                <option value="voice">Open Voice</option>
-              </select>
-            </div>
-
-            <div class="form-group full">
-              <label>AI RESPONSE</label>
-              <textarea id="cmdResponse"></textarea>
-            </div>
-
-          </div>
-
-          <button class="ai-btn" onclick="addCustomCommand()">ADD COMMAND</button>
-
-          <div class="admin-list" id="commandList"></div>
-
-        </div>
-
-      </div>
-
-
-      <!-- PROJECTS -->
-      <div class="admin-page" id="tab-projects">
-
-        <div class="admin-card">
-
-          <h3>PUBLISH WEBSITE / PROJECT</h3>
-
-          <div class="form-grid">
-
-            <div class="form-group">
-              <label>PROJECT NAME</label>
-              <input id="pName">
-            </div>
-
-            <div class="form-group">
-              <label>CATEGORY</label>
-              <input id="pCategory" placeholder="Website / App / Software">
-            </div>
-
-            <div class="form-group full">
-              <label>DESCRIPTION</label>
-              <textarea id="pDescription"></textarea>
-            </div>
-
-            <div class="form-group">
-              <label>TECHNOLOGY</label>
-              <input id="pTech" placeholder="HTML, CSS, JS">
-            </div>
-
-            <div class="form-group">
-              <label>LIVE LINK</label>
-              <input id="pLink" placeholder="https://...">
-            </div>
-
-            <div class="form-group full">
-              <label>IMAGE URL</label>
-              <input id="pImage">
-            </div>
-
-          </div>
-
-          <button class="ai-btn" onclick="addProject()">PUBLISH PROJECT</button>
-
-          <div class="admin-list" id="projectAdminList"></div>
-
-        </div>
-
-      </div>
-
-
-      <!-- STORE -->
-      <div class="admin-page" id="tab-storeAdmin">
-
-        <div class="admin-card">
-
-          <h3>DIGITAL PRODUCT PUBLISHER</h3>
-
-          <div class="form-grid">
-
-            <div class="form-group">
-              <label>PRODUCT NAME</label>
-              <input id="sName">
-            </div>
-
-            <div class="form-group">
-              <label>PRICE</label>
-              <input id="sPrice" placeholder="Free / ৳500">
-            </div>
-
-            <div class="form-group">
-              <label>CATEGORY</label>
-              <input id="sCategory" placeholder="Software / Website / ZIP">
-            </div>
-
-            <div class="form-group">
-              <label>VERSION</label>
-              <input id="sVersion" placeholder="1.0.0">
-            </div>
-
-            <div class="form-group full">
-              <label>DESCRIPTION</label>
-              <textarea id="sDescription"></textarea>
-            </div>
-
-            <div class="form-group">
-              <label>IMAGE URL</label>
-              <input id="sImage">
-            </div>
-
-            <div class="form-group">
-              <label>EXTERNAL DELIVERY LINK</label>
-              <input id="sLink">
-            </div>
-
-          </div>
-
-          <div class="admin-actions">
-            <button class="ai-btn" onclick="addProduct()">PUBLISH PRODUCT</button>
-          </div>
-
-          <div class="admin-list" id="storeAdminList"></div>
-
-        </div>
-
-      </div>
-
-
-      <!-- FILES -->
-      <div class="admin-page" id="tab-files">
-
-        <div class="admin-card">
-
-          <h3>UPLOAD SOFTWARE / DIGITAL FILE</h3>
-
-          <p style="color:#71879d;font-size:11px;line-height:1.5">
-            ZIP, APK, AAB, HTML, PDF এবং অন্যান্য ফাইল local browser storage-এ রাখা হবে।
-          </p>
-
-          <div class="file-drop">
-            <i class="fa-solid fa-cloud-arrow-up"></i>
-
-            <input
-              id="digitalFile"
-              type="file"
-              accept=".zip,.apk,.aab,.html,.htm,.pdf,.txt,.json,.js,.css,.exe,.msi,.png,.jpg,.jpeg,.webp"
-            >
-
-          </div>
-
-          <div class="form-group" style="margin-top:10px">
-            <label>FILE DESCRIPTION</label>
-            <textarea id="fileDescription"></textarea>
-          </div>
-
-          <button class="ai-btn" onclick="uploadDigitalFile()">
-            SAVE FILE
-          </button>
-
-          <div class="admin-list" id="fileList"></div>
-
-        </div>
-
-        <div class="admin-card">
-
-          <h3>UPLOAD PRE-RECORDED AI VOICE</h3>
-
-          <p style="color:#71879d;font-size:11px;line-height:1.5">
-            Audio response হিসেবে সংরক্ষণ করা যাবে। Browser-only mode-এ এটি voice cloning নয়; matching command হলে saved audio play করা হবে।
-          </p>
-
-          <div class="file-drop">
-            <i class="fa-solid fa-microphone-lines"></i>
-            <input id="voiceFile" type="file" accept="audio/*">
-          </div>
-
-          <div class="form-group" style="margin-top:10px">
-            <label>VOICE TRIGGER</label>
-            <input id="voiceTrigger" placeholder="Example: introduce yourself">
-          </div>
-
-          <button class="ai-btn" onclick="uploadVoiceFile()">
-            SAVE VOICE RESPONSE
-          </button>
-
-          <div class="admin-list" id="voiceList"></div>
-
-        </div>
-
-      </div>
-
-
-      <!-- SOCIAL -->
-      <div class="admin-page" id="tab-socialAdmin">
-
-        <div class="admin-card">
-
-          <h3>SOCIAL / CONTACT CONTROL</h3>
-
-          <div id="socialEditor"></div>
-
-          <button class="ai-btn" onclick="saveSocial()">SAVE SOCIAL LINKS</button>
-
-        </div>
-
-      </div>
-
-
-      <!-- STRUCTURE -->
-      <div class="admin-page" id="tab-structure">
-
-        <div class="admin-card">
-
-          <h3>WEBSITE STRUCTURE CONTROL</h3>
-
-          <div class="toggle-row">
-            <span>About section</span>
-            <input type="checkbox" id="showAbout">
-          </div>
-
-          <div class="toggle-row">
-            <span>Projects section</span>
-            <input type="checkbox" id="showProjects">
-          </div>
-
-          <div class="toggle-row">
-            <span>Store section</span>
-            <input type="checkbox" id="showStore">
-          </div>
-
-          <div class="toggle-row">
-            <span>Skills section</span>
-            <input type="checkbox" id="showSkills">
-          </div>
-
-          <div class="toggle-row">
-            <span>Education section</span>
-            <input type="checkbox" id="showEducation">
-          </div>
-
-          <div class="toggle-row">
-            <span>Social section</span>
-            <input type="checkbox" id="showSocial">
-          </div>
-
-          <div class="toggle-row">
-            <span>Contact section</span>
-            <input type="checkbox" id="showContact">
-          </div>
-
-          <div class="admin-actions">
-            <button class="ai-btn" onclick="saveStructure()">SAVE STRUCTURE</button>
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- SETTINGS -->
-      <div class="admin-page" id="tab-settings">
-
-        <div class="admin-card">
-
-          <h3>SYSTEM SETTINGS</h3>
-
-          <div class="toggle-row">
-            <span>Animated background</span>
-            <input type="checkbox" id="particlesEnabled">
-          </div>
-
-          <div class="toggle-row">
-            <span>Scanline effect</span>
-            <input type="checkbox" id="scanlineEnabled">
-          </div>
-
-          <div class="toggle-row">
-            <span>Reduced motion</span>
-            <input type="checkbox" id="reducedMotion">
-          </div>
-
-          <div class="admin-actions">
-            <button class="ai-btn" onclick="saveSettings()">SAVE SETTINGS</button>
-          </div>
-
-        </div>
-
-
-        <div class="admin-card">
-
-          <h3>BACKUP / RESTORE</h3>
-
-          <div class="admin-actions">
-            <button class="ai-btn" onclick="exportData()">
-              EXPORT JSON
-            </button>
-
-            <label class="ai-btn">
-              IMPORT JSON
-              <input id="importFile" type="file" accept=".json" hidden onchange="importData(event)">
-            </label>
-          </div>
-
-        </div>
-
-
-        <div class="admin-card">
-
-          <h3>DANGER ZONE</h3>
-
-          <button class="ai-btn danger" onclick="resetData()">
-            RESET NEXUS DATA
-          </button>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-<div id="toast"></div>
-
-
+<div class="section-modal" id="modal-about"><div class="modal-content"><div class="modal-close" onclick="closeModal('modal-about')"><i class="fa-solid fa-xmark"></i></div><h2 class="sec-title"><i class="fa-solid fa-user-gear"></i> ABOUT MD. ATIKUL ISLAM</h2>
+<div style="line-height:1.8;color:var(--text-dim)"><p style="margin-bottom:15px;font-size:1.1rem;color:#fff"><strong>Name:</strong> MD. ATIKUL ISLAM</p>
+<p style="margin-bottom:10px"><i class="fa-solid fa-cake-candles" style="color:var(--cyan-glow)"></i> <strong>Age:</strong> 20 Years</p>
+<p style="margin-bottom:10px"><i class="fa-solid fa-location-dot" style="color:var(--cyan-glow)"></i> <strong>Location:</strong> Mymensingh, Bangladesh</p>
+<p style="margin-bottom:10px"><i class="fa-solid fa-graduation-cap" style="color:var(--cyan-glow)"></i> <strong>Profession:</strong> Software, Android &amp; Web Developer</p>
+<p style="margin-bottom:10px"><i class="fa-solid fa-user-graduate" style="color:var(--cyan-glow)"></i> <strong>Status:</strong> Digital Creator &amp; AI Learner</p><br>
+<h3 style="color:var(--cyan-glow);font-family:var(--font-head);margin-bottom:10px">CORE INTERESTS &amp; VISION</h3>
+<p style="margin-bottom:15px">Passionate about modern web development, futuristic UI design, Artificial Intelligence applications, and innovative web technologies. Constantly learning new concepts to build powerful digital products.</p>
+<div style="background:rgba(0,240,255,.05);border-left:3px solid var(--cyan-glow);padding:10px 15px;font-style:italic;color:#fff">"Small steps every day lead to big digital breakthroughs."</div></div></div></div>
+<div class="section-modal" id="modal-projects"><div class="modal-content"><div class="modal-close" onclick="closeModal('modal-projects')"><i class="fa-solid fa-xmark"></i></div><h2 class="sec-title"><i class="fa-solid fa-laptop-code"></i> PROJECTS &amp; WEBSITES</h2>
+<div class="filter-bar"><button class="filter-btn active" onclick="filterProjects('ALL',this)">ALL</button><button class="filter-btn" onclick="filterProjects('WEB',this)">WEB</button><button class="filter-btn" onclick="filterProjects('AI',this)">AI</button><button class="filter-btn" onclick="filterProjects('APP',this)">APP</button><button class="filter-btn" onclick="filterProjects('GAME',this)">GAME</button><button class="filter-btn" onclick="filterProjects('SECURITY',this)">SECURITY</button></div>
+<div class="projects-grid" id="projects-container"></div></div></div>
+<div class="section-modal" id="modal-skills"><div class="modal-content"><div class="modal-close" onclick="closeModal('modal-skills')"><i class="fa-solid fa-xmark"></i></div><h2 class="sec-title"><i class="fa-solid fa-network-wired"></i> TECHNICAL SKILL MATRIX</h2><div class="skills-grid" id="skills-container"></div></div></div>
+<div class="section-modal" id="modal-education"><div class="modal-content"><div class="modal-close" onclick="closeModal('modal-education')"><i class="fa-solid fa-xmark"></i></div><h2 class="sec-title"><i class="fa-solid fa-graduation-cap"></i> PROFESSIONAL TIMELINE</h2><div class="timeline" id="timeline-container"></div></div></div>
+<div class="section-modal" id="modal-social"><div class="modal-content"><div class="modal-close" onclick="closeModal('modal-social')"><i class="fa-solid fa-xmark"></i></div><h2 class="sec-title"><i class="fa-solid fa-share-nodes"></i> DIGITAL NETWORK</h2><div class="social-grid" id="social-container"></div></div></div>
+<div class="section-modal" id="modal-contact"><div class="modal-content"><div class="modal-close" onclick="closeModal('modal-contact')"><i class="fa-solid fa-xmark"></i></div><h2 class="sec-title"><i class="fa-solid fa-headset"></i> CONNECT WITH ATIK</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px"><div><h3 style="color:var(--cyan-glow);font-family:var(--font-head);margin-bottom:15px">CONTACT INFO</h3>
+<p style="margin-bottom:12px;color:var(--text-dim)"><i class="fa-solid fa-envelope" style="color:var(--cyan-glow);margin-right:10px"></i> <span id="contact-email"></span></p>
+<p style="margin-bottom:12px;color:var(--text-dim)"><i class="fa-solid fa-phone" style="color:var(--cyan-glow);margin-right:10px"></i> <span id="contact-phone"></span></p>
+<p style="margin-bottom:12px;color:var(--text-dim)"><i class="fa-solid fa-location-dot" style="color:var(--cyan-glow);margin-right:10px"></i> <span id="contact-location"></span></p></div>
+<div><form class="contact-form" onsubmit="handleFormSubmit(event)"><div class="form-group"><label>YOUR NAME</label><input type="text" class="form-input" required placeholder="Enter your full name"></div>
+<div class="form-group"><label>YOUR EMAIL</label><input type="email" class="form-input" required placeholder="Enter your email address"></div>
+<div class="form-group"><label>MESSAGE</label><textarea class="form-input" required placeholder="Write your message here..."></textarea></div>
+<button type="submit" class="ai-btn ai-btn-primary" style="justify-content:center;padding:12px"><i class="fa-solid fa-paper-plane"></i> SEND MESSAGE</button></form></div></div></div></div>
+<div class="section-modal" id="modal-goals"><div class="modal-content"><div class="modal-close" onclick="closeModal('modal-goals')"><i class="fa-solid fa-xmark"></i></div><h2 class="sec-title"><i class="fa-solid fa-bullseye"></i> FUTURE GOALS &amp; VISION</h2><div class="projects-grid">
+<div class="project-card"><div class="project-head"><div class="project-icon"><i class="fa-solid fa-brain"></i></div><div class="project-title">Advanced Tech Learning</div></div><div class="project-desc">Master cutting-edge modern web platforms, AI integration frameworks, and software architectures.</div></div>
+<div class="project-card"><div class="project-head"><div class="project-icon"><i class="fa-solid fa-rocket"></i></div><div class="project-title">Digital Product Creation</div></div><div class="project-desc">Design and launch high-impact digital products and web solutions that empower online users.</div></div>
+<div class="project-card"><div class="project-head"><div class="project-icon"><i class="fa-solid fa-globe"></i></div><div class="project-title">Global Technology Reach</div></div><div class="project-desc">Collaborate on international tech projects and contribute to meaningful open-source software solutions.</div></div></div></div></div>
+<div id="toast"><i class="fa-solid fa-circle-info" style="color:var(--cyan-glow)"></i> <span id="toast-msg"></span></div>
 <script>
-/* =========================================================
-   ATIK // NEXUS CORE
-   SINGLE FILE EDITION
-   ========================================================= */
-
-const ADMIN_USER = "1234";
-const ADMIN_PASS = "1234";
-
-const STORAGE_KEY = "atik_nexus_data_v4";
-const DB_NAME = "ATIK_NEXUS_FILES";
-const DB_VERSION = 1;
-const FILE_STORE = "files";
-
-const DEFAULT_DATA = {
-
-  profile:{
-    name:"MD. ATIKUL ISLAM",
-    aiName:"ATIK // NEXUS",
-    title:"Student | Digital Creator | Web & Technology Enthusiast",
-    email:"atikul3673@gmail.com",
-    phone:"+880 1819-813673",
-    location:"Mymensingh, Bangladesh",
-    about:"I am MD. Atikul Islam, a student, digital creator and technology enthusiast from Bangladesh. I am interested in web development, AI, digital projects, creativity and continuous learning.",
-    goals:"My goal is to continue learning technology, create useful digital systems, build my professional position and develop projects that can create real value.",
-    profileImage:"profile.jpg"
-  },
-
-  projects:[
-    {
-      id:uid(),
-      name:"Nexora Secure Messenger",
-      category:"Web Application",
-      description:"A futuristic secure messenger concept with a modern digital communication interface.",
-      tech:"HTML / CSS / JavaScript",
-      link:"",
-      image:""
-    },
-    {
-      id:uid(),
-      name:"Nexora V3 — Future Connection",
-      category:"Digital Platform",
-      description:"A futuristic communication and community platform concept.",
-      tech:"HTML / CSS / JavaScript",
-      link:"",
-      image:""
-    },
-    {
-      id:uid(),
-      name:"Atik AI Robo Assistant",
-      category:"AI Assistant",
-      description:"A futuristic AI robot assistant concept for voice conversation, learning and digital tasks.",
-      tech:"JavaScript / Web Speech API",
-      link:"",
-      image:""
-    },
-    {
-      id:uid(),
-      name:"E-commerce Platform Concept",
-      category:"E-commerce",
-      description:"A modern marketplace concept with products, customers and digital commerce features.",
-      tech:"HTML / CSS / JavaScript",
-      link:"",
-      image:""
-    },
-    {
-      id:uid(),
-      name:"Janusurakkha Citizen Reporting",
-      category:"Civic Technology",
-      description:"An anonymous citizen reporting platform concept.",
-      tech:"HTML / CSS / JavaScript",
-      link:"",
-      image:""
-    },
-    {
-      id:uid(),
-      name:"ROAD RUSH 3D Game Concept",
-      category:"Game",
-      description:"A futuristic 3D racing game concept.",
-      tech:"Godot",
-      link:"",
-      image:""
-    }
-  ],
-
-  skills:[
-    {name:"HTML",icon:"fa-html5",desc:"Semantic web structure"},
-    {name:"CSS",icon:"fa-css3-alt",desc:"Responsive futuristic UI"},
-    {name:"JavaScript",icon:"fa-js",desc:"Interactive web applications"},
-    {name:"Python",icon:"fa-python",desc:"Programming and automation"},
-    {name:"PHP",icon:"fa-code",desc:"Backend development"},
-    {name:"MySQL",icon:"fa-database",desc:"Database concepts"},
-    {name:"Git & GitHub",icon:"fa-github",desc:"Version control"},
-    {name:"UI / UX",icon:"fa-pen-ruler",desc:"Digital interface design"},
-    {name:"Responsive Design",icon:"fa-mobile-screen",desc:"Mobile-first interfaces"},
-    {name:"AI Tools",icon:"fa-brain",desc:"AI-assisted development"},
-    {name:"Problem Solving",icon:"fa-puzzle-piece",desc:"Logical thinking"},
-    {name:"Digital Projects",icon:"fa-rocket",desc:"Product building"}
-  ],
-
-  education:[
-    {
-      title:"BBA in Management",
-      place:"National University, Bangladesh",
-      year:"Current"
-    },
-    {
-      title:"Higher Secondary Certificate — HSC",
-      place:"Sunamganj Degree College",
-      year:"2025"
-    },
-    {
-      title:"Secondary School Certificate — SSC",
-      place:"Business Studies / Commerce",
-      year:"2023"
-    }
-  ],
-
-  social:{
-    Facebook:"https://facebook.com/",
-    YouTube:"https://youtube.com/",
-    GitHub:"https://github.com/",
-    LinkedIn:"https://linkedin.com/",
-    Telegram:"https://t.me/",
-    WhatsApp:"https://wa.me/8801819813673"
-  },
-
-  ai:{
-    greeting:"Hello. I'm Atik's Digital Assistant. Welcome to ATIK // NEXUS. You can ask me about Atik, his projects, skills, education, contact information or use voice commands to control this website.",
-    about:"Atik is a student, digital creator and web & technology enthusiast from Mymensingh, Bangladesh. He is interested in technology, web development, AI, digital projects, learning and creativity.",
-    projects:"Atik has worked on futuristic digital concepts including Nexora Secure Messenger, Nexora V3, Atik AI Robo Assistant, an e-commerce platform, Janusurakkha Citizen Reporting and ROAD RUSH 3D.",
-    skills:"Atik's skills and interests include HTML, CSS, JavaScript, Python, PHP, MySQL, Git and GitHub, UI/UX, responsive design, AI tools and problem solving.",
-    contact:"You can contact Atik through email, phone, WhatsApp and his social media links shown in the Contact and Social Media sections.",
-    unknown:"I can answer questions about Atik and control many parts of this website. Try asking about his profile, projects, skills, education, store or contact information.",
-    priorityAnnouncement:"",
-    priorityEnabled:false,
-    priorityOnEntry:false,
-    assistantEnabled:true,
-    autoGreeting:true,
-    language:"bn-BD",
-    rate:1,
-    customCommands:[],
-    voiceResponses:[]
-  },
-
-  products:[],
-  uploadedFiles:[],
-
-  structure:{
-    about:true,
-    projects:true,
-    store:true,
-    skills:true,
-    education:true,
-    social:true,
-    contact:true
-  },
-
-  settings:{
-    particles:true,
-    scanlines:true,
-    reducedMotion:false
-  }
-};
-
-let data = loadData();
-let recognition = null;
-let listening = false;
-let voiceDB = null;
-let adminAuthenticated = false;
-
-
-/* =========================================================
-   UTILITIES
-   ========================================================= */
-
-function uid(){
-  return Date.now().toString(36)+"_"+Math.random().toString(36).slice(2,9);
-}
-
-function deepClone(obj){
-  return JSON.parse(JSON.stringify(obj));
-}
-
-function esc(value){
-  return String(value ?? "")
-    .replace(/&/g,"&amp;")
-    .replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;")
-    .replace(/"/g,"&quot;")
-    .replace(/'/g,"&#039;");
-}
-
-function safeURL(url){
-  if(!url) return "";
-  try{
-    const u = new URL(url,location.href);
-    if(["http:","https:","mailto:","tel:","blob:"].includes(u.protocol)){
-      return u.href;
-    }
-  }catch(e){}
-  return "";
-}
-
-function loadData(){
-  try{
-    const saved = localStorage.getItem(STORAGE_KEY);
-    if(!saved) return deepClone(DEFAULT_DATA);
-
-    const parsed = JSON.parse(saved);
-
-    return mergeData(deepClone(DEFAULT_DATA),parsed);
-  }catch(e){
-    return deepClone(DEFAULT_DATA);
-  }
-}
-
-function mergeData(base,extra){
-  for(const key in extra){
-    if(
-      extra[key] &&
-      typeof extra[key]==="object" &&
-      !Array.isArray(extra[key]) &&
-      typeof base[key]==="object"
-    ){
-      base[key]=mergeData(base[key],extra[key]);
-    }else{
-      base[key]=extra[key];
-    }
-  }
-  return base;
-}
-
-function saveData(){
-  localStorage.setItem(STORAGE_KEY,JSON.stringify(data));
-}
-
-function toast(message){
-  const el=document.getElementById("toast");
-  el.textContent=message;
-  el.classList.add("show");
-
-  clearTimeout(window.__toastTimer);
-
-  window.__toastTimer=setTimeout(()=>{
-    el.classList.remove("show");
-  },2600);
-}
-
-
-/* =========================================================
-   INIT
-   ========================================================= */
-
-window.addEventListener("load",async()=>{
-
-  renderAll();
-  initMatrix();
-  initVoice();
-
-  setTimeout(()=>{
-    document.getElementById("loader").classList.add("hide");
-  },900);
-
-  setTimeout(()=>{
-    if(data.ai.assistantEnabled && data.ai.autoGreeting){
-      greetVisitor();
-    }
-  },1600);
-
-  await initDB();
-
-});
-
-
-function renderAll(){
-  renderProfile();
-  renderProjects();
-  renderProducts();
-  renderSkills();
-  renderEducation();
-  renderSocial();
-  renderStructure();
-}
-
-
-/* =========================================================
-   PROFILE
-   ========================================================= */
-
-function renderProfile(){
-
-  const p=data.profile;
-
-  document.getElementById("heroName").textContent=p.name;
-  document.getElementById("heroTitle").textContent=p.title;
-  document.getElementById("aiName").textContent=p.aiName;
-
-  document.getElementById("aboutText").textContent=p.about;
-  document.getElementById("goalsText").textContent=p.goals;
-
-  document.getElementById("statName").textContent=p.name;
-  document.getElementById("statRole").textContent=p.title;
-  document.getElementById("statLocation").textContent=p.location;
-
-  document.getElementById("contactEmail").textContent=p.email;
-  document.getElementById("contactPhone").textContent=p.phone;
-  document.getElementById("contactLocation").textContent=p.location;
-
-  const img=document.getElementById("profileImage");
-  img.src=p.profileImage || "profile.jpg";
-  img.style.display="block";
-  img.parentElement.parentElement.classList.remove("has-image");
-
-  img.onload=()=>{
-    document.getElementById("avatarBox").classList.add("has-image");
-  };
-
-  img.onerror=()=>{
-    handleImageError(img);
-  };
-}
-
-
-/* =========================================================
-   PROJECTS
-   ========================================================= */
-
-function renderProjects(){
-
-  const grid=document.getElementById("projectsGrid");
-
-  if(!data.projects.length){
-    grid.innerHTML=`
-      <div class="info-card" style="grid-column:1/-1;text-align:center">
-        No published projects yet.
-      </div>`;
-    return;
-  }
-
-  grid.innerHTML=data.projects.map(p=>{
-
-    const link=safeURL(p.link);
-
-    return `
-      <div class="project-card">
-
-        <div class="card-top">
-
-          <div class="card-icon">
-            <i class="fa-solid fa-${projectIcon(p.category)}"></i>
-          </div>
-
-          <h3>${esc(p.name)}</h3>
-
-          <p>${esc(p.description)}</p>
-
-          <div style="margin-top:10px;color:#4f7890;font-size:9px;font-family:Share Tech Mono">
-            ${esc(p.category)} ${p.tech ? "• "+esc(p.tech):""}
-          </div>
-
-        </div>
-
-        <div class="card-bottom">
-
-          <button onclick="openProject('${esc(p.id)}')">
-            DETAILS
-          </button>
-
-          ${
-            link
-            ? `<a href="${esc(link)}" target="_blank" rel="noopener">OPEN</a>`
-            : ""
-          }
-
-        </div>
-
-      </div>
-    `;
-
-  }).join("");
-}
-
-function projectIcon(category){
-
-  const c=(category||"").toLowerCase();
-
-  if(c.includes("game")) return "gamepad";
-  if(c.includes("ai")) return "brain";
-  if(c.includes("commerce")) return "cart-shopping";
-  if(c.includes("civic")) return "shield-halved";
-  if(c.includes("web")) return "globe";
-
-  return "code";
-}
-
-function openProject(id){
-
-  const p=data.projects.find(x=>x.id===id);
-
-  if(!p) return;
-
-  document.getElementById("infoTitle").textContent=p.name;
-
-  document.getElementById("infoBody").innerHTML=`
-    <div class="info-card">
-
-      <div class="kicker">${esc(p.category)}</div>
-
-      <h2 style="font-family:Orbitron;margin:10px 0">
-        ${esc(p.name)}
-      </h2>
-
-      <p style="color:#9bb0c4;line-height:1.7">
-        ${esc(p.description)}
-      </p>
-
-      <div style="margin-top:15px;color:var(--cyan);font-family:Share Tech Mono;font-size:10px">
-        TECHNOLOGY: ${esc(p.tech || "Not specified")}
-      </div>
-
-      ${
-        safeURL(p.link)
-        ? `<a class="ai-btn" style="display:inline-block;margin-top:15px;text-decoration:none" href="${esc(safeURL(p.link))}" target="_blank" rel="noopener">OPEN PROJECT</a>`
-        :""
-      }
-
-    </div>
-  `;
-
-  document.getElementById("infoModal").classList.add("show");
-}
-
-
-/* =========================================================
-   STORE
-   ========================================================= */
-
-function renderProducts(){
-
-  const grid=document.getElementById("storeGrid");
-
-  if(!data.products.length){
-    grid.innerHTML=`
-      <div class="info-card" style="grid-column:1/-1;text-align:center">
-        <i class="fa-solid fa-box-open" style="font-size:35px;color:var(--purple)"></i>
-        <p style="margin-top:10px;color:#74889f">
-          Digital products will appear here after publication from the Admin Control Center.
-        </p>
-      </div>`;
-    return;
-  }
-
-  grid.innerHTML=data.products.map(p=>{
-
-    const img=safeURL(p.image);
-    const link=safeURL(p.link);
-
-    return `
-      <div class="product-card">
-
-        <div class="product-image">
-          ${
-            img
-            ? `<img src="${esc(img)}" alt="${esc(p.name)}" onerror="this.style.display='none'">`
-            : `<i class="fa-solid fa-cube"></i>`
-          }
-        </div>
-
-        <div class="card-top">
-
-          <h3>${esc(p.name)}</h3>
-
-          <div class="price">${esc(p.price || "Free")}</div>
-
-          <p>${esc(p.description)}</p>
-
-          <div style="margin-top:8px;color:#526b83;font-size:9px">
-            ${esc(p.category || "Digital Product")}
-            ${p.version ? " • v"+esc(p.version):""}
-          </div>
-
-        </div>
-
-        <div class="card-bottom">
-
-          <button onclick="viewProduct('${esc(p.id)}')">
-            DETAILS
-          </button>
-
-          ${
-            p.fileId
-            ? `<button onclick="downloadStoredFile('${esc(p.fileId)}')">DOWNLOAD</button>`
-            : ""
-          }
-
-          ${
-            link
-            ? `<a href="${esc(link)}" target="_blank" rel="noopener">OPEN LINK</a>`
-            : ""
-          }
-
-          ${
-            p.price && p.price.toLowerCase()!=="free"
-            ? `<button onclick="orderProduct('${esc(p.id)}')">ORDER</button>`
-            : ""
-          }
-
-        </div>
-
-      </div>
-    `;
-
-  }).join("");
-}
-
-function viewProduct(id){
-
-  const p=data.products.find(x=>x.id===id);
-
-  if(!p)return;
-
-  document.getElementById("infoTitle").textContent=p.name;
-
-  document.getElementById("infoBody").innerHTML=`
-    <div class="info-card">
-
-      <div class="kicker">${esc(p.category || "DIGITAL PRODUCT")}</div>
-
-      <h2 style="font-family:Orbitron;margin:10px 0">
-        ${esc(p.name)}
-      </h2>
-
-      <div class="price">${esc(p.price || "Free")}</div>
-
-      <p style="margin-top:15px;color:#9bb0c4;line-height:1.7">
-        ${esc(p.description)}
-      </p>
-
-      ${
-        p.version
-        ? `<div style="margin-top:12px;color:#657d94;font-size:11px">VERSION ${esc(p.version)}</div>`
-        :""
-      }
-
-      <div class="admin-actions">
-
-        ${
-          p.fileId
-          ? `<button class="ai-btn" onclick="downloadStoredFile('${esc(p.fileId)}')">DOWNLOAD FILE</button>`
-          :""
-        }
-
-        ${
-          safeURL(p.link)
-          ? `<a class="ai-btn" style="text-decoration:none" href="${esc(safeURL(p.link))}" target="_blank" rel="noopener">OPEN DELIVERY LINK</a>`
-          :""
-        }
-
-      </div>
-
-    </div>
-  `;
-
-  document.getElementById("infoModal").classList.add("show");
-}
-
-function orderProduct(id){
-
-  const p=data.products.find(x=>x.id===id);
-
-  if(!p)return;
-
-  const name=prompt("Your name:");
-
-  if(!name)return;
-
-  const contact=prompt("Email / phone / WhatsApp:");
-
-  if(!contact)return;
-
-  if(!data.orders)data.orders=[];
-
-  data.orders.push({
-    id:uid(),
-    productId:id,
-    product:p.name,
-    customer:name,
-    contact,
-    date:new Date().toISOString(),
-    status:"REQUESTED"
-  });
-
-  saveData();
-
-  toast("Order request saved locally.");
-
-  speakText(
-    `Your request for ${p.name} has been recorded locally.`
-  );
-}
-
-
-/* =========================================================
-   SKILLS
-   ========================================================= */
-
-function renderSkills(){
-
-  document.getElementById("skillsGrid").innerHTML=data.skills.map(s=>`
-    <div class="skill-card">
-      <i class="fa-solid ${esc(s.icon || "fa-code")}"></i>
-      <h3>${esc(s.name)}</h3>
-      <p>${esc(s.desc)}</p>
-    </div>
-  `).join("");
-}
-
-
-/* =========================================================
-   EDUCATION
-   ========================================================= */
-
-function renderEducation(){
-
-  document.getElementById("educationList").innerHTML=data.education.map(e=>`
-    <div class="edu-item">
-      <div class="edu-icon">
-        <i class="fa-solid fa-graduation-cap"></i>
-      </div>
-
-      <div>
-        <h3>${esc(e.title)}</h3>
-        <p>${esc(e.place)} • ${esc(e.year)}</p>
-      </div>
-    </div>
-  `).join("");
-}
-
-
-/* =========================================================
-   SOCIAL
-   ========================================================= */
-
-function renderSocial(){
-
-  const grid=document.getElementById("socialGrid");
-
-  grid.innerHTML=Object.entries(data.social).map(([name,url])=>{
-
-    const safe=safeURL(url);
-
-    return `
-      <a
-        class="social"
-        href="${safe ? esc(safe):"#"}"
-        ${safe ? `target="_blank" rel="noopener"`:""}
-        onclick="${safe ? "":"return false"}"
-      >
-        <i class="fa-brands fa-${socialIcon(name)}"></i>
-        <span>${esc(name)}</span>
-      </a>
-    `;
-
-  }).join("");
-}
-
-function socialIcon(name){
-
-  const n=name.toLowerCase();
-
-  if(n.includes("facebook"))return "facebook";
-  if(n.includes("youtube"))return "youtube";
-  if(n.includes("github"))return "github";
-  if(n.includes("linkedin"))return "linkedin";
-  if(n.includes("telegram"))return "telegram";
-  if(n.includes("whatsapp"))return "whatsapp";
-
-  return "globe";
-}
-
-
-/* =========================================================
-   STRUCTURE
-   ========================================================= */
-
-function renderStructure(){
-
-  const map={
-    about:"about",
-    projects:"projects",
-    store:"store",
-    skills:"skills",
-    education:"education",
-    social:"social",
-    contact:"contact"
-  };
-
-  Object.entries(map).forEach(([key,id])=>{
-
-    const el=document.getElementById(id);
-
-    if(el){
-      el.style.display=data.structure[key] ? "" : "none";
-    }
-
-  });
-}
-
-
-/* =========================================================
-   NAVIGATION
-   ========================================================= */
-
-function goTo(id){
-
-  const el=document.getElementById(id);
-
-  if(!el)return;
-
-  document.getElementById("nav").classList.remove("open");
-
-  el.scrollIntoView({
-    behavior:data.settings.reducedMotion ? "auto":"smooth"
-  });
-}
-
-function toggleMenu(){
-  document.getElementById("nav").classList.toggle("open");
-}
-
-function openInfo(type){
-
-  const title=document.getElementById("infoTitle");
-  const body=document.getElementById("infoBody");
-
-  if(type==="about"){
-    title.textContent="ABOUT ATIK";
-
-    body.innerHTML=`
-      <div class="info-card">
-        <p style="color:#a6bacb;line-height:1.8">
-          ${esc(data.profile.about)}
-        </p>
-      </div>
-    `;
-  }
-
-  if(type==="websites"){
-    title.textContent="MY WEBSITES";
-
-    body.innerHTML=`
-      <div class="projects-grid">
-        ${data.projects
-          .filter(p=>(p.category||"").toLowerCase().includes("web"))
-          .map(p=>`
-            <div class="project-card">
-              <div class="card-top">
-                <div class="card-icon">
-                  <i class="fa-solid fa-globe"></i>
-                </div>
-                <h3>${esc(p.name)}</h3>
-                <p>${esc(p.description)}</p>
-              </div>
-              <div class="card-bottom">
-                <button onclick="openProject('${esc(p.id)}')">DETAILS</button>
-              </div>
-            </div>
-          `).join("") || `
-            <div class="info-card" style="grid-column:1/-1">
-              No websites have been categorized yet.
-            </div>
-        `}
-      </div>
-    `;
-  }
-
-  if(type==="projects"){
-    title.textContent="PROJECTS";
-    body.innerHTML=`
-      <div class="projects-grid">
-        ${data.projects.map(p=>`
-          <div class="project-card">
-            <div class="card-top">
-              <div class="card-icon"><i class="fa-solid fa-code"></i></div>
-              <h3>${esc(p.name)}</h3>
-              <p>${esc(p.description)}</p>
-            </div>
-          </div>
-        `).join("")}
-      </div>
-    `;
-  }
-
-  if(type==="skills"){
-    title.textContent="SKILL MATRIX";
-
-    body.innerHTML=`
-      <div class="skills-grid">
-        ${data.skills.map(s=>`
-          <div class="skill-card">
-            <i class="fa-solid ${esc(s.icon)}"></i>
-            <h3>${esc(s.name)}</h3>
-            <p>${esc(s.desc)}</p>
-          </div>
-        `).join("")}
-      </div>
-    `;
-  }
-
-  if(type==="education"){
-    title.textContent="EDUCATION";
-
-    body.innerHTML=`
-      <div class="edu-list">
-        ${data.education.map(e=>`
-          <div class="edu-item">
-            <div class="edu-icon">
-              <i class="fa-solid fa-graduation-cap"></i>
-            </div>
-            <div>
-              <h3>${esc(e.title)}</h3>
-              <p>${esc(e.place)} • ${esc(e.year)}</p>
-            </div>
-          </div>
-        `).join("")}
-      </div>
-    `;
-  }
-
-  if(type==="social"){
-    title.textContent="SOCIAL MEDIA";
-
-    body.innerHTML=`
-      <div class="social-grid">
-        ${Object.entries(data.social).map(([n,u])=>`
-          <a class="social" href="${esc(safeURL(u)||"#")}" target="_blank" rel="noopener">
-            <i class="fa-brands fa-${socialIcon(n)}"></i>
-            ${esc(n)}
-          </a>
-        `).join("")}
-      </div>
-    `;
-  }
-
-  if(type==="contact"){
-    title.textContent="CONTACT";
-
-    body.innerHTML=`
-      <div class="info-card contact-box">
-        <div class="contact-line">
-          <i class="fa-solid fa-envelope"></i>
-          ${esc(data.profile.email)}
-        </div>
-        <div class="contact-line">
-          <i class="fa-solid fa-phone"></i>
-          ${esc(data.profile.phone)}
-        </div>
-        <div class="contact-line">
-          <i class="fa-solid fa-location-dot"></i>
-          ${esc(data.profile.location)}
-        </div>
-      </div>
-    `;
-  }
-
-  if(type==="goals"){
-    title.textContent="FUTURE GOALS";
-
-    body.innerHTML=`
-      <div class="info-card">
-        <p style="color:#a5bacb;line-height:1.8">
-          ${esc(data.profile.goals)}
-        </p>
-      </div>
-    `;
-  }
-
-  document.getElementById("infoModal").classList.add("show");
-}
-
-
-/* =========================================================
-   MODALS
-   ========================================================= */
-
-function closeModal(id){
-  document.getElementById(id).classList.remove("show");
-}
-
-function outsideClose(e,id){
-  if(e.target.id===id) closeModal(id);
-}
-
-
-/* =========================================================
-   AI ENGINE
-   ========================================================= */
-
-function updateAI(text){
-  document.getElementById("aiOutput").textContent=text;
-}
-
-function greetVisitor(){
-
-  if(!data.ai.assistantEnabled)return;
-
-  let greeting=data.ai.greeting;
-
-  if(
-    data.ai.priorityEnabled &&
-    data.ai.priorityOnEntry &&
-    data.ai.priorityAnnouncement.trim()
-  ){
-    greeting=data.ai.priorityAnnouncement+" "+greeting;
-  }
-
-  updateAI(greeting);
-  speakText(greeting);
-}
-
-function quickCommand(command){
-
-  const map={
-    about:"Tell me about Atik",
-    projects:"Show Atik's projects",
-    skills:"What are Atik's skills?",
-    contact:"How can I contact Atik?",
-    store:"Open the digital store"
-  };
-
-  processCommand(map[command]||command);
-}
-
-function submitCommand(){
-
-  const input=document.getElementById("commandInput");
-  const text=input.value.trim();
-
-  if(!text)return;
-
-  input.value="";
-
-  processCommand(text);
-}
-
-document.getElementById("commandInput").addEventListener("keydown",e=>{
-  if(e.key==="Enter")submitCommand();
-});
-
-function processCommand(raw){
-
-  if(!data.ai.assistantEnabled){
-    updateAI("The AI assistant is currently disabled by the administrator.");
-    return;
-  }
-
-  const text=raw.toLowerCase().trim();
-
-  document.getElementById("voiceTranscript").textContent=raw;
-
-  /* PRIORITY ADMIN ANNOUNCEMENT */
-
-  if(
-    data.ai.priorityEnabled &&
-    data.ai.priorityAnnouncement.trim() &&
-    (
-      text.includes("announcement") ||
-      text.includes("notice") ||
-      text.includes("important") ||
-      text.includes("admin")
-    )
-  ){
-    respond(data.ai.priorityAnnouncement);
-    return;
-  }
-
-  /* CUSTOM ADMIN COMMANDS */
-
-  const custom=data.ai.customCommands.find(c=>
-    c.enabled!==false &&
-    text.includes(c.trigger.toLowerCase())
-  );
-
-  if(custom){
-
-    if(custom.action && custom.action!=="none"){
-      executeAction(custom.action);
-    }
-
-    respond(custom.response || "Command completed.");
-    return;
-  }
-
-  /* BASIC WEBSITE CONTROL */
-
-  if(
-    text.includes("home") ||
-    text.includes("হোম") ||
-    text.includes("main page") ||
-    text.includes("মূল পেজ")
-  ){
-    executeAction("home");
-    respond("Opening the home section.");
-    return;
-  }
-
-  if(
-    text.includes("about") ||
-    text.includes("who is atik") ||
-    text.includes("আতিক কে") ||
-    text.includes("পরিচয়")
-  ){
-    executeAction("about");
-    respond(data.ai.about);
-    return;
-  }
-
-  if(
-    text.includes("project") ||
-    text.includes("projects") ||
-    text.includes("প্রজেক্ট") ||
-    text.includes("কাজ দেখাও")
-  ){
-    executeAction("projects");
-    respond(data.ai.projects);
-    return;
-  }
-
-  if(
-    text.includes("skill") ||
-    text.includes("skills") ||
-    text.includes("দক্ষতা") ||
-    text.includes("স্কিল")
-  ){
-    executeAction("skills");
-    respond(data.ai.skills);
-    return;
-  }
-
-  if(
-    text.includes("education") ||
-    text.includes("study") ||
-    text.includes("পড়াশোনা") ||
-    text.includes("শিক্ষা")
-  ){
-    executeAction("education");
-    respond("Atik is currently studying BBA in Management at National University. His previous education includes HSC and SSC.");
-    return;
-  }
-
-  if(
-    text.includes("contact") ||
-    text.includes("email") ||
-    text.includes("phone") ||
-    text.includes("যোগাযোগ")
-  ){
-    executeAction("contact");
-    respond(data.ai.contact);
-    return;
-  }
-
-  if(
-    text.includes("social") ||
-    text.includes("facebook") ||
-    text.includes("youtube") ||
-    text.includes("github")
-  ){
-    executeAction("social");
-    respond("Opening Atik's digital network and social media links.");
-    return;
-  }
-
-  if(
-    text.includes("store") ||
-    text.includes("shop") ||
-    text.includes("product") ||
-    text.includes("দোকান") ||
-    text.includes("পণ্য")
-  ){
-    executeAction("store");
-    respond("Opening the digital store.");
-    return;
-  }
-
-  if(
-    text.includes("voice") ||
-    text.includes("speak") ||
-    text.includes("কথা বল")
-  ){
-    executeAction("voice");
-    respond("Voice interface activated. You can speak now.");
-    return;
-  }
-
-  if(
-    text.includes("stop") ||
-    text.includes("শান্ত") ||
-    text.includes("বন্ধ")
-  ){
-    stopSpeaking();
-    updateAI("Voice stopped.");
-    return;
-  }
-
-  /* LANGUAGE / TRANSLATION */
-
-  if(
-    text.includes("translate") ||
-    text.includes("translation") ||
-    text.includes("অনুবাদ")
-  ){
-    const result=localTranslate(raw);
-
-    if(result){
-      respond(result);
-    }else{
-      respond("I can handle basic local translation in this browser. Full natural-language translation can be connected later through an AI translation API.");
-    }
-
-    return;
-  }
-
-  /* QUESTIONS ABOUT ATIK */
-
-  if(
-    text.includes("name") ||
-    text.includes("নাম")
-  ){
-    respond(`Atik's name is ${data.profile.name}.`);
-    return;
-  }
-
-  if(
-    text.includes("age") ||
-    text.includes("বয়স")
-  ){
-    respond("Atik is 20 years old.");
-    return;
-  }
-
-  if(
-    text.includes("where") ||
-    text.includes("কোথায়")
-  ){
-    respond(`Atik is from ${data.profile.location}.`);
-    return;
-  }
-
-  if(
-    text.includes("goal") ||
-    text.includes("future") ||
-    text.includes("লক্ষ্য") ||
-    text.includes("ভবিষ্যৎ")
-  ){
-    executeAction("about");
-    respond(data.profile.goals);
-    return;
-  }
-
-  respond(data.ai.unknown);
-}
-
-function respond(text){
-
-  updateAI(text);
-
-  if(text){
-    speakText(text);
-  }
-}
-
-function executeAction(action){
-
-  if(action==="voice"){
-    openVoicePanel();
-    return;
-  }
-
-  if(action==="home"){
-    goTo("home");
-    return;
-  }
-
-  if(action==="about"){
-    goTo("about");
-    return;
-  }
-
-  if(action==="projects"){
-    goTo("projects");
-    return;
-  }
-
-  if(action==="store"){
-    goTo("store");
-    return;
-  }
-
-  if(action==="skills"){
-    goTo("skills");
-    return;
-  }
-
-  if(action==="education"){
-    goTo("education");
-    return;
-  }
-
-  if(action==="social"){
-    goTo("social");
-    return;
-  }
-
-  if(action==="contact"){
-    goTo("contact");
-    return;
-  }
-}
-
-
-/* =========================================================
-   BASIC LOCAL TRANSLATION
-   ========================================================= */
-
-function localTranslate(text){
-
-  const dict={
-    "hello":"হ্যালো",
-    "good morning":"সুপ্রভাত",
-    "good afternoon":"শুভ অপরাহ্ন",
-    "good night":"শুভ রাত্রি",
-    "thank you":"ধন্যবাদ",
-    "how are you":"আপনি কেমন আছেন",
-    "who is atik":"আতিক কে",
-    "welcome":"স্বাগতম",
-    "about":"সম্পর্কে",
-    "project":"প্রজেক্ট",
-    "skills":"দক্ষতা",
-    "contact":"যোগাযোগ",
-    "education":"শিক্ষা",
-    "future goals":"ভবিষ্যৎ লক্ষ্য"
-  };
-
-  const clean=text
-    .toLowerCase()
-    .replace("translate","")
-    .replace("অনুবাদ","")
-    .trim();
-
-  if(dict[clean]){
-    return `"${clean}" → "${dict[clean]}"`;
-  }
-
-  return null;
-}
-
-
-/* =========================================================
-   SPEECH SYNTHESIS
-   ========================================================= */
-
-function speakText(text){
-
-  if(!("speechSynthesis" in window))return;
-
-  if(!data.ai.assistantEnabled)return;
-
-  speechSynthesis.cancel();
-
-  const utter=new SpeechSynthesisUtterance(text);
-
-  utter.lang=data.ai.language || "bn-BD";
-  utter.rate=Number(data.ai.rate)||1;
-  utter.pitch=1;
-
-  const voices=speechSynthesis.getVoices();
-
-  let voice=voices.find(v=>
-    v.lang.toLowerCase().startsWith(
-      (data.ai.language||"bn-BD").split("-")[0].toLowerCase()
-    )
-  );
-
-  if(voice)utter.voice=voice;
-
-  speechSynthesis.speak(utter);
-}
-
-function stopSpeaking(){
-
-  if("speechSynthesis" in window){
-    speechSynthesis.cancel();
-  }
-
-  const v=document.getElementById("voiceStatus");
-
-  if(v)v.textContent="VOICE STOPPED";
-}
-
-if("speechSynthesis" in window){
-  speechSynthesis.onvoiceschanged=()=>{};
-}
-
-
-/* =========================================================
-   SPEECH RECOGNITION
-   ========================================================= */
-
-function initVoice(){
-
-  const SpeechRecognition=
-    window.SpeechRecognition ||
-    window.webkitSpeechRecognition;
-
-  if(!SpeechRecognition){
-    recognition=null;
-    return;
-  }
-
-  recognition=new SpeechRecognition();
-
-  recognition.continuous=false;
-  recognition.interimResults=true;
-  recognition.lang=data.ai.language || "bn-BD";
-
-  recognition.onstart=()=>{
-    listening=true;
-
-    document.getElementById("voiceStatus").textContent="LISTENING...";
-    document.getElementById("voiceTranscript").textContent="Listening...";
-  };
-
-  recognition.onresult=e=>{
-
-    let finalText="";
-
-    for(let i=e.resultIndex;i<e.results.length;i++){
-
-      const transcript=e.results[i][0].transcript;
-
-      if(e.results[i].isFinal){
-        finalText+=transcript;
-      }else{
-        document.getElementById("voiceTranscript").textContent=transcript;
-      }
-    }
-
-    if(finalText){
-      document.getElementById("voiceTranscript").textContent=finalText;
-      processCommand(finalText);
-    }
-  };
-
-  recognition.onerror=e=>{
-    listening=false;
-    document.getElementById("voiceStatus").textContent="VOICE ERROR";
-    toast("Voice recognition: "+e.error);
-  };
-
-  recognition.onend=()=>{
-    listening=false;
-    document.getElementById("voiceStatus").textContent="READY";
-  };
-}
-
-function startListening(){
-
-  if(!recognition){
-    toast("Speech recognition is not supported by this browser.");
-    return;
-  }
-
-  try{
-    recognition.lang=data.ai.language || "bn-BD";
-    recognition.start();
-  }catch(e){}
-}
-
-function openVoicePanel(){
-
-  document.getElementById("voiceModal").classList.add("show");
-
-  setTimeout(()=>{
-    startListening();
-  },250);
-}
-
-
-/* =========================================================
-   ADMIN LOGIN
-   ========================================================= */
-
-function openAdmin(){
-
-  document.getElementById("adminModal").classList.add("show");
-
-  if(adminAuthenticated){
-    showAdminPanel();
-  }else{
-    document.getElementById("adminLoginBox").style.display="block";
-    document.getElementById("adminPanelBox").style.display="none";
-  }
-}
-
-function adminLogin(){
-
-  const username=document.getElementById("adminUsername").value.trim();
-  const password=document.getElementById("adminPassword").value;
-
-  if(username===ADMIN_USER && password===ADMIN_PASS){
-
-    adminAuthenticated=true;
-
-    document.getElementById("loginError").textContent="";
-
-    showAdminPanel();
-
-    toast("Admin access granted.");
-
-  }else{
-
-    document.getElementById("loginError").textContent=
-      "ACCESS DENIED — INVALID CREDENTIALS";
-  }
-}
-
-function showAdminPanel(){
-
-  document.getElementById("adminLoginBox").style.display="none";
-  document.getElementById("adminPanelBox").style.display="block";
-
-  fillAdminForms();
-}
-
-function adminLogout(){
-
-  adminAuthenticated=false;
-
-  document.getElementById("adminUsername").value="";
-  document.getElementById("adminPassword").value="";
-
-  document.getElementById("adminLoginBox").style.display="block";
-  document.getElementById("adminPanelBox").style.display="none";
-
-  closeModal("adminModal");
-
-  toast("Admin logged out.");
-}
-
-
-/* =========================================================
-   HIDDEN ADMIN TRIGGERS
-   ========================================================= */
-
-let brandClicks=0;
-let brandTimer=null;
-
-document.getElementById("brandTrigger").addEventListener("click",()=>{
-
-  brandClicks++;
-
-  clearTimeout(brandTimer);
-
-  brandTimer=setTimeout(()=>{
-    brandClicks=0;
-  },1500);
-
-  if(brandClicks>=5){
-
-    brandClicks=0;
-
-    openAdmin();
-  }
-});
-
-document.getElementById("adminTrigger").addEventListener("click",openAdmin);
-
-document.addEventListener("keydown",e=>{
-
-  if(e.ctrlKey && e.shiftKey && e.key.toLowerCase()==="a"){
-    e.preventDefault();
-    openAdmin();
-  }
-
-  if(e.key==="Escape"){
-    closeModal("infoModal");
-    closeModal("voiceModal");
-  }
-});
-
-
-/* =========================================================
-   ADMIN TABS
-   ========================================================= */
-
-function adminTab(tab){
-
-  document.querySelectorAll(".admin-tab").forEach(btn=>{
-    btn.classList.toggle("active",btn.dataset.tab===tab);
-  });
-
-  document.querySelectorAll(".admin-page").forEach(page=>{
-    page.classList.toggle("active",page.id==="tab-"+tab);
-  });
-
-  if(tab==="commands")renderCommandList();
-  if(tab==="projects")renderProjectAdminList();
-  if(tab==="storeAdmin")renderStoreAdminList();
-  if(tab==="files")renderFileList();
-  if(tab==="socialAdmin")renderSocialEditor();
-}
-
-
-/* =========================================================
-   ADMIN FORM LOAD
-   ========================================================= */
-
-function fillAdminForms(){
-
-  const p=data.profile;
-
-  document.getElementById("fName").value=p.name;
-  document.getElementById("fAiName").value=p.aiName;
-  document.getElementById("fTitle").value=p.title;
-  document.getElementById("fEmail").value=p.email;
-  document.getElementById("fPhone").value=p.phone;
-  document.getElementById("fLocation").value=p.location;
-  document.getElementById("fAbout").value=p.about;
-  document.getElementById("fGoals").value=p.goals;
-  document.getElementById("fProfileImage").value=p.profileImage;
-
-  document.getElementById("fGreeting").value=data.ai.greeting;
-  document.getElementById("fAiAbout").value=data.ai.about;
-  document.getElementById("fAiProjects").value=data.ai.projects;
-  document.getElementById("fAiSkills").value=data.ai.skills;
-  document.getElementById("fAiContact").value=data.ai.contact;
-  document.getElementById("fAiUnknown").value=data.ai.unknown;
-
-  document.getElementById("priorityAnnouncement").value=data.ai.priorityAnnouncement;
-  document.getElementById("priorityEnabled").checked=data.ai.priorityEnabled;
-  document.getElementById("priorityOnEntry").checked=data.ai.priorityOnEntry;
-
-  document.getElementById("assistantEnabled").checked=data.ai.assistantEnabled;
-  document.getElementById("autoGreeting").checked=data.ai.autoGreeting;
-  document.getElementById("speechLanguage").value=data.ai.language;
-  document.getElementById("speechRate").value=data.ai.rate;
-
-  document.getElementById("showAbout").checked=data.structure.about;
-  document.getElementById("showProjects").checked=data.structure.projects;
-  document.getElementById("showStore").checked=data.structure.store;
-  document.getElementById("showSkills").checked=data.structure.skills;
-  document.getElementById("showEducation").checked=data.structure.education;
-  document.getElementById("showSocial").checked=data.structure.social;
-  document.getElementById("showContact").checked=data.structure.contact;
-
-  document.getElementById("particlesEnabled").checked=data.settings.particles;
-  document.getElementById("scanlineEnabled").checked=data.settings.scanlines;
-  document.getElementById("reducedMotion").checked=data.settings.reducedMotion;
-
-  renderCommandList();
-  renderProjectAdminList();
-  renderStoreAdminList();
-  renderFileList();
-  renderSocialEditor();
-}
-
-
-/* =========================================================
-   SAVE PROFILE
-   ========================================================= */
-
-function saveProfile(){
-
-  data.profile.name=document.getElementById("fName").value.trim();
-  data.profile.aiName=document.getElementById("fAiName").value.trim();
-  data.profile.title=document.getElementById("fTitle").value.trim();
-  data.profile.email=document.getElementById("fEmail").value.trim();
-  data.profile.phone=document.getElementById("fPhone").value.trim();
-  data.profile.location=document.getElementById("fLocation").value.trim();
-  data.profile.about=document.getElementById("fAbout").value.trim();
-  data.profile.goals=document.getElementById("fGoals").value.trim();
-  data.profile.profileImage=document.getElementById("fProfileImage").value.trim();
-
-  saveData();
-  renderProfile();
-
-  toast("Profile saved.");
-}
-
-
-/* =========================================================
-   SAVE AI
-   ========================================================= */
-
-function saveAI(){
-
-  data.ai.greeting=document.getElementById("fGreeting").value;
-  data.ai.about=document.getElementById("fAiAbout").value;
-  data.ai.projects=document.getElementById("fAiProjects").value;
-  data.ai.skills=document.getElementById("fAiSkills").value;
-  data.ai.contact=document.getElementById("fAiContact").value;
-  data.ai.unknown=document.getElementById("fAiUnknown").value;
-
-  saveData();
-
-  document.getElementById("aiName").textContent=data.profile.aiName;
-
-  toast("AI responses saved.");
-}
-
-function savePriority(){
-
-  data.ai.priorityAnnouncement=
-    document.getElementById("priorityAnnouncement").value;
-
-  data.ai.priorityEnabled=
-    document.getElementById("priorityEnabled").checked;
-
-  data.ai.priorityOnEntry=
-    document.getElementById("priorityOnEntry").checked;
-
-  saveData();
-
-  toast("Priority announcement saved.");
-}
-
-function saveVoiceSettings(){
-
-  data.ai.assistantEnabled=
-    document.getElementById("assistantEnabled").checked;
-
-  data.ai.autoGreeting=
-    document.getElementById("autoGreeting").checked;
-
-  data.ai.language=
-    document.getElementById("speechLanguage").value;
-
-  data.ai.rate=
-    Number(document.getElementById("speechRate").value)||1;
-
-  if(recognition){
-    recognition.lang=data.ai.language;
-  }
-
-  saveData();
-
-  toast("Voice settings saved.");
-}
-
-
-/* =========================================================
-   CUSTOM COMMANDS
-   ========================================================= */
-
-function addCustomCommand(){
-
-  const trigger=document.getElementById("cmdTrigger").value.trim();
-  const response=document.getElementById("cmdResponse").value.trim();
-  const action=document.getElementById("cmdAction").value;
-
-  if(!trigger || !response){
-    toast("Trigger and response are required.");
-    return;
-  }
-
-  data.ai.customCommands.push({
-    id:uid(),
-    trigger,
-    response,
-    action,
-    enabled:true
-  });
-
-  saveData();
-
-  document.getElementById("cmdTrigger").value="";
-  document.getElementById("cmdResponse").value="";
-
-  renderCommandList();
-
-  toast("Custom AI command added.");
-}
-
-function renderCommandList(){
-
-  const el=document.getElementById("commandList");
-
-  if(!el)return;
-
-  if(!data.ai.customCommands.length){
-    el.innerHTML=`
-      <div style="color:#62768d;font-size:10px">
-        No custom commands.
-      </div>`;
-    return;
-  }
-
-  el.innerHTML=data.ai.customCommands.map(c=>`
-
-    <div class="admin-list-item">
-
-      <div>
-        <strong>${esc(c.trigger)}</strong>
-        <small>${esc(c.response)}</small>
-        <small>ACTION: ${esc(c.action)}</small>
-      </div>
-
-      <button class="ai-btn danger" onclick="deleteCommand('${esc(c.id)}')">
-        DELETE
-      </button>
-
-    </div>
-
-  `).join("");
-}
-
-function deleteCommand(id){
-
-  data.ai.customCommands=
-    data.ai.customCommands.filter(c=>c.id!==id);
-
-  saveData();
-  renderCommandList();
-
-  toast("Command deleted.");
-}
-
-
-/* =========================================================
-   PROJECT ADMIN
-   ========================================================= */
-
-function addProject(){
-
-  const name=document.getElementById("pName").value.trim();
-
-  if(!name){
-    toast("Project name is required.");
-    return;
-  }
-
-  data.projects.unshift({
-    id:uid(),
-    name,
-    category:document.getElementById("pCategory").value.trim(),
-    description:document.getElementById("pDescription").value.trim(),
-    tech:document.getElementById("pTech").value.trim(),
-    link:document.getElementById("pLink").value.trim(),
-    image:document.getElementById("pImage").value.trim()
-  });
-
-  saveData();
-  renderProjects();
-  renderProjectAdminList();
-
-  [
-    "pName",
-    "pCategory",
-    "pDescription",
-    "pTech",
-    "pLink",
-    "pImage"
-  ].forEach(id=>{
-    document.getElementById(id).value="";
-  });
-
-  toast("Project published.");
-}
-
-function renderProjectAdminList(){
-
-  const el=document.getElementById("projectAdminList");
-
-  if(!el)return;
-
-  el.innerHTML=data.projects.map(p=>`
-
-    <div class="admin-list-item">
-
-      <div>
-        <strong>${esc(p.name)}</strong>
-        <small>${esc(p.category)}</small>
-      </div>
-
-      <button class="ai-btn danger" onclick="deleteProject('${esc(p.id)}')">
-        DELETE
-      </button>
-
-    </div>
-
-  `).join("");
-}
-
-function deleteProject(id){
-
-  if(!confirm("Delete this project?"))return;
-
-  data.projects=data.projects.filter(p=>p.id!==id);
-
-  saveData();
-  renderProjects();
-  renderProjectAdminList();
-
-  toast("Project deleted.");
-}
-
-
-/* =========================================================
-   PRODUCT ADMIN
-   ========================================================= */
-
-function addProduct(){
-
-  const name=document.getElementById("sName").value.trim();
-
-  if(!name){
-    toast("Product name is required.");
-    return;
-  }
-
-  data.products.unshift({
-    id:uid(),
-    name,
-    price:document.getElementById("sPrice").value.trim() || "Free",
-    category:document.getElementById("sCategory").value.trim() || "Digital Product",
-    version:document.getElementById("sVersion").value.trim(),
-    description:document.getElementById("sDescription").value.trim(),
-    image:document.getElementById("sImage").value.trim(),
-    link:document.getElementById("sLink").value.trim(),
-    fileId:""
-  });
-
-  saveData();
-
-  renderProducts();
-  renderStoreAdminList();
-
-  [
-    "sName",
-    "sPrice",
-    "sCategory",
-    "sVersion",
-    "sDescription",
-    "sImage",
-    "sLink"
-  ].forEach(id=>{
-    document.getElementById(id).value="";
-  });
-
-  toast("Digital product published.");
-}
-
-function renderStoreAdminList(){
-
-  const el=document.getElementById("storeAdminList");
-
-  if(!el)return;
-
-  el.innerHTML=data.products.map(p=>`
-
-    <div class="admin-list-item">
-
-      <div>
-        <strong>${esc(p.name)}</strong>
-        <small>${esc(p.price)} • ${esc(p.category)}</small>
-      </div>
-
-      <button class="ai-btn danger" onclick="deleteProduct('${esc(p.id)}')">
-        DELETE
-      </button>
-
-    </div>
-
-  `).join("");
-}
-
-function deleteProduct(id){
-
-  if(!confirm("Delete this product?"))return;
-
-  data.products=data.products.filter(p=>p.id!==id);
-
-  saveData();
-  renderProducts();
-  renderStoreAdminList();
-
-  toast("Product deleted.");
-}
-
-
-/* =========================================================
-   INDEXED DB FILE STORAGE
-   ========================================================= */
-
-function initDB(){
-
-  return new Promise((resolve,reject)=>{
-
-    if(!("indexedDB" in window)){
-      resolve(null);
-      return;
-    }
-
-    const req=indexedDB.open(DB_NAME,DB_VERSION);
-
-    req.onupgradeneeded=e=>{
-
-      const db=e.target.result;
-
-      if(!db.objectStoreNames.contains(FILE_STORE)){
-        db.createObjectStore(FILE_STORE,{keyPath:"id"});
-      }
-
-    };
-
-    req.onsuccess=e=>{
-      voiceDB=e.target.result;
-      resolve(voiceDB);
-    };
-
-    req.onerror=()=>{
-      resolve(null);
-    };
-
-  });
-}
-
-function saveBlobFile(file,metadata){
-
-  return new Promise(async(resolve,reject)=>{
-
-    if(!voiceDB){
-      await initDB();
-    }
-
-    if(!voiceDB){
-      reject("IndexedDB unavailable");
-      return;
-    }
-
-    const id=uid();
-
-    const record={
-      id,
-      name:file.name,
-      type:file.type,
-      size:file.size,
-      blob:file,
-      description:metadata.description || "",
-      kind:metadata.kind || "file",
-      createdAt:new Date().toISOString()
-    };
-
-    const tx=voiceDB.transaction(FILE_STORE,"readwrite");
-
-    tx.objectStore(FILE_STORE).put(record);
-
-    tx.oncomplete=()=>resolve(record);
-    tx.onerror=()=>reject(tx.error);
-
-  });
-}
-
-function getBlobFile(id){
-
-  return new Promise((resolve,reject)=>{
-
-    if(!voiceDB){
-      resolve(null);
-      return;
-    }
-
-    const tx=voiceDB.transaction(FILE_STORE,"readonly");
-    const req=tx.objectStore(FILE_STORE).get(id);
-
-    req.onsuccess=()=>resolve(req.result || null);
-    req.onerror=()=>reject(req.error);
-
-  });
-}
-
-function deleteBlobFile(id){
-
-  return new Promise((resolve,reject)=>{
-
-    if(!voiceDB){
-      resolve();
-      return;
-    }
-
-    const tx=voiceDB.transaction(FILE_STORE,"readwrite");
-
-    tx.objectStore(FILE_STORE).delete(id);
-
-    tx.oncomplete=resolve;
-    tx.onerror=()=>reject(tx.error);
-
-  });
-}
-
-
-/* =========================================================
-   DIGITAL FILE UPLOAD
-   ========================================================= */
-
-async function uploadDigitalFile(){
-
-  const input=document.getElementById("digitalFile");
-  const file=input.files[0];
-
-  if(!file){
-    toast("Select a file first.");
-    return;
-  }
-
-  try{
-
-    toast("Saving file...");
-
-    const record=await saveBlobFile(file,{
-      description:document.getElementById("fileDescription").value,
-      kind:"digital"
+const portfolioData={name:"MD. ATIKUL ISLAM",aiName:"ATIK // NEXUS",title:"Student | Digital Creator | Web & Technology Enthusiast",email:"atikul3673@gmail.com",phone:"+880 1819-813673",location:"Mymensingh, Bangladesh",
+profileImages:["profile.jpg","profile2.jpg","profile3.jpg","profile4.jpg"],
+projects:[
+{name:"Nexora Secure Messenger",desc:"Encrypted cyber-style communication app built for secure real-time messaging.",category:"SECURITY",tech:["Web","Security","Crypto"],icon:"fa-shield-halved",link:""},
+{name:"Nexora V3 – Future Connection",desc:"Next-gen web portal concept featuring interactive dynamic visual controls.",category:"WEB",tech:["HTML5","CSS3","JS"],icon:"fa-network-wired",link:""},
+{name:"Atik AI Robo Assistant",desc:"Voice and command digital assistant designed for personal web interactions.",category:"AI",tech:["AI","Speech Synthesis","JS"],icon:"fa-robot",link:""},
+{name:"E-commerce Platform Concept",desc:"Futuristic online storefront platform with sleek reactive UI components.",category:"WEB",tech:["Web","UI/UX","Database"],icon:"fa-cart-shopping",link:""},
+{name:"Janusurakkha Citizen Reporting",desc:"Digital citizen engagement portal for issue reporting and public updates.",category:"APP",tech:["Web Portal","Form System"],icon:"fa-users-viewfinder",link:""},
+{name:"ROAD RUSH 3D Game Concept",desc:"High-octane browser-driven game project showcasing active game mechanics.",category:"GAME",tech:["JavaScript","Canvas","3D/2D"],icon:"fa-gamepad",link:""}],
+skills:[{name:"HTML5",level:"90%"},{name:"CSS3 / Modern Styling",level:"85%"},{name:"JavaScript (ES6+)",level:"80%"},{name:"Python",level:"60%"},{name:"PHP",level:"50%"},{name:"MySQL Database",level:"60%"},{name:"Git & GitHub",level:"75%"},{name:"UI/UX Design",level:"80%"},{name:"Responsive Web Design",level:"90%"},{name:"AI Tools Integration",level:"85%"},{name:"Problem Solving",level:"80%"}],
+education:[{year:"NOW",degree:"Software & Android Developer",inst:"Designing and building Android apps, software tools and automation."},{year:"NOW",degree:"Web Developer",inst:"Responsive, modern websites with HTML, CSS, JavaScript and UI/UX design."},{year:"ONGOING",degree:"AI Courses & Prompt Engineering",inst:"Learning AI tools, prompt engineering and AI-powered app development."},{year:"ONGOING",degree:"Japanese Journey",inst:"Learning the Japanese language step by step."}],
+social:{facebook:"https://facebook.com",youtube:"https://youtube.com",github:"https://github.com",linkedin:"https://linkedin.com",telegram:"https://t.me",whatsapp:"https://wa.me/8801819813673"},
+aiSpeech:{greeting:"আসসালামু আলাইকুম। আমি Atik-এর Digital AI Assistant। আপনাকে স্বাগতম। আমি Atik-এর digital identity, projects, websites এবং skills সম্পর্কে আপনাকে তথ্য দিতে পারি।",about:"Atik is a 20-year-old software, Android and web developer from Mymensingh, Bangladesh, who builds AI-powered tools and keeps learning new AI courses.",projects:"Atik builds futuristic web applications, AI tools, secure messengers, and web games.",skills:"Atik's core skills include HTML, CSS, JavaScript, Python, PHP, MySQL, and UI design.",contact:"You can reach Atik directly via email at atikul3673@gmail.com or via WhatsApp."}};
+let currentProfileIndex=0,isSpeaking=false,speechUtterance=null;
+const $=id=>document.getElementById(id);
+document.addEventListener('DOMContentLoaded',()=>{initBackgroundCanvas();loadPortfolioData();setTimeout(()=>{const l=$('loader');l.style.opacity='0';setTimeout(()=>l.style.display='none',800)},1200)});
+function loadPortfolioData(){$('display-name').innerText=portfolioData.name;$('display-ai-name').innerText=portfolioData.aiName;$('display-title').innerText=portfolioData.title;$('contact-email').innerText=portfolioData.email;$('contact-phone').innerText=portfolioData.phone;$('contact-location').innerText=portfolioData.location;renderProjects('ALL');renderSkills();renderEducation();renderSocial()}
+function cycleProfileImage(){const b=$('avatar-box'),i=$('avatar-img');b.classList.add('switching');setTimeout(()=>{currentProfileIndex=(currentProfileIndex+1)%portfolioData.profileImages.length;i.style.display='';const f=b.querySelector('.avatar-fallback');if(f)f.remove();i.src=portfolioData.profileImages[currentProfileIndex];showToast(`AI IDENTITY SWITCHED: MODE 0${currentProfileIndex+1}`);updateAIDisplay(`Digital identity mode changed to MODE 0${currentProfileIndex+1}.`);setTimeout(()=>b.classList.remove('switching'),300)},300)}
+function handleImageError(img){const p=img.parentElement;img.style.display='none';if(!p.querySelector('.avatar-fallback'))p.insertAdjacentHTML('beforeend','<div class="avatar-fallback"><i class="fa-solid fa-user-astronaut" style="font-size:4rem;margin-bottom:10px"></i><span style="font-family:var(--font-mono);font-size:.75rem">ATIK // AI CORE</span></div>')}
+function speakText(text){if(!('speechSynthesis' in window)){showToast("Speech Synthesis not supported in this browser.");return}
+speechSynthesis.cancel();speechUtterance=new SpeechSynthesisUtterance(text);speechUtterance.rate=.95;speechUtterance.pitch=1;
+const v=speechSynthesis.getVoices().find(v=>v.lang.includes('bn')||v.lang.includes('BD')||v.lang.includes('IN'));
+if(v&&/[\u0980-\u09FF]/.test(text)){speechUtterance.voice=v;speechUtterance.lang='bn-BD'}else speechUtterance.lang='en-US';
+speechUtterance.onstart=()=>{isSpeaking=true;setVisualizerActive(true);$('speech-status').innerText='● AI SPEAKING...';$('ai-status-tag').innerText='ATIK AI • SPEAKING'};
+speechUtterance.onend=()=>{isSpeaking=false;setVisualizerActive(false);$('speech-status').innerText='● AI ONLINE';$('ai-status-tag').innerText='ATIK AI • ONLINE'};
+speechUtterance.onerror=()=>{isSpeaking=false;setVisualizerActive(false);$('speech-status').innerText='● AI READY'};
+speechSynthesis.speak(speechUtterance)}
+function stopSpeaking(){if('speechSynthesis' in window)speechSynthesis.cancel();isSpeaking=false;setVisualizerActive(false);$('speech-status').innerText='● AI ONLINE';$('ai-status-tag').innerText='ATIK AI • ONLINE'}
+function activateAIGreet(){const t=portfolioData.aiSpeech.greeting;updateAIDisplay(t);speakText(t)}
+function aiQuickCommand(type){const t=portfolioData.aiSpeech[type]||'';updateAIDisplay(t);speakText(t)}
+function updateAIDisplay(t){$('ai-text-box').childNodes[0].nodeValue=`"${t}"`}
+function setVisualizerActive(a){document.querySelectorAll('.v-bar').forEach(b=>b.classList.toggle('active',a))}
+function renderProjects(cat){const c=$('projects-container');c.innerHTML='';(cat==='ALL'?portfolioData.projects:portfolioData.projects.filter(p=>p.category===cat)).forEach(p=>{const d=document.createElement('div');d.className='project-card';
+const attr=p.link?`href="${p.link}" target="_blank"`:`href="#" onclick="showToast('DEMO / COMING SOON');return false;"`;
+d.innerHTML=`<div><div class="project-head"><div class="project-icon"><i class="fa-solid ${p.icon}"></i></div><div class="project-title">${p.name}</div></div><div class="project-desc">${p.desc}</div><div class="project-tech">${p.tech.map(t=>`<span class="tech-tag">${t}</span>`).join('')}</div></div><a ${attr} class="project-btn">${p.link?'VIEW LIVE':'DEMO / COMING SOON'}</a>`;c.appendChild(d)})}
+function filterProjects(cat,btn){document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');renderProjects(cat)}
+function renderSkills(){const c=$('skills-container');c.innerHTML='';portfolioData.skills.forEach(s=>{const d=document.createElement('div');d.className='skill-item';d.innerHTML=`<div class="skill-info"><span class="skill-name">${s.name}</span><span class="skill-val">${s.level}</span></div><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:${s.level}"></div></div>`;c.appendChild(d)})}
+function renderEducation(){const c=$('timeline-container');c.innerHTML='';portfolioData.education.forEach(e=>{const d=document.createElement('div');d.className='timeline-item';d.innerHTML=`<div class="timeline-year">${e.year}</div><div class="timeline-deg">${e.degree}</div><div class="timeline-inst">${e.inst}</div>`;c.appendChild(d)})}
+function renderSocial(){const c=$('social-container');c.innerHTML='';[["Facebook","facebook","fa-brands fa-facebook"],["YouTube","youtube","fa-brands fa-youtube"],["GitHub","github","fa-brands fa-github"],["LinkedIn","linkedin","fa-brands fa-linkedin"],["Telegram","telegram","fa-brands fa-telegram"],["WhatsApp","whatsapp","fa-brands fa-whatsapp"]].forEach(n=>{const a=document.createElement('a');a.className='social-card';a.href=portfolioData.social[n[1]]||'#';a.target="_blank";a.innerHTML=`<i class="${n[2]}"></i> <span>${n[0]}</span>`;c.appendChild(a)})}
+function switchSection(id){closeAllModals();if(id!=='home'){const m=$(`modal-${id}`);if(m)m.classList.add('active')}}
+function closeModal(id){$(id).classList.remove('active')}
+function closeAllModals(){document.querySelectorAll('.section-modal').forEach(m=>m.classList.remove('active'))}
+function toggleMenu(){const o=$('nav-links').classList.toggle('open');document.querySelector('.menu-btn i').className='fa-solid fa-bars'}
+function closeMenu(){$('nav-links').classList.remove('open');document.querySelector('.menu-btn i').className='fa-solid fa-bars'}
+function handleFormSubmit(e){e.preventDefault();showToast("Message interface ready — connect a backend to enable sending.");e.target.reset()}
+function showToast(m){const t=$('toast');$('toast-msg').innerText=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3500)}
+function initBackgroundCanvas(){const cv=$('bg-canvas'),ctx=cv.getContext('2d');let w=cv.width=innerWidth,h=cv.height=innerHeight;addEventListener('resize',()=>{w=cv.width=innerWidth;h=cv.height=innerHeight});
+const P=[],n=Math.min(Math.floor(w/15),60);for(let i=0;i<n;i++)P.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.5,vy:(Math.random()-.5)*.5,r:Math.random()*2+1});
+(function a(){ctx.clearRect(0,0,w,h);for(let i=0;i<P.length;i++)for(let j=i+1;j<P.length;j++){const dx=P[i].x-P[j].x,dy=P[i].y-P[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<120){ctx.beginPath();ctx.moveTo(P[i].x,P[i].y);ctx.lineTo(P[j].x,P[j].y);ctx.strokeStyle=`rgba(0,240,255,${.15-d/800})`;ctx.lineWidth=.8;ctx.stroke()}}
+P.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='rgba(0,240,255,.6)';ctx.shadowBlur=8;ctx.shadowColor='#00f0ff';ctx.fill()});requestAnimationFrame(a)})()}
+</script>
+<!-- ===== ADMIN PANEL ===== -->
+<script>
+(function(){
+const K='atik_admin_v1',P=portfolioData,clone=o=>JSON.parse(JSON.stringify(o));
+const H=s=>{let a=0xdeadbeef,b=0x41c6ce57;for(let i=0;i<s.length;i++){const c=s.charCodeAt(i);a=Math.imul(a^c,2654435761);b=Math.imul(b^c,1597334677)}a=Math.imul(a^a>>>16,2246822507)^Math.imul(b^b>>>13,3266489909);b=Math.imul(b^b>>>16,2246822507)^Math.imul(a^a>>>13,3266489909);return(4294967296*(2097151&b)+(a>>>0)).toString(36)};
+const HP='26190uzfi10',HW='24iusjknppa';
+P.websites=[{title:'Nexora V3 – Future Connection',desc:'Next-gen web portal concept featuring interactive dynamic visual controls.',link:''},{title:'E-commerce Platform Concept',desc:'Futuristic online storefront platform with sleek reactive UI components.',link:''}];
+P.apps=[{title:'Nexora Secure Messenger',desc:'Secure messaging app concept focused on clean communication.',version:'v0.1',link:'',open:''},{title:'Scanner Application',desc:'Turn paper documents into useful digital files.',version:'v0.1',link:'',open:''}];
+const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const DEF={about:{name:P.name,title:P.title,age:'20 Years',location:P.location,education:'Software, Android & Web Developer',status:'Digital Creator & AI Learner',bio:'Passionate about modern web development, futuristic UI design, Artificial Intelligence applications, and innovative web technologies. Constantly learning new concepts to build powerful digital products.',quote:'Small steps every day lead to big digital breakthroughs.',email:P.email,phone:P.phone},
+social:clone(P.social),skills:clone(P.skills),education:clone(P.education),projects:clone(P.projects),
+ai:{greeting:'আসসালামু আলাইকুম, আমি আতিকের ডিজিটাল এআই অ্যাসিস্ট্যান্ট। আপনাকে কীভাবে সাহায্য করতে পারি? আতিক একজন সফটওয়্যার অ্যান্ড ওয়েব ডেভেলপার, যিনি বিভিন্ন যুক্তিভিত্তিক ওয়েবসাইট এবং সফটওয়্যার ডেভেলপ করে থাকেন।',auto:true,voice:true,fallback:'',qa:'',about:P.aiSpeech.about,projects:P.aiSpeech.projects,skills:P.aiSpeech.skills,contact:P.aiSpeech.contact}};
+let S;try{S=JSON.parse(localStorage.getItem(K))||{}}catch(e){S={}}
+const A=()=>Object.assign({},DEF.about,S.about),AI=()=>Object.assign({},DEF.ai,S.ai);
+const save=()=>{try{localStorage.setItem(K,JSON.stringify(S))}catch(e){showToast('Storage blocked or full')}};
+
+/* ---- IndexedDB for uploaded files ---- */
+const dbp=new Promise((res,rej)=>{try{const r=indexedDB.open('atik_files',1);r.onupgradeneeded=()=>r.result.createObjectStore('f');r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)}catch(e){rej(e)}});
+const tx=(m,fn)=>dbp.then(db=>new Promise((res,rej)=>{const t=db.transaction('f',m),q=fn(t.objectStore('f'));t.oncomplete=()=>res(q&&q.result);t.onerror=()=>rej(t.error)}));
+const putF=(id,b)=>tx('readwrite',s=>s.put(b,id)),getF=id=>tx('readonly',s=>s.get(id)),delF=id=>tx('readwrite',s=>s.delete(id));
+const findFile=id=>{for(const p of P.projects)for(const f of p.files||[])if(f.id===id)return f};
+
+/* ---- apply saved data to the site ---- */
+function renderAbout(a){const mc=document.querySelector('#modal-about .modal-content');
+mc.querySelector('.sec-title').innerHTML='<i class="fa-solid fa-user-gear"></i> ABOUT '+esc(a.name.toUpperCase());
+const row=(i,l,v)=>`<p style="margin-bottom:10px"><i class="fa-solid ${i}" style="color:var(--cyan-glow)"></i> <strong>${l}:</strong> ${esc(v)}</p>`;
+const d=document.createElement('div');d.style.cssText='line-height:1.8;color:var(--text-dim)';
+d.innerHTML=`<p style="margin-bottom:15px;font-size:1.1rem;color:#fff"><strong>Name:</strong> ${esc(a.name)}</p>`+row('fa-cake-candles','Age',a.age)+row('fa-location-dot','Location',a.location)+row('fa-graduation-cap','Profession',a.education)+row('fa-user-graduate','Status',a.status)+`<br><h3 style="color:var(--cyan-glow);font-family:var(--font-head);margin-bottom:10px">CORE INTERESTS &amp; VISION</h3><p style="margin-bottom:15px">${esc(a.bio)}</p><div style="background:rgba(0,240,255,.05);border-left:3px solid var(--cyan-glow);padding:10px 15px;font-style:italic;color:#fff">"${esc(a.quote)}"</div>`;
+mc.lastElementChild.replaceWith(d)}
+function apply(){const a=A(),ai=AI();
+Object.assign(P,{name:a.name,title:a.title,email:a.email,phone:a.phone,location:a.location});
+['social','skills','education','projects','websites','apps'].forEach(k=>{if(S[k])P[k]=S[k]});
+P.aiSpeech.greeting=ai.greeting;['about','projects','skills','contact'].forEach(k=>P.aiSpeech[k]=ai[k]);
+window.axFallbackText=ai.fallback;window.axCfgVoice=ai.voice;
+if(S.about)renderAbout(a)}
+apply();
+const done=()=>{save();apply();loadPortfolioData();if(window.axRenderWA)axRenderWA();if(window.axRefresh)axRefresh();showToast('Saved ✔')};
+
+/* ---- public project cards: live link, free download, video ---- */
+window.renderProjects=function(cat){const c=$('projects-container');c.innerHTML='';
+(cat==='ALL'?P.projects:P.projects.filter(p=>p.category===cat)).forEach(p=>{const d=document.createElement('div');d.className='project-card';const b=[];
+if(p.link)b.push(`<a href="${esc(p.link)}" target="_blank" rel="noopener" class="project-btn">VIEW LIVE</a>`);
+(p.files||[]).forEach(f=>b.push(f.kind==='video'?`<a href="#" class="project-btn" onclick="axPlay('${f.id}');return false">▶ WATCH: ${esc(f.name)}</a>`:`<a href="#" class="project-btn" onclick="axDl('${f.id}');return false">⬇ FREE DOWNLOAD: ${esc(f.name)}</a>`));
+if(!b.length)b.push(`<a href="#" class="project-btn" onclick="showToast('DEMO / COMING SOON');return false">DEMO / COMING SOON</a>`);
+d.innerHTML=`<div><div class="project-head"><div class="project-icon"><i class="fa-solid ${esc(p.icon||'fa-folder-open')}"></i></div><div class="project-title">${esc(p.name)}</div></div><div class="project-desc">${esc(p.desc)}</div><div class="project-tech">${(p.tech||[]).map(t=>`<span class="tech-tag">${esc(t)}</span>`).join('')}</div></div><div style="display:flex;flex-direction:column;gap:8px">${b.join('')}</div>`;c.appendChild(d)})};
+window.axDl=async id=>{try{const b=await getF(id);if(!b)return showToast('File not found in this browser');const m=findFile(id),u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download=m?m.name:'download';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),4000)}catch(e){showToast('Download failed')}};
+window.axPlay=async id=>{try{const b=await getF(id);if(!b)return showToast('Video not found in this browser');let m=$('modal-axvid');if(!m){m=document.createElement('div');m.id='modal-axvid';m.className='section-modal';m.style.zIndex=700;document.body.appendChild(m)}
+const u=URL.createObjectURL(b);m.innerHTML=`<div class="modal-content" style="padding:16px"><div class="modal-close" id="axVx"><i class="fa-solid fa-xmark"></i></div><video src="${u}" controls autoplay playsinline style="width:100%;max-height:70vh;border-radius:8px;margin-top:40px"></video></div>`;
+$('axVx').onclick=()=>{m.classList.remove('active');m.innerHTML='';URL.revokeObjectURL(u)};requestAnimationFrame(()=>m.classList.add('active'))}catch(e){showToast('Cannot play video')}};
+
+/* ---- AI custom replies ---- */
+window.axCustomReply=q=>{const ai=AI(),l=q.toLowerCase();
+for(const line of(ai.qa||'').split('\n')){const i=line.indexOf('=>');if(i<0)continue;if(line.slice(0,i).split(',').map(s=>s.trim().toLowerCase()).filter(Boolean).some(k=>l.includes(k)))return line.slice(i+2).trim()}
+if(window.axProjHit&&window.axProjHit(l))return '';
+if(S.about&&/who|about|পরিচয়|সম্পর্কে/.test(l)){const a=A();return `${a.name} — ${a.title}. ${a.bio}`}
+if(S.projects&&/project|প্রজেক্ট|website|ওয়েবসাইট/.test(l))return 'Atik\'s projects: '+P.projects.map(p=>p.name).join(', ')+'. Open the Projects section for free downloads.';
+if(S.skills&&/skill|দক্ষতা|স্কিল/.test(l))return 'Atik\'s skills: '+P.skills.map(s=>s.name).join(', ')+'.';
+if(S.education&&/educat|study|শিক্ষা|পড়া/.test(l))return P.education.map(e=>`${e.degree} (${e.year})`).join('; ')+'.';
+return ''};
+
+/* ---- admin UI ---- */
+let tab='about',editing=null,pend=[],rem=[],authed=false;
+const adm=()=>{let m=$('axAdm');if(!m){m=document.createElement('div');m.id='axAdm';m.className='section-modal';m.style.zIndex=800;document.body.appendChild(m)}return m};
+const X='<div class="modal-close" onclick="axAdmClose()"><i class="fa-solid fa-xmark"></i></div>';
+function openAdmin(){const m=adm();closeAllModals();authed=false;
+m.innerHTML=`<div class="modal-content" style="max-width:460px">${X}<h2 class="sec-title"><i class="fa-solid fa-lock"></i> ADMIN ACCESS</h2><div class="form-group"><label>SECURITY PIN</label><input id="axPin" type="password" inputmode="numeric" class="form-input" placeholder="Enter PIN" onkeydown="if(event.key==='Enter')axLogin()"></div><button class="ai-btn ai-btn-primary" style="margin-top:15px;width:100%;justify-content:center;padding:12px" onclick="axLogin()">UNLOCK</button></div>`;
+requestAnimationFrame(()=>m.classList.add('active'))}
+window.axAdmClose=()=>{adm().classList.remove('active');authed=false;pend=[];rem=[];editing=null};
+window.axLogin=()=>{if(H($('axPin').value)===HP){adm().querySelector('.modal-content').innerHTML=`${X}<h2 class="sec-title"><i class="fa-solid fa-key"></i> PASSWORD VERIFICATION</h2><div class="form-group"><label>MASTER PASSWORD</label><input id="axPw" type="password" class="form-input" placeholder="Password"></div><button class="ai-btn ai-btn-primary" style="margin-top:15px;padding:12px 22px" onclick="axLogin2()">UNLOCK</button>`;$('axPw').onkeydown=e=>{if(e.key==='Enter')axLogin2()};setTimeout(()=>{const e=$('axPw');if(e)e.focus()},50)}else{showToast('Wrong PIN');$('axPin').value=''}};
+window.axLogin2=()=>{if(H($('axPw').value)===HW){authed=true;tab='about';panel()}else{showToast('Wrong password');$('axPw').value=''}};
+const TABS=[['about','ABOUT'],['contact','CONTACT & SOCIAL'],['websites','MY WEBSITES'],['apps','MY APPS'],['projects','PROJECTS & FILES'],['ai','AI & VOICE'],['skills','SKILLS & EXPERIENCE']];
+function panel(){if(!authed)return;const m=adm();
+m.innerHTML=`<div class="modal-content">${X}<h2 class="sec-title"><i class="fa-solid fa-user-shield"></i> ADMIN PANEL</h2><p style="color:var(--text-dim);font-size:.8rem;margin-bottom:12px">Changes are saved in this browser (localStorage + IndexedDB).</p><div class="filter-bar">${TABS.map(t=>`<button class="filter-btn ${t[0]===tab?'active':''}" onclick="axTab('${t[0]}')">${t[1]}</button>`).join('')}</div>${body()}<div style="display:flex;gap:10px;margin-top:20px;flex-wrap:wrap"><button class="ai-btn" onclick="axAdmClose()">LOGOUT</button><button class="ai-btn" style="border-color:#ef4444" onclick="axReset()">RESET ALL</button></div></div>`;m.classList.add('active')}
+window.axTab=t=>{tab=t;if(t!=='projects'){editing=null;pend=[];rem=[]}panel()};
+const F=(id,l,v,ta)=>`<div class="form-group"><label>${l}</label>${ta?`<textarea id="${id}" class="form-input">${esc(v)}</textarea>`:`<input id="${id}" class="form-input" value="${esc(v)}">`}</div>`;
+const V=id=>$(id).value.trim(),stack=h=>`<div style="display:flex;flex-direction:column;gap:12px">${h}</div>`;
+const SAVE=fn=>`<button class="ai-btn ai-btn-primary" style="margin-top:15px;padding:12px 22px" onclick="${fn}">SAVE</button>`;
+const CHK=(id,l,v)=>`<label style="color:var(--text-dim)"><input type="checkbox" id="${id}" ${v?'checked':''}> ${l}</label>`;
+const SOC=['facebook','youtube','github','linkedin','telegram','whatsapp'];
+const mb=n=>(n/1048576).toFixed(2)+' MB';
+const fileList=e=>(e.files||[]).filter(f=>!rem.includes(f.id)).map(f=>`<div class="ax-row">${esc(f.name)} <small>${mb(f.size)}</small><button class="filter-btn" onclick="axRmF('${f.id}')">REMOVE</button></div>`).join('')+pend.map(f=>`<div class="ax-row">＋ ${esc(f.name)} <small>${mb(f.size)} · pending save</small></div>`).join('');
+function body(){const a=A(),ai=AI();if(tab==='websites'||tab==='apps')return waForm(tab);
+if(tab==='about')return stack(F('a_name','NAME',a.name)+F('a_title','TITLE',a.title)+F('a_age','AGE',a.age)+F('a_loc','LOCATION',a.location)+F('a_edu','PROFESSION',a.education)+F('a_st','STATUS',a.status)+F('a_bio','BIO / VISION',a.bio,1)+F('a_q','QUOTE',a.quote))+SAVE('axSaveAbout()');
+if(tab==='contact')return stack(F('c_email','EMAIL',a.email)+F('c_phone','PHONE',a.phone)+SOC.map(k=>F('s_'+k,k.toUpperCase()+' URL',P.social[k]||'')).join(''))+SAVE('axSaveContact()');
+if(tab==='ai')return stack(F('i_gr','GREETING (shown when a visitor opens the AI section)',ai.greeting,1)+CHK('i_auto','Speak greeting automatically',ai.auto)+CHK('i_voice','Voice replies enabled',ai.voice)+F('i_fb','FALLBACK REPLY (when AI does not understand)',ai.fallback,1)+F('i_qa','CUSTOM Q&A — one per line: keyword1, keyword2 => answer',ai.qa,1)+F('i_ab','TOP CONSOLE: ABOUT',ai.about,1)+F('i_pr','TOP CONSOLE: PROJECTS',ai.projects,1)+F('i_sk','TOP CONSOLE: SKILLS',ai.skills,1)+F('i_ct','TOP CONSOLE: CONTACT',ai.contact,1))+SAVE('axSaveAI()')+' <button class="ai-btn" style="display:inline-flex;margin-top:15px" onclick="speakText(AIgreet())">TEST GREETING 🔊</button>';
+if(tab==='skills')return stack(F('k_sk','SKILLS — one per line: Name | 90%',P.skills.map(s=>s.name+' | '+s.level).join('\n'),1)+F('k_ed','EXPERIENCE / COURSES — one per line: LABEL | Title | Description',P.education.map(e=>[e.year,e.degree,e.inst].join(' | ')).join('\n'),1))+SAVE('axSaveSE()');
+const L=P.projects.map((p,i)=>`<div class="ax-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span>${esc(p.name)}<small>${p.category} · ${(p.files||[]).length} file(s)</small></span><span style="white-space:nowrap"><button class="filter-btn" onclick="axEdit(${i})">EDIT</button> <button class="filter-btn" onclick="axDel(${i})">DELETE</button></span></div>`).join('');
+const e=editing||{name:'',desc:'',category:'WEB',tech:[],link:'',icon:'fa-folder-open',files:[]};
+return L+`<h3 style="color:var(--cyan-glow);font-family:var(--font-head);margin:15px 0 10px">${editing?'EDIT PROJECT':'ADD NEW PROJECT'}</h3>`+stack(F('p_name','NAME',e.name)+F('p_desc','DESCRIPTION',e.desc,1)+`<div class="form-group"><label>CATEGORY</label><select id="p_cat" class="form-input">${['WEB','AI','APP','GAME','SECURITY'].map(c=>`<option ${c===e.category?'selected':''}>${c}</option>`).join('')}</select></div>`+F('p_tech','TECH (comma separated)',(e.tech||[]).join(', '))+F('p_link','LIVE LINK (optional)',e.link)+F('p_icon','ICON (Font Awesome, e.g. fa-robot)',e.icon)+`<div class="form-group"><label>FILES — ZIP / SOFTWARE / VIDEO (free for visitors)</label><input id="p_files" type="file" multiple class="form-input" onchange="axPick(this)"></div><div id="p_fl">${fileList(e)}</div>`)+SAVE('axSaveProject()')+(editing?' <button class="ai-btn" style="display:inline-flex;margin-top:15px" onclick="axEdit(-1)">CANCEL</button>':'')}
+window.AIgreet=()=>AI().greeting;window.axIsCustom=k=>!!S[k];
+window.axSaveAbout=()=>{S.about=Object.assign(A(),{name:V('a_name'),title:V('a_title'),age:V('a_age'),location:V('a_loc'),education:V('a_edu'),status:V('a_st'),bio:V('a_bio'),quote:V('a_q')});done()};
+window.axSaveContact=()=>{S.about=Object.assign(A(),{email:V('c_email'),phone:V('c_phone')});S.social=Object.assign({},P.social);SOC.forEach(k=>S.social[k]=V('s_'+k));done()};
+window.axSaveAI=()=>{S.ai={greeting:V('i_gr'),auto:$('i_auto').checked,voice:$('i_voice').checked,fallback:V('i_fb'),qa:V('i_qa'),about:V('i_ab'),projects:V('i_pr'),skills:V('i_sk'),contact:V('i_ct')};done()};
+const lines=id=>V(id).split('\n').map(l=>l.split('|').map(x=>x.trim())).filter(a=>a[0]);
+window.axSaveSE=()=>{S.skills=lines('k_sk').map(a=>({name:a[0],level:/^\d+$/.test(a[1]||'')?a[1]+'%':(a[1]||'50%')}));S.education=lines('k_ed').map(a=>({year:a[0],degree:a[1]||'',inst:a[2]||''}));done()};
+window.axPick=i=>{pend.push(...i.files);i.value='';$('p_fl').innerHTML=fileList(editing||{files:[]})};
+window.axRmF=id=>{rem.push(id);$('p_fl').innerHTML=fileList(editing||{files:[]})};
+window.axEdit=i=>{editing=i<0?null:P.projects[i];pend=[];rem=[];panel()};
+window.axDel=async i=>{if(!confirm('Delete this project and its files?'))return;try{for(const f of P.projects[i].files||[])await delF(f.id)}catch(e){}P.projects.splice(i,1);S.projects=P.projects;done();panel()};
+window.axSaveProject=async()=>{const name=V('p_name');if(!name)return showToast('Name is required');
+const files=((editing||{}).files||[]).filter(f=>!rem.includes(f.id));
+try{for(const id of rem)await delF(id);for(const f of pend){const id='f'+Date.now().toString(36)+Math.random().toString(36).slice(2,6);await putF(id,f);files.push({id,name:f.name,size:f.size,kind:(f.type||'').startsWith('video')?'video':'file'})}}catch(e){return showToast('File storage failed (blocked or full)')}
+const p={name,desc:V('p_desc'),category:$('p_cat').value,tech:V('p_tech').split(',').map(s=>s.trim()).filter(Boolean),link:V('p_link'),icon:V('p_icon')||'fa-folder-open',files};
+if(editing)P.projects[P.projects.indexOf(editing)]=p;else P.projects.push(p);
+S.projects=P.projects;editing=null;pend=[];rem=[];done();panel()};
+window.axReset=()=>{if(!confirm('Reset ALL admin changes and delete uploaded files?'))return;try{localStorage.removeItem(K);indexedDB.deleteDatabase('atik_files')}catch(e){}location.reload()};
+
+/* ---- websites & apps ---- */
+let eIdx=-1,eKind='',pI=null,pF=null;
+const mbs=n=>(n/1048576).toFixed(2)+' MB',isHtml=n=>/\.html?$/i.test(n||''),nl=t=>esc(t).replace(/\n/g,'<br>');
+const nid=p=>p+Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+const imgURL=async id=>{if(!id)return'';try{const b=await getF(id);return b?URL.createObjectURL(b):''}catch(e){return''}};
+const listWA=k=>P[k].map((x,i)=>`<div class="ax-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span>${esc(x.title)}<small>${esc(k==='apps'?(x.version||''):(x.link||x.fileName||''))}</small></span><span><button class="filter-btn" onclick="axWAEdit('${k}',${i})">EDIT</button> <button class="filter-btn" onclick="axWADel('${k}',${i})">DELETE</button></span></div>`).join('')||'<p style="color:var(--text-dim)">Nothing yet. Add the first one below.</p>';
+const waForm=k=>{const ed=eIdx>=0&&eKind===k,e=ed?P[k][eIdx]:{},fl=e.fileName?` — current: ${esc(e.fileName)} (${mbs(e.size||0)})`:'';
+return listWA(k)+`<h3 style="color:var(--cyan-glow);font-family:var(--font-head);margin:15px 0 10px">${ed?'EDIT ITEM':'ADD NEW'} <button class="filter-btn" onclick="axWAEdit('${k}',-1)">+ NEW</button></h3>`+stack(
+F('w_t','TITLE',e.title||'')+F('w_d','SHORT DESCRIPTION',e.desc||'',1)+F('w_x','FULL DETAILS (shown inside)',e.details||'',1)+
+(k==='apps'?F('w_v','VERSION (e.g. v1.0)',e.version||'')+F('w_o','TEST / OPEN LINK',e.open||'')+F('w_l','DIRECT DOWNLOAD LINK',e.link||''):F('w_l','WEBSITE LINK (https://...)',e.link||''))+
+`<div class="form-group"><label>${k==='apps'?'APK / APP FILE':'HTML FILE (hosted inside this site) or ZIP'}${fl}</label><input type="file" class="form-input" onchange="axWAFile(this,'f')"></div>`+
+(e.fileId?CHK('w_rf','Remove current file',0):'')+
+`<div class="form-group"><label>IMAGE / SCREENSHOT${e.imgId?' (kept unless replaced)':''}</label><input type="file" accept="image/*" class="form-input" onchange="axWAFile(this,'i')"></div>`)+SAVE(`axWASave('${k}')`)};
+window.axWAFile=(el,t)=>{if(t==='f')pF=el.files[0]||null;else pI=el.files[0]||null};
+window.axWAEdit=(k,i)=>{eKind=k;eIdx=i;pI=pF=null;panel()};
+window.axWASave=async k=>{const t=V('w_t');if(!t)return showToast('Title is required');
+const ed=eIdx>=0&&eKind===k,old=ed?P[k][eIdx]:{},o=Object.assign({},old,{title:t,desc:V('w_d'),details:V('w_x'),link:V('w_l')});
+if(k==='apps'){o.version=V('w_v');o.open=V('w_o')}
+try{const rf=$('w_rf');if(((rf&&rf.checked)||pF)&&old.fileId){await delF(old.fileId);delete o.fileId;delete o.fileName;delete o.size}
+if(pF){o.fileId=nid('f');await putF(o.fileId,pF);o.fileName=pF.name;o.size=pF.size}
+if(pI){if(old.imgId)await delF(old.imgId);o.imgId=nid('i');await putF(o.imgId,pI)}}catch(e){return showToast('Upload failed (storage full?)')}
+if(ed)P[k][eIdx]=o;else P[k].push(o);S[k]=P[k];eIdx=-1;pI=pF=null;done();panel()};
+window.axWADel=async(k,i)=>{if(!confirm('Delete this item?'))return;const x=P[k][i];try{if(x.fileId)await delF(x.fileId);if(x.imgId)await delF(x.imgId)}catch(e){}P[k].splice(i,1);S[k]=P[k];done();panel()};
+const fileMeta=id=>[...P.apps,...P.websites].find(a=>a.fileId===id)||{};
+window.axWADl=async id=>{try{const b=await getF(id);if(!b)return showToast('File not found in this browser');const u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download=fileMeta(id).fileName||'download';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),4000)}catch(e){showToast('Download failed')}};
+window.axWAOpen=async id=>{try{const b=await getF(id);if(!b)return showToast('File not found in this browser');const u=URL.createObjectURL(new Blob([b],{type:'text/html'}));if(!window.open(u,'_blank'))location.href=u}catch(e){showToast('Cannot open file')}};
+const acts=(k,x)=>{const b=[],L=(u,t,dl)=>`<a class="project-btn" href="${esc(u)}" target="_blank" rel="noopener"${dl?' download':''}>${t}</a>`,dlb=`<a href="#" class="project-btn" onclick="axWADl('${x.fileId}');return false">⬇ DOWNLOAD ${esc(x.fileName||'')}</a>`;
+if(k==='websites'){if(x.link)b.push(L(x.link,'VISIT SITE ↗'));if(x.fileId)b.push(isHtml(x.fileName)?`<a href="#" class="project-btn" onclick="axWAOpen('${x.fileId}');return false">▶ OPEN HOSTED PAGE</a>`:dlb)}
+else{if(x.open)b.push(L(x.open,'TEST / OPEN ↗'));if(x.fileId)b.push(dlb);if(x.link)b.push(L(x.link,'⬇ DIRECT LINK',1))}
+return b};
+const mk=(id,title,icon,z)=>{let m=$(id);if(!m){m=document.createElement('div');m.id=id;m.className='section-modal';if(z)m.style.zIndex=z;m.innerHTML=`<div class="modal-content"><div class="modal-close" onclick="closeModal('${id}')"><i class="fa-solid fa-xmark"></i></div><h2 class="sec-title"><i class="fa-solid ${icon}"></i> ${title}</h2><div id="${id}-g" class="projects-grid"></div></div>`;document.body.appendChild(m)}return m};
+window.axRenderWA=async()=>{mk('modal-websites','MY WEBSITES','fa-user-astronaut');mk('modal-apps','MY APPS','fa-user-astronaut');
+for(const k of['websites','apps']){let h=P[k].length?'':'<p style="color:var(--text-dim)">Coming soon.</p>';
+for(let i=0;i<P[k].length;i++){const x=P[k][i],u=await imgURL(x.imgId),b=acts(k,x);if(!b.length)b.push(`<a href="#" class="project-btn" onclick="showToast('COMING SOON');return false">COMING SOON</a>`);
+h+=`<div class="project-card"><div>${u?`<img src="${u}" alt="" style="width:100%;border-radius:6px;margin-bottom:12px">`:''}<div class="project-head"><div class="project-icon"><i class="fa-solid fa-user-astronaut"></i></div><div class="project-title">${esc(x.title)}</div></div>${x.version?`<span class="tech-tag" style="display:inline-block;margin-bottom:10px">${esc(x.version)}</span>`:''}<div class="project-desc">${esc(x.desc)}</div></div><div style="display:flex;flex-direction:column;gap:8px"><a href="#" class="project-btn" style="background:rgba(0,240,255,.12)" onclick="axWAView('${k}',${i});return false">ⓘ DETAILS</a>${b.join('')}</div></div>`}
+$('modal-'+k+'-g').innerHTML=h}
+const n1=P.apps.length,n2=P.websites.length,c1=$('axCntApps'),c2=$('axCntWeb');if(c1)c1.textContent=n1+(n1===1?' APP':' APPS');if(c2)c2.textContent=n2+(n2===1?' WEBSITE':' WEBSITES')};
+window.axWAView=async(k,i)=>{const x=P[k][i];if(!x)return;const m=mk('modal-wa-detail','','fa-circle-info',520),u=await imgURL(x.imgId),b=acts(k,x);
+m.querySelector('.modal-content').innerHTML=`<div class="modal-close" onclick="closeModal('modal-wa-detail')"><i class="fa-solid fa-xmark"></i></div><h2 class="sec-title"><i class="fa-solid fa-user-astronaut"></i> ${esc(x.title)}</h2>${u?`<img src="${u}" alt="" style="width:100%;border-radius:8px;margin-bottom:14px">`:''}<div style="margin-bottom:12px">${x.version?`<span class="tech-tag">${esc(x.version)}</span> `:''}${x.fileName?`<span class="tech-tag">${esc(x.fileName)} · ${mbs(x.size||0)}</span>`:''}</div><p style="color:var(--text-dim);line-height:1.7;margin-bottom:18px">${nl(x.details||x.desc||'')}</p><div style="display:flex;flex-direction:column;gap:10px">${b.join('')||'<span class="tech-tag">COMING SOON</span>'}</div>`;
+requestAnimationFrame(()=>m.classList.add('active'))};
+axRenderWA();
+
+/* ---- secret trigger + automatic greeting ---- */
+function autoGreet(){const ai=AI();if(!window.axAdd)return;axAdd(ai.greeting,'ai');if(!ai.auto||!ai.voice||window.axSpokeOnce)return;axSay(ai.greeting);
+setTimeout(()=>{if('speechSynthesis' in window&&!speechSynthesis.speaking){const go=()=>{axSay(ai.greeting);['pointerdown','keydown'].forEach(v=>removeEventListener(v,go))};['pointerdown','keydown'].forEach(v=>addEventListener(v,go,{once:true}))}},800)}
+let n=0,t0=0;
+document.addEventListener('click',e=>{if(!e.target.closest('.brand-logo'))return;const now=Date.now();n=now-t0<1500?n+1:1;t0=now;if(n>=10){n=0;openAdmin()}});
+document.addEventListener('DOMContentLoaded',()=>{const s=$('ax-ai');if(s&&'IntersectionObserver' in window)new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){o.disconnect();autoGreet()}},{threshold:.35}).observe(s)});
+})();
+</script>
+<!-- ===== NEW FEATURES (ATIK AI chat, projects, timeline, store, control center, connection center) ===== -->
+<script>
+/* ATIK NEXUS new features */
+(function () {
+  const D = (typeof portfolioData !== 'undefined') ? portfolioData : {};
+  const EM = () => D.email || '', WAf = () => (D.social && D.social.whatsapp) || '';
+
+  /* ---------- EDITABLE DATA ---------- */
+  const projects = [
+    ['NX','Nexora Secure Messenger','COMMUNICATION','CONCEPT / BUILD','A secure messaging product concept focused on clean communication and digital trust.',['HTML','CSS','JavaScript'],'#0e7490,#1e3a8a'],
+    ['AI','Atik AI Robo Assistant','ARTIFICIAL INTELLIGENCE','ACTIVE PROTOTYPE','A personal assistant that helps visitors understand Atik\'s identity, projects and learning journey.',['JavaScript','Web Speech API','JSON Data'],'#4338ca,#7e22ce'],
+    ['CR','Citizen Reporting Platform','CIVIC TECHNOLOGY','PRODUCT CONCEPT','A civic reporting platform concept for organizing citizen-submitted issues.',['Web App','UI/UX','Database'],'#0f766e,#1e40af'],
+    ['EC','E-commerce Platform','COMMERCE','PRODUCT CONCEPT','A flexible commerce experience for digital products, services and online business ideas.',['HTML','CSS','JavaScript'],'#9a3412,#9d174d'],
+    ['SC','Scanner Application','UTILITY APP','EXPLORATION','A practical scanning app concept for turning paper documents into digital files.',['PWA','Mobile UX','JavaScript'],'#155e75,#0f766e'],
+    ['RR','ROAD RUSH 3D','GAME CONCEPT','CREATIVE CONCEPT','A fast, energetic 3D road game concept beyond traditional websites.',['JavaScript','Game Logic','3D Web'],'#9f1239,#3730a3']
+  ];
+  const store = [
+    ['TEMPLATE','Portfolio UI System','A customizable personal portfolio interface.','PLANNED','◫'],
+    ['DIGITAL ASSET','Digital Identity Card','A downloadable identity card and profile presentation.','CONCEPT','✦'],
+    ['RESOURCE','Web Starter Kit','A beginner-friendly starting structure for creative web projects.','PLANNED','⌘']
+  ];
+  let cards = projects;
+  const Eh = t => String(t == null ? '' : t).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const custom = () => !!(window.axIsCustom && axIsCustom('projects'));
+  const projList = () => custom() ? (D.projects || []).map(p => ({ n: p.name || '', d: p.desc || '', t: (p.tech || []).join(', ') })) : projects.map(p => ({ n: p[1], d: p[4], t: p[5].join(', ') }));
+  window.axProjHit = ql => !!(projList().find(p => p.n && ql.includes(p.n.toLowerCase())) || store.find(x => ql.includes(x[1].toLowerCase())));
+  const KB = [
+    [/who|about|atik|পরিচয়|কে|সম্পর্কে/, () => (D.aiSpeech && D.aiSpeech.about) || (D.name + ' — ' + D.title)],
+    [/project|প্রজেক্ট|website|ওয়েবসাইট/, () => 'Projects: ' + projList().map(p => p.n).join(', ') + '. Open the Projects section for details.'],
+    [/skill|দক্ষতা|স্কিল/, () => 'Skills: ' + (D.skills || []).map(x => x.name).join(', ') + '.'],
+    [/educat|study|experience|course|career|শিক্ষা|পড়া|অভিজ্ঞতা|কোর্স/, () => (D.education || []).map(e => e.degree + (e.inst ? ' — ' + e.inst : '')).join('; ') + '.'],
+    [/japan|জাপান/, 'Atik is on a Japanese language learning journey alongside his software and web development.'],
+    [/contact|email|phone|whatsapp|যোগাযোগ/, () => 'Email: ' + EM() + (WAf() ? ' — or message on WhatsApp: ' + WAf() : '') + '. You can also use the Contact section.'],
+    [/goal|future|লক্ষ্য/, 'Future goals: master advanced web & AI technologies, launch digital products, and join global tech projects.'],
+    [/store|price|product|buy/, 'The Digital Store is a concept: Portfolio UI System, Digital Identity Card and Web Starter Kit. Contact Atik for prices.'],
+    [/hello|hi|salam|সালাম|হ্যালো/, 'আসসালামু আলাইকুম! Ask me about Atik, projects, skills, experience or contact.']
+  ];
+
+  /* ---------- CSS ---------- */
+  const css = `
+  .ax{position:relative;z-index:10;max-width:1100px;margin:0 auto;padding:50px 20px}
+  .ax-eyebrow{font-family:var(--font-mono);color:var(--cyan-glow);letter-spacing:2px;font-size:.85rem;margin-bottom:8px}
+  .ax h2{font-family:var(--font-head);font-size:2rem;color:#fff;margin-bottom:10px}
+  .ax-sub{color:var(--text-dim);margin-bottom:25px}
+  .ax-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
+  .ax-card{background:var(--card-bg);border:1px solid rgba(0,240,255,.2);border-radius:14px;overflow:hidden;transition:.3s}
+  .ax-card:hover{border-color:var(--cyan-glow);transform:translateY(-4px)}
+  .ax-banner{height:140px;padding:14px;position:relative;display:flex;flex-direction:column;justify-content:space-between}
+  .ax-pill{font-family:var(--font-mono);font-size:.65rem;background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:3px 10px;width:max-content}
+  .ax-mono{position:absolute;right:12px;bottom:34px;font-family:var(--font-head);font-size:3rem;font-weight:900;opacity:.35}
+  .ax-bt{font-family:var(--font-sub);font-weight:700;font-size:1.2rem;color:#fff}
+  .ax-body{padding:16px}.ax-body p{color:var(--text-dim);font-size:.9rem;margin-bottom:12px}
+  .ax-btn{background:rgba(0,240,255,.08);border:1px solid var(--cyan-glow);color:#fff;border-radius:8px;padding:10px;width:100%;cursor:pointer;font-family:var(--font-sub);font-weight:600;transition:.3s}
+  .ax-btn:hover{background:var(--cyan-glow);color:#000}
+  .ax-tl{display:flex;flex-direction:column;gap:14px;border-left:2px solid var(--cyan-glow);padding-left:20px}
+  .ax-tl div{background:var(--card-bg);border:1px solid rgba(0,240,255,.2);border-radius:12px;padding:14px}
+  .ax-tl small{font-family:var(--font-mono);color:var(--cyan-glow)}
+  .ax-tl b{display:block;color:#fff;font-size:1.1rem;margin:3px 0}.ax-tl span{color:var(--text-dim);font-size:.9rem}
+  .ax-chat{background:var(--card-bg);border:1px solid var(--cyan-glow);border-radius:16px;overflow:hidden;box-shadow:0 0 25px rgba(0,240,255,.2)}
+  .ax-ch{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid rgba(0,240,255,.2)}
+  .ax-ch small{display:block;font-family:var(--font-mono);color:#4ade80;font-size:.7rem}
+  .ax-msgs{height:320px;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px}
+  .ax-m{max-width:85%;padding:10px 14px;border-radius:12px;font-size:.95rem;line-height:1.5;user-select:text;-webkit-user-select:text}
+  .ax-m.ai{background:rgba(30,58,138,.4);border:1px solid rgba(0,240,255,.25);align-self:flex-start}
+  .ax-m.u{background:rgba(112,0,255,.25);border:1px solid rgba(112,0,255,.5);align-self:flex-end}
+  .ax-chips{display:flex;flex-wrap:wrap;gap:8px;padding:0 16px 12px}
+  .ax-chip{background:transparent;border:1px solid rgba(0,240,255,.3);color:var(--text-dim);border-radius:20px;padding:5px 12px;font-size:.8rem;cursor:pointer}
+  .ax-chip:hover{color:var(--cyan-glow);border-color:var(--cyan-glow)}
+  .ax-in{display:flex;gap:8px;padding:12px 16px;border-top:1px solid rgba(0,240,255,.2)}
+  .ax-in input{flex:1;min-width:0;background:rgba(0,0,0,.5);border:1px solid rgba(0,240,255,.3);border-radius:8px;padding:12px;color:#fff;font-size:1rem;outline:none;user-select:text;-webkit-user-select:text}
+  .ax-ib{width:46px;background:rgba(0,240,255,.1);border:1px solid var(--cyan-glow);color:#fff;border-radius:8px;cursor:pointer}
+  .ax-ib.on{background:#ef4444;border-color:#ef4444}
+  .ax-send{background:var(--cyan-glow);color:#000;font-weight:800;border:0;border-radius:8px;padding:0 18px;cursor:pointer}
+  .ax-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0}
+  .ax-stats div{background:rgba(0,0,0,.35);border:1px solid rgba(0,240,255,.2);border-radius:10px;padding:14px}
+  .ax-stats b{display:block;font-family:var(--font-head);font-size:1.5rem;color:var(--cyan-glow)}
+  .ax-stats span{font-size:.75rem;color:var(--text-dim)}
+  .ax-panel{background:var(--card-bg);border:1px solid rgba(0,240,255,.25);border-radius:14px;padding:20px}
+  .ax-row{display:block;text-decoration:none;color:#fff;background:rgba(255,255,255,.03);border:1px solid rgba(0,240,255,.2);border-radius:10px;padding:12px;margin-bottom:10px;cursor:pointer}
+  .ax-row small{display:block;font-family:var(--font-mono);color:var(--text-dim);font-size:.7rem}
+  @media(max-width:600px){.ax h2{font-size:1.5rem}}`;
+  const st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
+
+  /* ---------- HTML ---------- */
+  const sec = (eyebrow, title, sub, body, id) =>
+    `<section class="ax" ${id ? 'id="' + id + '"' : ''}><div class="ax-eyebrow">— ${eyebrow}</div><h2>${title}</h2><div class="ax-sub">${sub}</div>${body}</section>`;
+
+  const projHTML = '<div class="ax-grid" id="axProjGrid"></div>';
+  const tlHTML = '<div class="ax-tl" id="axTl"></div>';
+
+  const storeHTML = '<div class="ax-grid">' + store.map(s => `
+    <div class="ax-card"><div class="ax-banner" style="height:110px;align-items:center;justify-content:center;background:linear-gradient(135deg,#1e3a8a,#312e81);font-size:2.5rem;color:#93c5fd">${s[4]}</div>
+    <div class="ax-body"><div class="ax-eyebrow">— ${s[0]}</div><div class="ax-bt" style="margin-bottom:6px">${s[1]}</div><p>${s[2]}</p>
+    <p style="font-family:var(--font-mono);font-size:.75rem;display:flex;justify-content:space-between"><span>Contact for price</span><span>${s[3]}</span></p>
+    <button class="ax-btn" onclick="axAsk('Tell me about ${s[1]}')">Ask about this item →</button></div></div>`).join('') + '</div>';
+
+  const chatHTML = `<div class="ax-chat">
+    <div class="ax-ch"><div><b style="color:#fff">ATIK AI</b><small>● KNOWLEDGE NODE ONLINE</small></div>
+      <div><button class="ax-ib" style="width:auto;padding:6px 10px;margin-right:6px" id="axVoice" onclick="axToggleVoice()" title="Voice replies">🔊</button><button class="ax-ib" style="width:auto;padding:6px 10px" onclick="axClear()" title="Clear">⌫</button></div></div>
+    <div class="ax-msgs" id="axMsgs"></div>
+    <div class="ax-chips">${['Who is Atik?','Show projects','What are his skills?','Experience & courses','Japanese journey'].map(c => `<button class="ax-chip" onclick="axAsk('${c}')">${c}</button>`).join('')}</div>
+    <div class="ax-in"><button class="ax-ib" id="axMic" onclick="axMic()" title="Speak">🎤</button>
+      <input id="axInput" placeholder="Ask ATIK AI about Atik..." onkeydown="if(event.key==='Enter')axSend()"><button class="ax-send" onclick="axSend()">SEND</button></div></div>`;
+
+  const ctrlHTML = `<div class="ax-panel"><div class="ax-eyebrow">— AI CONTROL CENTER</div><b style="color:#fff;font-size:1.2rem">Portfolio intelligence, safely designed.</b>
+    <p class="ax-sub" style="margin-top:8px">ATIK AI answers from the public portfolio data. No API key, no external AI service, no private data.</p>
+    <div class="ax-stats"><div><b id="axStP">0</b><span>PROJECT NODES</span></div><div><b id="axStS">0</b><span>SKILL SIGNALS</span></div><div><b>LOCAL</b><span>AI MODE</span></div><div><b>READY</b><span>API ARCHITECTURE</span></div></div>
+    <b style="color:#fff">Voice interface</b><p class="ax-sub" style="margin:6px 0 12px">The mic button uses browser speech recognition when supported; otherwise typing works.</p>
+    <button class="ax-btn" style="width:auto;padding:10px 20px" onclick="axGreet()">Hear ATIK AI greeting 🔊</button></div>`;
+
+  const connHTML = `<div class="ax-grid" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr))">
+    <div class="ax-panel"><b style="color:#fff;font-size:1.2rem">Social identity channels</b><p class="ax-sub" style="margin:6px 0 14px">Reach Atik directly.</p>
+      <div id="axConnRows"></div>
+      <a class="ax-row" onclick="switchSection('social')"><small>SOCIAL PROFILES</small>GitHub, LinkedIn, Facebook and more</a></div>
+    <div class="ax-panel"><b style="color:#fff;font-size:1.2rem">Transmit a message</b><p class="ax-sub" style="margin:6px 0 14px">Opens your mail app with the message ready.</p>
+      <div class="contact-form"><input id="axN" class="form-input" placeholder="Name"><input id="axE" class="form-input" placeholder="email@example.com">
+      <textarea id="axM" class="form-input" placeholder="Write your message..."></textarea>
+      <button class="ai-btn ai-btn-primary" style="justify-content:center;padding:12px" onclick="axMail()">SEND MESSAGE</button></div></div></div>`;
+
+  const wrap = document.createElement('div');
+  wrap.innerHTML =
+    sec('03 / BUILD ARCHIVE', 'Projects as product ideas.', 'Select any project to ask ATIK AI about it.', projHTML, 'ax-projects') +
+    sec('04 / EXPERIENCE TIMELINE', 'Every milestone becomes part of the system.', 'Professional experience, courses, technology learning and future ambitions.', tlHTML, 'ax-timeline') +
+    sec('07 / DIGITAL STORE', 'A store module for future products.', 'Frontend catalogue only. No payments processed.', storeHTML) +
+    sec('08 / ATIK AI', 'Your guide inside the digital core.', 'Runs locally on the portfolio data. Type or speak — it can talk back.', chatHTML + ctrlHTML.replace('class="ax-panel"', 'class="ax-panel" style="margin-top:20px"'), 'ax-ai') +
+    sec('09 / CONNECTION CENTER', 'Start a conversation.', 'Contact channels and message form.', connHTML);
+  const host = document.querySelector('main') || document.body;
+  host.appendChild(wrap);
+
+  /* ---------- LIVE RENDER (reflects admin changes) ---------- */
+  const PAL = ['#0e7490,#1e3a8a','#4338ca,#7e22ce','#0f766e,#1e40af','#9a3412,#9d174d','#155e75,#0f766e','#9f1239,#3730a3'];
+  const CATL = { WEB: 'WEB PROJECT', AI: 'ARTIFICIAL INTELLIGENCE', APP: 'APPLICATION', GAME: 'GAME CONCEPT', SECURITY: 'SECURITY' };
+  function buildCards() {
+    if (!custom()) return projects.map(p => p.concat(['', '']));
+    return (D.projects || []).map((p, i) => {
+      const mono = (p.name || '?').split(/\s+/).filter(Boolean).slice(0, 2).map(w => w[0]).join('').toUpperCase() || '?';
+      const bt = [];
+      if (p.link) bt.push(`<a class="ax-btn" style="display:block;text-align:center;text-decoration:none;margin-bottom:8px" href="${Eh(p.link)}" target="_blank" rel="noopener">VIEW LIVE ↗</a>`);
+      (p.files || []).forEach(f => bt.push(f.kind === 'video' ? `<button class="ax-btn" style="margin-bottom:8px" onclick="axPlay('${f.id}')">▶ WATCH: ${Eh(f.name)}</button>` : `<button class="ax-btn" style="margin-bottom:8px" onclick="axDl('${f.id}')">⬇ FREE DOWNLOAD: ${Eh(f.name)}</button>`));
+      return [mono, Eh(p.name), Eh(CATL[p.category] || p.category || 'PROJECT'), p.link ? 'LIVE' : ((p.files || []).length ? 'FREE DOWNLOAD' : 'IN DEVELOPMENT'), Eh(p.desc), (p.tech || []).map(Eh), PAL[i % PAL.length], bt.join(''), String(p.name || '').replace(/["'\\<>&]/g, '')];
     });
-
-    data.uploadedFiles.push({
-      id:record.id,
-      name:record.name,
-      type:record.type,
-      size:record.size,
-      description:record.description,
-      kind:"digital",
-      createdAt:record.createdAt
-    });
-
-    saveData();
-
-    input.value="";
-    document.getElementById("fileDescription").value="";
-
-    renderFileList();
-
-    toast("File saved successfully.");
-
-  }catch(e){
-
-    toast("Could not save file.");
   }
-}
-
-function renderFileList(){
-
-  const el=document.getElementById("fileList");
-
-  if(!el)return;
-
-  const files=data.uploadedFiles.filter(f=>f.kind==="digital");
-
-  if(!files.length){
-    el.innerHTML=`
-      <div style="color:#62768d;font-size:10px">
-        No uploaded digital files.
-      </div>`;
-    return;
+  function renderProj() {
+    cards = buildCards(); const g = document.getElementById('axProjGrid'); if (!g) return;
+    g.innerHTML = cards.length ? cards.map((p, i) => `
+    <div class="ax-card"><div class="ax-banner" style="background:linear-gradient(135deg,${p[6]})">
+      <div style="display:flex;justify-content:space-between"><span class="ax-pill">${p[2]}</span><span class="ax-pill">● ${p[3]}</span></div>
+      <div class="ax-mono">${p[0]}</div><div class="ax-bt">${p[1]}</div></div>
+      <div class="ax-body"><p>${p[4]}</p><div class="project-tech">${p[5].map(t => `<span class="tech-tag">${t}</span>`).join('')}</div>
+      <button class="ax-btn" onclick="axProject(${i})">ENTER PROJECT INTERFACE →</button></div></div>`).join('') : '<p class="ax-sub">Projects coming soon.</p>';
   }
-
-  el.innerHTML=files.map(f=>`
-
-    <div class="admin-list-item">
-
-      <div>
-        <strong>${esc(f.name)}</strong>
-        <small>${formatBytes(f.size)} • ${esc(f.type || "file")}</small>
-        <small>${esc(f.description || "")}</small>
-      </div>
-
-      <div class="admin-actions">
-
-        <button class="ai-btn" onclick="downloadStoredFile('${esc(f.id)}')">
-          DOWNLOAD
-        </button>
-
-        <button class="ai-btn danger" onclick="deleteStoredFile('${esc(f.id)}')">
-          DELETE
-        </button>
-
-      </div>
-
-    </div>
-
-  `).join("");
-}
-
-function formatBytes(bytes){
-
-  if(!bytes)return "0 B";
-
-  const units=["B","KB","MB","GB"];
-  const i=Math.floor(Math.log(bytes)/Math.log(1024));
-
-  return `${(bytes/Math.pow(1024,i)).toFixed(i?1:0)} ${units[i]}`;
-}
-
-async function downloadStoredFile(id){
-
-  const record=await getBlobFile(id);
-
-  if(!record){
-    toast("File not found.");
-    return;
+  function renderTl() {
+    const t = document.getElementById('axTl'); if (!t) return;
+    t.innerHTML = (D.education || []).map(e => `<div><small>${Eh(e.year)}</small><b>${Eh(e.degree)}</b><span>${Eh(e.inst)}</span></div>`).join('');
   }
-
-  const url=URL.createObjectURL(record.blob);
-
-  const a=document.createElement("a");
-
-  a.href=url;
-  a.download=record.name;
-
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
-
-  setTimeout(()=>{
-    URL.revokeObjectURL(url);
-  },2000);
-}
-
-async function deleteStoredFile(id){
-
-  if(!confirm("Delete this file?"))return;
-
-  await deleteBlobFile(id);
-
-  data.uploadedFiles=
-    data.uploadedFiles.filter(f=>f.id!==id);
-
-  data.products.forEach(p=>{
-    if(p.fileId===id)p.fileId="";
-  });
-
-  saveData();
-
-  renderFileList();
-  renderProducts();
-
-  toast("File deleted.");
-}
-
-
-/* =========================================================
-   PRE-RECORDED VOICE UPLOAD
-   ========================================================= */
-
-async function uploadVoiceFile(){
-
-  const input=document.getElementById("voiceFile");
-  const file=input.files[0];
-
-  const trigger=document
-    .getElementById("voiceTrigger")
-    .value
-    .trim();
-
-  if(!file || !trigger){
-    toast("Audio file and trigger are required.");
-    return;
+  function renderStats() {
+    const a = document.getElementById('axStP'), b = document.getElementById('axStS');
+    if (a) a.textContent = String(cards.length).padStart(2, '0'); if (b) b.textContent = (D.skills || []).length;
   }
-
-  try{
-
-    const record=await saveBlobFile(file,{
-      description:trigger,
-      kind:"voice"
-    });
-
-    data.ai.voiceResponses.push({
-      id:record.id,
-      trigger,
-      name:file.name
-    });
-
-    data.uploadedFiles.push({
-      id:record.id,
-      name:file.name,
-      type:file.type,
-      size:file.size,
-      description:trigger,
-      kind:"voice",
-      createdAt:record.createdAt
-    });
-
-    saveData();
-
-    input.value="";
-    document.getElementById("voiceTrigger").value="";
-
-    renderVoiceList();
-
-    toast("Voice response saved.");
-
-  }catch(e){
-
-    toast("Could not save audio.");
+  function renderConn() {
+    const c = document.getElementById('axConnRows'); if (!c) return; const em = EM(), wa = WAf();
+    c.innerHTML = `<a class="ax-row" href="mailto:${Eh(em)}"><small>EMAIL</small>${Eh(em) || 'Available through contact form'}</a><a class="ax-row" href="${Eh(wa) || '#'}" target="_blank" rel="noopener"><small>WHATSAPP</small>Message on WhatsApp</a>`;
   }
-}
+  window.axRefresh = () => { renderProj(); renderTl(); renderStats(); renderConn(); };
+  axRefresh();
 
-function renderVoiceList(){
-
-  const container=document.getElementById("voiceList");
-
-  if(!container)return;
-
-  const list=data.ai.voiceResponses || [];
-
-  if(!list.length){
-    container.innerHTML=`
-      <div style="color:#62768d;font-size:10px">
-        No saved voice responses.
-      </div>`;
-    return;
+  /* ---------- CHAT LOGIC ---------- */
+  let voiceOn = true;
+  const msgs = () => document.getElementById('axMsgs');
+  function add(text, who) {
+    const d = document.createElement('div'); d.className = 'ax-m ' + who; d.textContent = text;
+    msgs().appendChild(d); msgs().scrollTop = msgs().scrollHeight;
   }
-
-  container.innerHTML=list.map(v=>`
-
-    <div class="admin-list-item">
-
-      <div>
-        <strong>${esc(v.trigger)}</strong>
-        <small>${esc(v.name)}</small>
-      </div>
-
-      <div class="admin-actions">
-
-        <button class="ai-btn" onclick="playVoiceFile('${esc(v.id)}')">
-          PLAY
-        </button>
-
-        <button class="ai-btn danger" onclick="deleteVoiceFile('${esc(v.id)}')">
-          DELETE
-        </button>
-
-      </div>
-
-    </div>
-
-  `).join("");
-}
-
-
-/* =========================================================
-   VOICE MATCHING
-   ========================================================= */
-
-async function tryPlayConfiguredVoice(text){
-
-  const list=data.ai.voiceResponses || [];
-
-  const match=list.find(v=>
-    text.toLowerCase().includes(v.trigger.toLowerCase())
-  );
-
-  if(!match)return false;
-
-  await playVoiceFile(match.id);
-
-  return true;
-}
-
-async function playVoiceFile(id){
-
-  const record=await getBlobFile(id);
-
-  if(!record){
-    toast("Voice file not found.");
-    return;
+  function reply(q) {
+    if (window.axCustomReply) { const c = window.axCustomReply(q); if (c) return c; }
+    const ql = q.toLowerCase();
+    const hit = projList().find(p => p.n && ql.includes(p.n.toLowerCase()));
+    if (hit) return hit.n + (hit.d ? ': ' + hit.d : '') + (hit.t ? ' Tech: ' + hit.t + '.' : '');
+    const sh = store.find(x => ql.includes(x[1].toLowerCase())); if (sh) return sh[1] + ': ' + sh[2];
+    for (const [re, ans] of KB) if (re.test(ql)) return typeof ans === 'function' ? ans() : ans;
+    if (window.axFallbackText) return window.axFallbackText;
+    return 'I can tell you about Atik\'s identity, projects, skills, experience, Japanese journey, goals or contact info. Try one of the quick buttons!';
   }
-
-  const url=URL.createObjectURL(record.blob);
-
-  const audio=new Audio(url);
-
-  audio.onended=()=>{
-    URL.revokeObjectURL(url);
+  function say(t) {
+    if (!voiceOn || window.axCfgVoice === false) return;
+    if (typeof speakText === 'function') speakText(t);
+    else if ('speechSynthesis' in window) speechSynthesis.speak(new SpeechSynthesisUtterance(t));
+  }
+  window.axAsk = q => {
+    add(q, 'u'); const a = reply(q); setTimeout(() => { add(a, 'ai'); say(a); }, 250);
+    document.getElementById('ax-ai').scrollIntoView({ behavior: 'smooth' });
+  };
+  window.axSend = () => { const i = document.getElementById('axInput'); const v = i.value.trim(); if (v) { i.value = ''; axAsk(v); } };
+  window.axClear = () => { msgs().innerHTML = ''; add('Chat cleared. Ask me anything about Atik.', 'ai'); };
+  window.axToggleVoice = () => {
+    voiceOn = !voiceOn; document.getElementById('axVoice').textContent = voiceOn ? '🔊' : '🔇';
+    if (!voiceOn && 'speechSynthesis' in window) speechSynthesis.cancel();
+  };
+  window.axGreet = () => {
+    const g = (D.aiSpeech && D.aiSpeech.greeting) || 'Hello! I am Atik\'s digital AI assistant.';
+    add(g, 'ai'); const was = voiceOn; voiceOn = true; say(g); voiceOn = was;
+  };
+  window.axMic = () => {
+    const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SR) { add('Voice input is not supported in this browser. Please type instead.', 'ai'); return; }
+    const r = new SR(), b = document.getElementById('axMic');
+    r.lang = 'bn-BD'; r.interimResults = false;
+    r.onstart = () => b.classList.add('on'); r.onend = () => b.classList.remove('on');
+    r.onresult = e => { document.getElementById('axInput').value = e.results[0][0].transcript; axSend(); };
+    r.onerror = () => add('Could not hear you. Please allow microphone access and try again.', 'ai');
+    r.start();
+  };
+  window.axMail = () => {
+    const n = axN.value, e = axE.value, m = axM.value;
+    location.href = 'mailto:' + EM() + '?subject=' + encodeURIComponent('Portfolio message from ' + n) + '&body=' + encodeURIComponent(m + '\n\nReply to: ' + e);
+  };
+  /* ---------- PROJECT DETAIL INTERFACE ---------- */
+  window.axProject = name => {
+    const p = typeof name === 'number' ? cards[name] : cards.find(x => x[1] === name); if (!p) return;
+    let m = document.getElementById('modal-axproj');
+    if (!m) { m = document.createElement('div'); m.id = 'modal-axproj'; m.className = 'section-modal'; document.body.appendChild(m); }
+    m.innerHTML = `<div class="modal-content" style="padding:0">
+      <div class="modal-close" style="z-index:2" onclick="document.getElementById('modal-axproj').classList.remove('active')"><i class="fa-solid fa-xmark"></i></div>
+      <div class="ax-banner" style="height:170px;background:linear-gradient(135deg,${p[6]});border-radius:12px 12px 0 0">
+        <span class="ax-pill">${p[2]}</span><div class="ax-mono" style="bottom:50px">${p[0]}</div><div class="ax-bt" style="font-size:1.6rem">${p[1]}</div></div>
+      <div style="padding:24px"><p class="ax-pill" style="margin-bottom:14px">● ${p[3]}</p>
+        <p style="color:var(--text-dim);line-height:1.7;margin-bottom:16px">${p[4]}</p>
+        <div class="ax-eyebrow">— TECH STACK</div><div class="project-tech" style="margin-bottom:20px">${p[5].map(t => `<span class="tech-tag">${t}</span>`).join('')}</div>
+        ${p[7] || ''}<button class="ax-btn" onclick="document.getElementById('modal-axproj').classList.remove('active');axAsk('Tell me about ${p[8] || p[1]}')">Ask ATIK AI about this project 🎤</button></div></div>`;
+    requestAnimationFrame(() => m.classList.add('active'));
   };
 
-  try{
-    await audio.play();
-  }catch(e){
-    toast("Tap the page once, then play the audio again.");
-  }
-}
-
-async function deleteVoiceFile(id){
-
-  if(!confirm("Delete this voice response?"))return;
-
-  await deleteBlobFile(id);
-
-  data.ai.voiceResponses=
-    data.ai.voiceResponses.filter(v=>v.id!==id);
-
-  data.uploadedFiles=
-    data.uploadedFiles.filter(f=>f.id!==id);
-
-  saveData();
-
-  renderVoiceList();
-
-  toast("Voice response deleted.");
-}
-
-
-/* =========================================================
-   SOCIAL ADMIN
-   ========================================================= */
-
-function renderSocialEditor(){
-
-  const el=document.getElementById("socialEditor");
-
-  if(!el)return;
-
-  el.innerHTML=Object.entries(data.social).map(([name,url])=>`
-
-    <div class="form-group">
-
-      <label>${esc(name)}</label>
-
-      <input
-        data-social="${esc(name)}"
-        value="${esc(url)}"
-        placeholder="https://..."
-      >
-
-    </div>
-
-  `).join("");
-}
-
-function saveSocial(){
-
-  document.querySelectorAll("[data-social]").forEach(input=>{
-    const name=input.dataset.social;
-    data.social[name]=input.value.trim();
-  });
-
-  saveData();
-  renderSocial();
-
-  toast("Social links saved.");
-}
-
-
-/* =========================================================
-   STRUCTURE SAVE
-   ========================================================= */
-
-function saveStructure(){
-
-  data.structure.about=
-    document.getElementById("showAbout").checked;
-
-  data.structure.projects=
-    document.getElementById("showProjects").checked;
-
-  data.structure.store=
-    document.getElementById("showStore").checked;
-
-  data.structure.skills=
-    document.getElementById("showSkills").checked;
-
-  data.structure.education=
-    document.getElementById("showEducation").checked;
-
-  data.structure.social=
-    document.getElementById("showSocial").checked;
-
-  data.structure.contact=
-    document.getElementById("showContact").checked;
-
-  saveData();
-  renderStructure();
-
-  toast("Website structure updated.");
-}
-
-
-/* =========================================================
-   SYSTEM SETTINGS
-   ========================================================= */
-
-function saveSettings(){
-
-  data.settings.particles=
-    document.getElementById("particlesEnabled").checked;
-
-  data.settings.scanlines=
-    document.getElementById("scanlineEnabled").checked;
-
-  data.settings.reducedMotion=
-    document.getElementById("reducedMotion").checked;
-
-  saveData();
-
-  applySettings();
-
-  toast("System settings saved.");
-}
-
-function applySettings(){
-
-  document.body.classList.toggle(
-    "no-motion",
-    data.settings.reducedMotion
-  );
-
-  document.getElementById("matrix").style.display=
-    data.settings.particles ? "block":"none";
-
-  document.body.classList.toggle(
-    "hide-scanlines",
-    !data.settings.scanlines
-  );
-}
-
-
-/* =========================================================
-   BACKUP / RESTORE
-   ========================================================= */
-
-function exportData(){
-
-  const blob=new Blob(
-    [JSON.stringify(data,null,2)],
-    {type:"application/json"}
-  );
-
-  const url=URL.createObjectURL(blob);
-
-  const a=document.createElement("a");
-
-  a.href=url;
-  a.download="atik-nexus-backup.json";
-
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
-
-  setTimeout(()=>{
-    URL.revokeObjectURL(url);
-  },1000);
-
-  toast("Backup exported.");
-}
-
-function importData(event){
-
-  const file=event.target.files[0];
-
-  if(!file)return;
-
-  const reader=new FileReader();
-
-  reader.onload=()=>{
-
-    try{
-
-      const imported=JSON.parse(reader.result);
-
-      data=mergeData(
-        deepClone(DEFAULT_DATA),
-        imported
-      );
-
-      saveData();
-
-      renderAll();
-      fillAdminForms();
-
-      toast("Backup imported.");
-
-    }catch(e){
-
-      toast("Invalid JSON backup.");
-    }
-
-  };
-
-  reader.readAsText(file);
-}
-
-async function resetData(){
-
-  if(!confirm(
-    "This will reset the website's local data. Continue?"
-  ))return;
-
-  data=deepClone(DEFAULT_DATA);
-
-  saveData();
-
-  renderAll();
-  fillAdminForms();
-
-  toast("Nexus data reset.");
-}
-
-
-/* =========================================================
-   MATRIX BACKGROUND
-   ========================================================= */
-
-function initMatrix(){
-
-  const canvas=document.getElementById("matrix");
-  const ctx=canvas.getContext("2d");
-
-  let width=canvas.width=window.innerWidth;
-  let height=canvas.height=window.innerHeight;
-
-  const chars="01ATIKNEXUS<>/{}[]#$%";
-  const size=15;
-
-  let columns=Math.floor(width/size);
-  let drops=Array(columns).fill(1);
-
-  function resize(){
-
-    width=canvas.width=window.innerWidth;
-    height=canvas.height=window.innerHeight;
-
-    columns=Math.floor(width/size);
-
-    drops=Array(columns).fill(1);
-  }
-
-  window.addEventListener("resize",resize);
-
-  function draw(){
-
-    if(!data.settings.particles){
-      requestAnimationFrame(draw);
-      return;
-    }
-
-    ctx.fillStyle="rgba(5,7,18,.075)";
-    ctx.fillRect(0,0,width,height);
-
-    ctx.font=size+"px Share Tech Mono";
-
-    for(let i=0;i<drops.length;i++){
-
-      const char=
-        chars[Math.floor(Math.random()*chars.length)];
-
-      ctx.fillStyle=
-        i%7===0
-        ? "rgba(139,92,255,.30)"
-        : "rgba(0,234,255,.22)";
-
-      ctx.fillText(
-        char,
-        i*size,
-        drops[i]*size
-      );
-
-      if(
-        drops[i]*size>height &&
-        Math.random()>.975
-      ){
-        drops[i]=0;
-      }
-
-      drops[i]+=.45;
-    }
-
-    requestAnimationFrame(draw);
-  }
-
-  draw();
-}
-
-
-/* =========================================================
-   IMAGE FALLBACK
-   ========================================================= */
-
-function handleImageError(img){
-
-  img.style.display="none";
-
-  document.getElementById("avatarBox")
-    .classList.remove("has-image");
-}
-
-
-/* =========================================================
-   AUTO PLAY PRE-RECORDED VOICE BEFORE TTS
-   ========================================================= */
-
-const originalProcessCommand=processCommand;
-
-processCommand=async function(raw){
-
-  if(data.ai.assistantEnabled){
-
-    const played=await tryPlayConfiguredVoice(raw);
-
-    if(played){
-      updateAI("Playing the configured administrator voice response.");
-      return;
-    }
-
-  }
-
-  return originalProcessCommand(raw);
-};
-
-
-/* =========================================================
-   INITIAL SETTINGS
-   ========================================================= */
-
-applySettings();
+  /* ---------- HEADER STATUS + SPEAKING STATE ---------- */
+  const hb = document.querySelector('header .brand-logo');
+  if (hb && !document.getElementById('axStat')) hb.insertAdjacentHTML('afterend', '<span id="axStat" style="font-family:var(--font-mono);font-size:.65rem;color:#4ade80">● SYSTEM ONLINE</span>');
+
+  window.axAdd = add; window.axSay = say;
+})();
 
 </script>
-
-</body>
-  </html>
+<style>
+#axStat{display:none!important}
+.ax-live{position:absolute;right:-34px;top:20px;z-index:12;display:flex;align-items:center;gap:8px;background:rgba(0,15,30,.92);border:1px solid var(--cyan-glow);border-radius:18px;padding:6px 12px;font-family:var(--font-mono);font-size:.62rem;letter-spacing:1px;color:var(--cyan-glow);box-shadow:0 0 14px rgba(0,240,255,.5);cursor:pointer;animation:axg 2s ease-in-out infinite alternate}
+.ax-live small{display:block;color:var(--text-dim);font-size:.55rem}
+.ax-wv{display:flex;gap:2px;align-items:center;height:18px}
+.ax-wv i{width:3px;height:30%;background:var(--cyan-glow);border-radius:2px;box-shadow:0 0 6px var(--cyan-glow);animation:axw 1.2s ease-in-out infinite alternate}
+.ax-wv i:nth-child(2){animation-delay:.15s}.ax-wv i:nth-child(3){animation-delay:.3s}.ax-wv i:nth-child(4){animation-delay:.45s}.ax-wv i:nth-child(5){animation-delay:.6s}
+.ax-live.talk .ax-wv i{animation-duration:.35s}
+.ax-live.talk{box-shadow:0 0 26px var(--cyan-glow)}
+body.ax-talking .ring-glow{box-shadow:0 0 70px var(--cyan-glow),inset 0 0 30px var(--cyan-glow)}
+@keyframes axw{0%{height:20%}100%{height:100%}}@keyframes axg{0%{box-shadow:0 0 8px rgba(0,240,255,.3)}100%{box-shadow:0 0 18px rgba(0,240,255,.7)}}
+@media(max-width:768px){.ax-live{right:-22px;top:6px}}
+</style>
+<script>
+(function(){
+const $=id=>document.getElementById(id),w=document.querySelector('.avatar-center-wrapper');
+if(!w)return;
+w.insertAdjacentHTML('beforeend','<div class="ax-live" id="axLive" title="Tap to talk"><span class="ax-wv"><i></i><i></i><i></i><i></i><i></i></span><span><b id="axLiveT">AI ACTIVE</b><small id="axLiveS">TAP TO TALK</small></span></div>');
+const live=$('axLive'),T=$('axLiveT'),S=$('axLiveS');
+const setTalk=on=>{live.classList.toggle('talk',on);document.body.classList.toggle('ax-talking',on);T.textContent=on?'SPEAKING':'AI ACTIVE';S.textContent=on?'LISTEN...':'READY TO TALK';
+if(typeof setVisualizerActive==='function')setVisualizerActive(on);
+const st=$('speech-status'),tg=$('ai-status-tag');if(st)st.innerText=on?'● AI SPEAKING...':'● AI ONLINE';if(tg)tg.innerText=on?'ATIK AI • SPEAKING':'ATIK AI • ONLINE'};
+let voices=[];const lv=()=>{voices=speechSynthesis.getVoices()};
+if('speechSynthesis' in window){lv();speechSynthesis.onvoiceschanged=lv}
+window.speakText=function(text){
+if(!('speechSynthesis' in window)){if(typeof showToast==='function')showToast('Speech not supported in this browser.');return}
+if(window.axCfgVoice===false)return;
+speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text),bn=/[\u0980-\u09FF]/.test(text);
+const v=bn?voices.find(x=>/bn/i.test(x.lang)):(voices.find(x=>/en/i.test(x.lang)&&/google|david|daniel|male/i.test(x.name))||voices.find(x=>/en/i.test(x.lang)));
+if(v)u.voice=v;u.lang=bn?'bn-BD':'en-US';u.pitch=.55;u.rate=.92;
+u.onstart=()=>{window.axSpokeOnce=true;setTalk(true)};u.onend=u.onerror=()=>setTalk(false);
+speechSynthesis.speak(u)};
+if(typeof stopSpeaking==='function'){const _s=stopSpeaking;window.stopSpeaking=function(){_s();setTalk(false)}}
+const greet=()=>(typeof AIgreet==='function'?AIgreet():window.AX_GREET)||'';
+live.onclick=()=>{const t=greet();if(typeof updateAIDisplay==='function')updateAIDisplay(t);speakText(t)};
+function entry(){const t=greet();if(!t)return;if(typeof updateAIDisplay==='function')updateAIDisplay(t);speakText(t);
+setTimeout(()=>{if(window.axSpokeOnce)return;S.textContent='TAP ANYWHERE TO HEAR';
+const ev=['pointerdown','keydown','touchstart'],go=()=>{ev.forEach(e=>removeEventListener(e,go,true));if(!window.axSpokeOnce)speakText(t)};ev.forEach(e=>addEventListener(e,go,true))},1500)}
+const start=()=>setTimeout(entry,1500);
+if(document.readyState==='complete')start();else addEventListener('load',start);
+})();
+</script>
+<style>
+.ax-dual{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:560px;width:100%;margin:6px auto 0;position:relative;z-index:6}
+.ax-dbtn{background:var(--card-bg);border:1px solid var(--cyan-glow);border-radius:14px;padding:16px 8px;color:#fff;font-family:var(--font-head);cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;box-shadow:0 0 18px rgba(0,240,255,.25);backdrop-filter:blur(5px);transition:.3s}
+.ax-dbtn i{font-size:2rem;color:var(--cyan-glow);filter:drop-shadow(0 0 8px var(--cyan-glow))}
+.ax-dbtn b{font-size:.85rem;letter-spacing:1px}.ax-dbtn small{font-family:var(--font-mono);font-size:.65rem;color:var(--text-dim)}
+.ax-dbtn:hover,.ax-dbtn:active{background:rgba(0,240,255,.15);box-shadow:0 0 28px rgba(0,240,255,.5);transform:translateY(-3px)}
+.modal-content .sec-title{padding-right:52px}
+@media(max-width:992px){.avatar-center-wrapper{margin:78px 0 84px}}
+.avatar-center-wrapper{pointer-events:auto}
+@media(max-width:768px){.modal-content .sec-title{font-size:1.25rem}
+.nav-links{top:var(--hdr-h,70px)!important;height:calc(100vh - var(--hdr-h,70px))!important;width:min(72vw,280px)!important;background:rgba(3,7,18,.985)!important;box-shadow:-8px 0 30px rgba(0,0,0,.6);gap:6px}
+.nav-links a{display:block}}
+</style>
+<script>(function(){const h=document.querySelector('header'),set=()=>h&&document.documentElement.style.setProperty('--hdr-h',h.offsetHeight+'px');set();addEventListener('resize',set);addEventListener('load',set);setTimeout(set,1500);
+document.addEventListener('click',e=>{const n=document.getElementById('nav-links');if(n&&n.classList.contains('open')&&!e.target.closest('#nav-links')&&!e.target.closest('.menu-btn'))closeMenu()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()})})();</script>
+<script>(function(){const im=document.getElementById('avatar-img');const chk=()=>{if(im&&im.complete&&!im.naturalWidth&&typeof handleImageError==='function')handleImageError(im)};addEventListener('load',()=>setTimeout(chk,300))})();</script>
+</body></html>
