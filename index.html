@@ -113,8 +113,37 @@ textarea.form-input{min-height:100px;resize:vertical}
 @media(max-width:992px){.hud-nodes-container{position:relative;max-width:100%;flex-direction:column;gap:15px;margin-top:30px}.hud-col{width:100%;flex-direction:row;flex-wrap:wrap;justify-content:center}.hud-card-btn{width:45%;min-width:150px}.hud-col.right .hud-card-btn:hover,.hud-card-btn:hover{transform:translateY(-3px)}.avatar-matrix-section{flex-direction:column;min-height:auto}}
 @media(max-width:768px){.nav-links{position:fixed;top:60px;right:-100%;width:250px;height:calc(100vh - 60px);background:rgba(3,7,18,.95);backdrop-filter:blur(10px);border-left:1px solid var(--cyan-glow);flex-direction:column;padding:30px 20px;transition:right .4s}.nav-links.open{right:0}.menu-btn{display:block}.hero-title{font-size:1.6rem}.avatar-center-wrapper{width:260px;height:260px}.avatar-box{width:210px;height:210px}.hud-card-btn{width:100%}.modal-content{padding:20px}}
 #axStat{padding:10px 6px;cursor:default}
-</style><script>function handleImageError(i){window._imgErr=i}</script></head>
+</style><script>function handleImageError(i){window._imgErr=i}</script>
+<script>/* ANALYTICS SERVER (optional): paste the address of your deployed atik-analytics-worker.js between the last two quotes, e.g. window.AX_ANALYTICS_URL=window.AX_ANALYTICS_URL||'https://atik-analytics.YOURNAME.workers.dev'; */
+window.AX_ANALYTICS_URL=window.AX_ANALYTICS_URL||'';</script></head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+<linearGradient id="axgA" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8ff7ea"/><stop offset=".55" stop-color="#4fc3f7"/><stop offset="1" stop-color="#2f6be0"/></linearGradient>
+<linearGradient id="axgB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#46d2ff"/><stop offset="1" stop-color="#1c3fa8"/></linearGradient>
+<radialGradient id="axgC" cx=".5" cy=".4" r=".7"><stop offset="0" stop-color="#2a8cff" stop-opacity=".55"/><stop offset="1" stop-color="#0a1f55" stop-opacity=".1"/></radialGradient>
+<filter id="axgf" x="-25%" y="-25%" width="150%" height="150%"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<symbol id="axi-app" viewBox="0 0 120 130"><g filter="url(#axgf)">
+<path d="M37 24 29 9M83 24 91 9" stroke="#a8fbff" stroke-width="4" stroke-linecap="round" fill="none"/>
+<circle cx="29" cy="9" r="3.6" fill="#d8ffff"/><circle cx="91" cy="9" r="3.6" fill="#d8ffff"/>
+<path d="M21 60a39 37 0 0 1 78 0z" fill="url(#axgA)"/>
+<circle cx="45" cy="45" r="5.5" fill="#06284a"/><circle cx="75" cy="45" r="5.5" fill="#06284a"/><circle cx="45" cy="45" r="2.4" fill="#e9ffff"/><circle cx="75" cy="45" r="2.4" fill="#e9ffff"/>
+<rect x="21" y="65" width="78" height="46" rx="13" fill="url(#axgB)"/>
+<path d="M27 78h66" stroke="#9eeaff" stroke-opacity=".35" stroke-width="2"/>
+<circle cx="60" cy="92" r="7.5" fill="none" stroke="#bffaff" stroke-width="2.6"/><circle cx="60" cy="92" r="2.6" fill="#e9ffff"/>
+<rect x="4" y="66" width="13" height="36" rx="6.5" fill="url(#axgA)"/><rect x="103" y="66" width="13" height="36" rx="6.5" fill="url(#axgA)"/>
+<rect x="37" y="106" width="15" height="19" rx="7" fill="url(#axgA)"/><rect x="68" y="106" width="15" height="19" rx="7" fill="url(#axgA)"/></g></symbol>
+<symbol id="axi-web" viewBox="0 0 120 120"><g filter="url(#axgf)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="56" cy="56" r="46" fill="url(#axgC)" stroke="url(#axgA)" stroke-width="3"/>
+<ellipse cx="56" cy="56" rx="46" ry="15" stroke="#6fdcff" stroke-width="1.6" opacity=".8"/><ellipse cx="56" cy="56" rx="18" ry="46" stroke="#6fdcff" stroke-width="1.6" opacity=".8"/><ellipse cx="56" cy="56" rx="34" ry="46" stroke="#6fdcff" stroke-width="1.2" opacity=".55"/>
+<path d="M10 56h92M56 10v92M18 34h76M18 78h76" stroke="#6fdcff" stroke-width="1.2" opacity=".6"/>
+<path d="M32 34 60 42 70 28 82 52 68 76 44 60 36 80M60 42 44 60M60 42 82 52" stroke="#9ff1ff" stroke-width="1.2" opacity=".7"/>
+<g fill="#d8ffff" stroke="none"><circle cx="32" cy="34" r="2.4"/><circle cx="70" cy="28" r="2.4"/><circle cx="82" cy="52" r="2.4"/><circle cx="44" cy="60" r="2.4"/><circle cx="60" cy="42" r="2.4"/><circle cx="36" cy="80" r="2.4"/><circle cx="68" cy="76" r="2.4"/></g>
+<path d="M76 66v34l9-8 7 14 8-4-7-14 12-1z" fill="#0c2b5c" stroke="#c8fbff" stroke-width="2.6"/></g></symbol>
+<symbol id="axi-order" viewBox="0 0 120 120"><g filter="url(#axgf)" stroke-linecap="round" stroke-linejoin="round">
+<path d="M60 8 100 24v32c0 29-17 46-40 56C37 102 20 85 20 56V24z" fill="url(#axgC)" stroke="url(#axgA)" stroke-width="4"/>
+<path d="M47 44 33 58l14 14M73 44l14 14-14 14M64 40 56 76" fill="none" stroke="#bffaff" stroke-width="5"/>
+<rect x="50" y="84" width="20" height="15" rx="4" fill="#0c2b5c" stroke="#bffaff" stroke-width="2.4"/><path d="M54 84v-5a6 6 0 0 1 12 0v5" fill="none" stroke="#bffaff" stroke-width="2.4"/></g></symbol>
+</defs></svg>
 <canvas id="bg-canvas"></canvas><div class="hud-overlay"></div><div class="scanline"></div>
 <div id="loader"><div class="loader-ring"></div><div class="loader-text">INITIALIZING ATIK AI...</div></div>
 <header><div class="brand-logo"><i class="fa-solid fa-microchip"></i> ATIK // NEXUS</div>
@@ -122,7 +151,7 @@ textarea.form-input{min-height:100px;resize:vertical}
 <ul class="nav-links" id="nav-links"><li><a href="#" onclick="closeMenu();switchSection('home')">HOME</a></li><li><a href="#" onclick="closeMenu();switchSection('about')">ABOUT</a></li><li><a href="#" onclick="closeMenu();switchSection('projects')">PROJECTS</a></li><li><a href="#" onclick="closeMenu();switchSection('skills')">SKILLS</a></li><li><a href="#" onclick="closeMenu();switchSection('education')">EXPERIENCE</a></li><li><a href="#" onclick="closeMenu();switchSection('social')">SOCIAL</a></li><li><a href="#" onclick="closeMenu();switchSection('contact')">CONTACT</a></li></ul></header>
 <main class="main-container">
 <div class="hero-header"><h1 class="hero-title" id="display-name">MD. ATIKUL ISLAM</h1><div class="hero-subtitle" id="display-ai-name">ATIK // NEXUS</div><div class="hero-desc" id="display-title">Student | Digital Creator | Web &amp; Technology Enthusiast</div></div>
-<div class="ax-dual"><button class="ax-dbtn" onclick="switchSection('apps')"><i class="fa-solid fa-user-astronaut"></i><b>MY APPS</b><small id="axCntApps">APPS</small></button><button class="ax-dbtn" onclick="switchSection('websites')"><i class="fa-solid fa-user-astronaut"></i><b>MY WEBSITES</b><small id="axCntWeb">WEBSITES</small></button></div>
+<div class="ax-dual"><button class="ax-d2b" onclick="switchSection('apps')" aria-label="My Apps"><svg class="ax-big"><use href="#axi-app"/></svg><b>APP</b></button><button class="ax-d2b" onclick="switchSection('websites')" aria-label="My Websites"><svg class="ax-big"><use href="#axi-web"/></svg><b>WEBSITE</b></button></div>
 <div class="avatar-matrix-section"><div class="hud-nodes-container">
 <div class="hud-col left">
 <button class="hud-card-btn" onclick="switchSection('about')"><i class="fa-solid fa-user-gear"></i> ABOUT ME</button>
@@ -220,10 +249,16 @@ function toggleMenu(){const o=$('nav-links').classList.toggle('open');document.q
 function closeMenu(){$('nav-links').classList.remove('open');document.querySelector('.menu-btn i').className='fa-solid fa-bars'}
 function handleFormSubmit(e){e.preventDefault();showToast("Message interface ready — connect a backend to enable sending.");e.target.reset()}
 function showToast(m){const t=$('toast');$('toast-msg').innerText=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3500)}
-function initBackgroundCanvas(){const cv=$('bg-canvas'),ctx=cv.getContext('2d');let w=cv.width=innerWidth,h=cv.height=innerHeight;addEventListener('resize',()=>{w=cv.width=innerWidth;h=cv.height=innerHeight});
+function initBackgroundCanvas(){const cv=$('bg-canvas'),ctx=cv.getContext('2d');let w=cv.width=innerWidth,h=cv.height=innerHeight,rt;
+addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{w=cv.width=innerWidth;h=cv.height=innerHeight},150)});
 const P=[],n=Math.min(Math.floor(w/15),60);for(let i=0;i<n;i++)P.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.5,vy:(Math.random()-.5)*.5,r:Math.random()*2+1});
-(function a(){ctx.clearRect(0,0,w,h);for(let i=0;i<P.length;i++)for(let j=i+1;j<P.length;j++){const dx=P[i].x-P[j].x,dy=P[i].y-P[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<120){ctx.beginPath();ctx.moveTo(P[i].x,P[i].y);ctx.lineTo(P[j].x,P[j].y);ctx.strokeStyle=`rgba(0,240,255,${.15-d/800})`;ctx.lineWidth=.8;ctx.stroke()}}
-P.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='rgba(0,240,255,.6)';ctx.shadowBlur=8;ctx.shadowColor='#00f0ff';ctx.fill()});requestAnimationFrame(a)})()}
+const gs=document.createElement('canvas');gs.width=gs.height=32;const gx=gs.getContext('2d'),gr=gx.createRadialGradient(16,16,0,16,16,16);gr.addColorStop(0,'rgba(0,240,255,.55)');gr.addColorStop(1,'rgba(0,240,255,0)');gx.fillStyle=gr;gx.fillRect(0,0,32,32);
+const B=[[],[],[],[]],ST=['rgba(0,240,255,.13)','rgba(0,240,255,.09)','rgba(0,240,255,.055)','rgba(0,240,255,.025)'];let last=0;
+function a(t){requestAnimationFrame(a);if(document.hidden||document.body.classList.contains('ax-modal-open')||t-last<33)return;last=t;ctx.clearRect(0,0,w,h);B[0].length=B[1].length=B[2].length=B[3].length=0;
+for(let i=0;i<P.length;i++){const p=P[i];for(let j=i+1;j<P.length;j++){const q=P[j],dx=p.x-q.x,dy=p.y-q.y,d2=dx*dx+dy*dy;if(d2<14400)B[d2<3600?0:d2<7200?1:d2<10800?2:3].push(p.x,p.y,q.x,q.y)}}
+ctx.lineWidth=.8;for(let k=0;k<4;k++){const L=B[k];if(!L.length)continue;ctx.strokeStyle=ST[k];ctx.beginPath();for(let m=0;m<L.length;m+=4){ctx.moveTo(L[m],L[m+1]);ctx.lineTo(L[m+2],L[m+3])}ctx.stroke()}
+ctx.fillStyle='rgba(0,240,255,.6)';for(const p of P){p.x+=p.vx*2;p.y+=p.vy*2;if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1;ctx.drawImage(gs,p.x-p.r*4,p.y-p.r*4,p.r*8,p.r*8);ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,6.2832);ctx.fill()}}
+requestAnimationFrame(a)}
 </script>
 <!-- ===== ADMIN PANEL ===== -->
 <script>
@@ -231,8 +266,8 @@ P.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*
 const K='atik_admin_v1',P=portfolioData,clone=o=>JSON.parse(JSON.stringify(o));
 const H=s=>{let a=0xdeadbeef,b=0x41c6ce57;for(let i=0;i<s.length;i++){const c=s.charCodeAt(i);a=Math.imul(a^c,2654435761);b=Math.imul(b^c,1597334677)}a=Math.imul(a^a>>>16,2246822507)^Math.imul(b^b>>>13,3266489909);b=Math.imul(b^b>>>16,2246822507)^Math.imul(a^a>>>13,3266489909);return(4294967296*(2097151&b)+(a>>>0)).toString(36)};
 const HP='26190uzfi10',HW='24iusjknppa';
-P.websites=[{title:'Nexora V3 – Future Connection',desc:'Next-gen web portal concept featuring interactive dynamic visual controls.',link:''},{title:'E-commerce Platform Concept',desc:'Futuristic online storefront platform with sleek reactive UI components.',link:''}];
-P.apps=[{title:'Nexora Secure Messenger',desc:'Secure messaging app concept focused on clean communication.',version:'v0.1',link:'',open:''},{title:'Scanner Application',desc:'Turn paper documents into useful digital files.',version:'v0.1',link:'',open:''}];
+P.websites=[{_seed:1,title:'Nexora V3 – Future Connection',desc:'Next-gen web portal concept featuring interactive dynamic visual controls.',link:''},{_seed:1,title:'E-commerce Platform Concept',desc:'Futuristic online storefront platform with sleek reactive UI components.',link:''}];
+P.apps=[{_seed:1,title:'Nexora Secure Messenger',desc:'Secure messaging app concept focused on clean communication.',version:'v0.1',link:'',open:''},{_seed:1,title:'Scanner Application',desc:'Turn paper documents into useful digital files.',version:'v0.1',link:'',open:''}];
 const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const DEF={about:{name:P.name,title:P.title,age:'20 Years',location:P.location,education:'Software, Android & Web Developer',status:'Digital Creator & AI Learner',bio:'Passionate about modern web development, futuristic UI design, Artificial Intelligence applications, and innovative web technologies. Constantly learning new concepts to build powerful digital products.',quote:'Small steps every day lead to big digital breakthroughs.',email:P.email,phone:P.phone},
 social:clone(P.social),skills:clone(P.skills),education:clone(P.education),projects:clone(P.projects),
@@ -260,6 +295,11 @@ Object.assign(P,{name:a.name,title:a.title,email:a.email,phone:a.phone,location:
 P.aiSpeech.greeting=ai.greeting;['about','projects','skills','contact'].forEach(k=>P.aiSpeech[k]=ai[k]);
 window.axFallbackText=ai.fallback;window.axCfgVoice=ai.voice;
 if(S.about)renderAbout(a)}
+const BADRE=new RegExp('\\b(S'+'SC|H'+'SC|B'+'BA|G'+'PA)\\b|Higher Seco'+'ndary|Seco'+'ndary School|National Univ'+'ersity','i');
+(function(){let ch=false;if(Array.isArray(S.education)){const n=S.education.filter(e=>!BADRE.test((e.degree||'')+' '+(e.inst||'')+' '+(e.year||'')));if(n.length!==S.education.length){S.education=n;ch=true}}
+if(S.about){['education','status','bio','quote'].forEach(k=>{if(S.about[k]&&BADRE.test(S.about[k])){S.about[k]=DEF.about[k];ch=true}})}
+if(S.ai&&S.ai.qa&&BADRE.test(S.ai.qa)){S.ai.qa=S.ai.qa.split('\n').filter(l=>!BADRE.test(l)).join('\n');ch=true}
+if(ch)save()})();
 apply();
 const done=()=>{save();apply();loadPortfolioData();if(window.axRenderWA)axRenderWA();if(window.axRefresh)axRefresh();showToast('Saved ✔')};
 
@@ -278,7 +318,7 @@ $('axVx').onclick=()=>{m.classList.remove('active');m.innerHTML='';URL.revokeObj
 /* ---- AI custom replies ---- */
 window.axCustomReply=q=>{const ai=AI(),l=q.toLowerCase();
 for(const line of(ai.qa||'').split('\n')){const i=line.indexOf('=>');if(i<0)continue;if(line.slice(0,i).split(',').map(s=>s.trim().toLowerCase()).filter(Boolean).some(k=>l.includes(k)))return line.slice(i+2).trim()}
-if(window.axProjHit&&window.axProjHit(l))return '';
+return '';
 if(S.about&&/who|about|পরিচয়|সম্পর্কে/.test(l)){const a=A();return `${a.name} — ${a.title}. ${a.bio}`}
 if(S.projects&&/project|প্রজেক্ট|website|ওয়েবসাইট/.test(l))return 'Atik\'s projects: '+P.projects.map(p=>p.name).join(', ')+'. Open the Projects section for free downloads.';
 if(S.skills&&/skill|দক্ষতা|স্কিল/.test(l))return 'Atik\'s skills: '+P.skills.map(s=>s.name).join(', ')+'.';
@@ -294,8 +334,8 @@ m.innerHTML=`<div class="modal-content" style="max-width:460px">${X}<h2 class="s
 requestAnimationFrame(()=>m.classList.add('active'))}
 window.axAdmClose=()=>{adm().classList.remove('active');authed=false;pend=[];rem=[];editing=null};
 window.axLogin=()=>{if(H($('axPin').value)===HP){adm().querySelector('.modal-content').innerHTML=`${X}<h2 class="sec-title"><i class="fa-solid fa-key"></i> PASSWORD VERIFICATION</h2><div class="form-group"><label>MASTER PASSWORD</label><input id="axPw" type="password" class="form-input" placeholder="Password"></div><button class="ai-btn ai-btn-primary" style="margin-top:15px;padding:12px 22px" onclick="axLogin2()">UNLOCK</button>`;$('axPw').onkeydown=e=>{if(e.key==='Enter')axLogin2()};setTimeout(()=>{const e=$('axPw');if(e)e.focus()},50)}else{showToast('Wrong PIN');$('axPin').value=''}};
-window.axLogin2=()=>{if(H($('axPw').value)===HW){authed=true;tab='about';panel()}else{showToast('Wrong password');$('axPw').value=''}};
-const TABS=[['about','ABOUT'],['contact','CONTACT & SOCIAL'],['websites','MY WEBSITES'],['apps','MY APPS'],['projects','PROJECTS & FILES'],['ai','AI & VOICE'],['skills','SKILLS & EXPERIENCE']];
+window.axLogin2=()=>{if(H($('axPw').value)===HW){authed=true;try{localStorage.setItem('atik_owner','1')}catch(e){}tab='about';panel()}else{showToast('Wrong password');$('axPw').value=''}};
+const TABS=[['about','ABOUT'],['contact','CONTACT & SOCIAL'],['websites','MY WEBSITES'],['apps','MY APPS'],['projects','PROJECTS & FILES'],['ai','AI & VOICE'],['skills','SKILLS & EXPERIENCE'],['viewers','VIEWERS']];
 function panel(){if(!authed)return;const m=adm();
 m.innerHTML=`<div class="modal-content">${X}<h2 class="sec-title"><i class="fa-solid fa-user-shield"></i> ADMIN PANEL</h2><p style="color:var(--text-dim);font-size:.8rem;margin-bottom:12px">Changes are saved in this browser (localStorage + IndexedDB).</p><div class="filter-bar">${TABS.map(t=>`<button class="filter-btn ${t[0]===tab?'active':''}" onclick="axTab('${t[0]}')">${t[1]}</button>`).join('')}</div>${body()}<div style="display:flex;gap:10px;margin-top:20px;flex-wrap:wrap"><button class="ai-btn" onclick="axAdmClose()">LOGOUT</button><button class="ai-btn" style="border-color:#ef4444" onclick="axReset()">RESET ALL</button></div></div>`;m.classList.add('active')}
 window.axTab=t=>{tab=t;if(t!=='projects'){editing=null;pend=[];rem=[]}panel()};
@@ -307,6 +347,7 @@ const SOC=['facebook','youtube','github','linkedin','telegram','whatsapp'];
 const mb=n=>(n/1048576).toFixed(2)+' MB';
 const fileList=e=>(e.files||[]).filter(f=>!rem.includes(f.id)).map(f=>`<div class="ax-row">${esc(f.name)} <small>${mb(f.size)}</small><button class="filter-btn" onclick="axRmF('${f.id}')">REMOVE</button></div>`).join('')+pend.map(f=>`<div class="ax-row">＋ ${esc(f.name)} <small>${mb(f.size)} · pending save</small></div>`).join('');
 function body(){const a=A(),ai=AI();if(tab==='websites'||tab==='apps')return waForm(tab);
+if(tab==='viewers'){setTimeout(()=>window.axVwLoad&&axVwLoad(),30);return '<div id="axVw" style="color:var(--text-dim)">Loading...</div>'}
 if(tab==='about')return stack(F('a_name','NAME',a.name)+F('a_title','TITLE',a.title)+F('a_age','AGE',a.age)+F('a_loc','LOCATION',a.location)+F('a_edu','PROFESSION',a.education)+F('a_st','STATUS',a.status)+F('a_bio','BIO / VISION',a.bio,1)+F('a_q','QUOTE',a.quote))+SAVE('axSaveAbout()');
 if(tab==='contact')return stack(F('c_email','EMAIL',a.email)+F('c_phone','PHONE',a.phone)+SOC.map(k=>F('s_'+k,k.toUpperCase()+' URL',P.social[k]||'')).join(''))+SAVE('axSaveContact()');
 if(tab==='ai')return stack(F('i_gr','GREETING (shown when a visitor opens the AI section)',ai.greeting,1)+CHK('i_auto','Speak greeting automatically',ai.auto)+CHK('i_voice','Voice replies enabled',ai.voice)+F('i_fb','FALLBACK REPLY (when AI does not understand)',ai.fallback,1)+F('i_qa','CUSTOM Q&A — one per line: keyword1, keyword2 => answer',ai.qa,1)+F('i_ab','TOP CONSOLE: ABOUT',ai.about,1)+F('i_pr','TOP CONSOLE: PROJECTS',ai.projects,1)+F('i_sk','TOP CONSOLE: SKILLS',ai.skills,1)+F('i_ct','TOP CONSOLE: CONTACT',ai.contact,1))+SAVE('axSaveAI()')+' <button class="ai-btn" style="display:inline-flex;margin-top:15px" onclick="speakText(AIgreet())">TEST GREETING 🔊</button>';
@@ -314,7 +355,7 @@ if(tab==='skills')return stack(F('k_sk','SKILLS — one per line: Name | 90%',P.
 const L=P.projects.map((p,i)=>`<div class="ax-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span>${esc(p.name)}<small>${p.category} · ${(p.files||[]).length} file(s)</small></span><span style="white-space:nowrap"><button class="filter-btn" onclick="axEdit(${i})">EDIT</button> <button class="filter-btn" onclick="axDel(${i})">DELETE</button></span></div>`).join('');
 const e=editing||{name:'',desc:'',category:'WEB',tech:[],link:'',icon:'fa-folder-open',files:[]};
 return L+`<h3 style="color:var(--cyan-glow);font-family:var(--font-head);margin:15px 0 10px">${editing?'EDIT PROJECT':'ADD NEW PROJECT'}</h3>`+stack(F('p_name','NAME',e.name)+F('p_desc','DESCRIPTION',e.desc,1)+`<div class="form-group"><label>CATEGORY</label><select id="p_cat" class="form-input">${['WEB','AI','APP','GAME','SECURITY'].map(c=>`<option ${c===e.category?'selected':''}>${c}</option>`).join('')}</select></div>`+F('p_tech','TECH (comma separated)',(e.tech||[]).join(', '))+F('p_link','LIVE LINK (optional)',e.link)+F('p_icon','ICON (Font Awesome, e.g. fa-robot)',e.icon)+`<div class="form-group"><label>FILES — ZIP / SOFTWARE / VIDEO (free for visitors)</label><input id="p_files" type="file" multiple class="form-input" onchange="axPick(this)"></div><div id="p_fl">${fileList(e)}</div>`)+SAVE('axSaveProject()')+(editing?' <button class="ai-btn" style="display:inline-flex;margin-top:15px" onclick="axEdit(-1)">CANCEL</button>':'')}
-window.AIgreet=()=>AI().greeting;window.axIsCustom=k=>!!S[k];
+window.AIgreet=()=>AI().greeting;window.axIsCustom=k=>!!S[k];window.axAbout=A;
 window.axSaveAbout=()=>{S.about=Object.assign(A(),{name:V('a_name'),title:V('a_title'),age:V('a_age'),location:V('a_loc'),education:V('a_edu'),status:V('a_st'),bio:V('a_bio'),quote:V('a_q')});done()};
 window.axSaveContact=()=>{S.about=Object.assign(A(),{email:V('c_email'),phone:V('c_phone')});S.social=Object.assign({},P.social);SOC.forEach(k=>S.social[k]=V('s_'+k));done()};
 window.axSaveAI=()=>{S.ai={greeting:V('i_gr'),auto:$('i_auto').checked,voice:$('i_voice').checked,fallback:V('i_fb'),qa:V('i_qa'),about:V('i_ab'),projects:V('i_pr'),skills:V('i_sk'),contact:V('i_ct')};done()};
@@ -333,28 +374,34 @@ S.projects=P.projects;editing=null;pend=[];rem=[];done();panel()};
 window.axReset=()=>{if(!confirm('Reset ALL admin changes and delete uploaded files?'))return;try{localStorage.removeItem(K);indexedDB.deleteDatabase('atik_files')}catch(e){}location.reload()};
 
 /* ---- websites & apps ---- */
-let eIdx=-1,eKind='',pI=null,pF=null;
+let eIdx=-1,eKind='',pI=[],pF=null,pL=null;
 const mbs=n=>(n/1048576).toFixed(2)+' MB',isHtml=n=>/\.html?$/i.test(n||''),nl=t=>esc(t).replace(/\n/g,'<br>');
 const nid=p=>p+Date.now().toString(36)+Math.random().toString(36).slice(2,6);
 const imgURL=async id=>{if(!id)return'';try{const b=await getF(id);return b?URL.createObjectURL(b):''}catch(e){return''}};
 const listWA=k=>P[k].map((x,i)=>`<div class="ax-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span>${esc(x.title)}<small>${esc(k==='apps'?(x.version||''):(x.link||x.fileName||''))}</small></span><span><button class="filter-btn" onclick="axWAEdit('${k}',${i})">EDIT</button> <button class="filter-btn" onclick="axWADel('${k}',${i})">DELETE</button></span></div>`).join('')||'<p style="color:var(--text-dim)">Nothing yet. Add the first one below.</p>';
-const waForm=k=>{const ed=eIdx>=0&&eKind===k,e=ed?P[k][eIdx]:{},fl=e.fileName?` — current: ${esc(e.fileName)} (${mbs(e.size||0)})`:'';
+const gal=x=>(x.imgs&&x.imgs.length)?x.imgs:(x.imgId?[x.imgId]:[]);
+const rz=(file,max,png)=>new Promise(res=>{try{if(!/^image\/(png|jpe?g|webp|gif|bmp)/i.test(file.type)){res(file);return}const u=URL.createObjectURL(file),im=new Image();
+im.onload=()=>{URL.revokeObjectURL(u);let w=im.naturalWidth,h=im.naturalHeight;const k=Math.min(1,max/Math.max(w,h));if(k===1&&file.size<400000){res(file);return}w=Math.round(w*k);h=Math.round(h*k);const c=document.createElement('canvas');c.width=w;c.height=h;c.getContext('2d').drawImage(im,0,0,w,h);c.toBlob(b=>res(b||file),png?'image/png':'image/jpeg',.86)};
+im.onerror=()=>{URL.revokeObjectURL(u);res(file)};im.src=u}catch(e){res(file)}});
+const waForm=k=>{const ed=eIdx>=0&&eKind===k,e=ed?P[k][eIdx]:{},fl=e.fileName?` — current: ${esc(e.fileName)} (${mbs(e.size||0)})`:'',gl=gal(e).length;
 return listWA(k)+`<h3 style="color:var(--cyan-glow);font-family:var(--font-head);margin:15px 0 10px">${ed?'EDIT ITEM':'ADD NEW'} <button class="filter-btn" onclick="axWAEdit('${k}',-1)">+ NEW</button></h3>`+stack(
 F('w_t','TITLE',e.title||'')+F('w_d','SHORT DESCRIPTION',e.desc||'',1)+F('w_x','FULL DETAILS (shown inside)',e.details||'',1)+
 (k==='apps'?F('w_v','VERSION (e.g. v1.0)',e.version||'')+F('w_o','TEST / OPEN LINK',e.open||'')+F('w_l','DIRECT DOWNLOAD LINK',e.link||''):F('w_l','WEBSITE LINK (https://...)',e.link||''))+
 `<div class="form-group"><label>${k==='apps'?'APK / APP FILE':'HTML FILE (hosted inside this site) or ZIP'}${fl}</label><input type="file" class="form-input" onchange="axWAFile(this,'f')"></div>`+
 (e.fileId?CHK('w_rf','Remove current file',0):'')+
-`<div class="form-group"><label>IMAGE / SCREENSHOT${e.imgId?' (kept unless replaced)':''}</label><input type="file" accept="image/*" class="form-input" onchange="axWAFile(this,'i')"></div>`)+SAVE(`axWASave('${k}')`)};
-window.axWAFile=(el,t)=>{if(t==='f')pF=el.files[0]||null;else pI=el.files[0]||null};
-window.axWAEdit=(k,i)=>{eKind=k;eIdx=i;pI=pF=null;panel()};
+`<div class="form-group"><label>LOGO (square image)${e.logoId?' — current kept unless replaced':''}</label><input type="file" accept="image/*" class="form-input" onchange="axWAFile(this,'l')"></div>`+
+`<div class="form-group"><label>IMAGES / SCREENSHOTS (select several)${gl?' — '+gl+' saved, a new selection replaces them':''}</label><input type="file" accept="image/*" multiple class="form-input" onchange="axWAFile(this,'i')"></div>`)+SAVE(`axWASave('${k}')`)};
+window.axWAFile=(el,t)=>{if(t==='f')pF=el.files[0]||null;else if(t==='l')pL=el.files[0]||null;else pI=[...el.files]};
+window.axWAEdit=(k,i)=>{eKind=k;eIdx=i;pI=[];pF=pL=null;panel()};
 window.axWASave=async k=>{const t=V('w_t');if(!t)return showToast('Title is required');
 const ed=eIdx>=0&&eKind===k,old=ed?P[k][eIdx]:{},o=Object.assign({},old,{title:t,desc:V('w_d'),details:V('w_x'),link:V('w_l')});
 if(k==='apps'){o.version=V('w_v');o.open=V('w_o')}
 try{const rf=$('w_rf');if(((rf&&rf.checked)||pF)&&old.fileId){await delF(old.fileId);delete o.fileId;delete o.fileName;delete o.size}
 if(pF){o.fileId=nid('f');await putF(o.fileId,pF);o.fileName=pF.name;o.size=pF.size}
-if(pI){if(old.imgId)await delF(old.imgId);o.imgId=nid('i');await putF(o.imgId,pI)}}catch(e){return showToast('Upload failed (storage full?)')}
-if(ed)P[k][eIdx]=o;else P[k].push(o);S[k]=P[k];eIdx=-1;pI=pF=null;done();panel()};
-window.axWADel=async(k,i)=>{if(!confirm('Delete this item?'))return;const x=P[k][i];try{if(x.fileId)await delF(x.fileId);if(x.imgId)await delF(x.imgId)}catch(e){}P[k].splice(i,1);S[k]=P[k];done();panel()};
+if(pL){if(old.logoId)await delF(old.logoId);o.logoId=nid('l');await putF(o.logoId,await rz(pL,256,true))}
+if(pI.length){for(const id of gal(old))await delF(id);o.imgs=[];for(const f of pI.slice(0,8)){const id=nid('i');await putF(id,await rz(f,1280,false));o.imgs.push(id)}o.imgId=o.imgs[0]}}catch(e){return showToast('Upload failed (storage full?)')}
+if(ed)P[k][eIdx]=o;else P[k].push(o);S[k]=P[k];eIdx=-1;pI=[];pF=pL=null;done();panel()};
+window.axWADel=async(k,i)=>{if(!confirm('Delete this item?'))return;const x=P[k][i];try{if(x.fileId)await delF(x.fileId);if(x.logoId)await delF(x.logoId);for(const id of gal(x))await delF(id)}catch(e){}P[k].splice(i,1);S[k]=P[k];done();panel()};
 const fileMeta=id=>[...P.apps,...P.websites].find(a=>a.fileId===id)||{};
 window.axWADl=async id=>{try{const b=await getF(id);if(!b)return showToast('File not found in this browser');const u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download=fileMeta(id).fileName||'download';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),4000)}catch(e){showToast('Download failed')}};
 window.axWAOpen=async id=>{try{const b=await getF(id);if(!b)return showToast('File not found in this browser');const u=URL.createObjectURL(new Blob([b],{type:'text/html'}));if(!window.open(u,'_blank'))location.href=u}catch(e){showToast('Cannot open file')}};
@@ -362,17 +409,54 @@ const acts=(k,x)=>{const b=[],L=(u,t,dl)=>`<a class="project-btn" href="${esc(u)
 if(k==='websites'){if(x.link)b.push(L(x.link,'VISIT SITE ↗'));if(x.fileId)b.push(isHtml(x.fileName)?`<a href="#" class="project-btn" onclick="axWAOpen('${x.fileId}');return false">▶ OPEN HOSTED PAGE</a>`:dlb)}
 else{if(x.open)b.push(L(x.open,'TEST / OPEN ↗'));if(x.fileId)b.push(dlb);if(x.link)b.push(L(x.link,'⬇ DIRECT LINK',1))}
 return b};
-const mk=(id,title,icon,z)=>{let m=$(id);if(!m){m=document.createElement('div');m.id=id;m.className='section-modal';if(z)m.style.zIndex=z;m.innerHTML=`<div class="modal-content"><div class="modal-close" onclick="closeModal('${id}')"><i class="fa-solid fa-xmark"></i></div><h2 class="sec-title"><i class="fa-solid ${icon}"></i> ${title}</h2><div id="${id}-g" class="projects-grid"></div></div>`;document.body.appendChild(m)}return m};
-window.axRenderWA=async()=>{mk('modal-websites','MY WEBSITES','fa-user-astronaut');mk('modal-apps','MY APPS','fa-user-astronaut');
+const svgI=(id,c)=>`<svg class="${c}" aria-hidden="true"><use href="#${id}"/></svg>`;
+const mk=(id,title,icon,z)=>{let m=$(id);if(!m){m=document.createElement('div');m.id=id;m.className='section-modal';if(z)m.style.zIndex=z;m.innerHTML=`<div class="modal-content"><div class="modal-close" onclick="closeModal('${id}')"><i class="fa-solid fa-xmark"></i></div><h2 class="sec-title">${icon.startsWith('axi-')?svgI(icon,'ax-hico'):`<i class="fa-solid ${icon}"></i>`} ${title}</h2><div id="${id}-g" class="projects-grid"></div></div>`;document.body.appendChild(m)}return m};
+window.axRenderWA=async()=>{mk('modal-websites','MY WEBSITES','axi-web');mk('modal-apps','MY APPS','axi-app');
 for(const k of['websites','apps']){let h=P[k].length?'':'<p style="color:var(--text-dim)">Coming soon.</p>';
-for(let i=0;i<P[k].length;i++){const x=P[k][i],u=await imgURL(x.imgId),b=acts(k,x);if(!b.length)b.push(`<a href="#" class="project-btn" onclick="showToast('COMING SOON');return false">COMING SOON</a>`);
-h+=`<div class="project-card"><div>${u?`<img src="${u}" alt="" style="width:100%;border-radius:6px;margin-bottom:12px">`:''}<div class="project-head"><div class="project-icon"><i class="fa-solid fa-user-astronaut"></i></div><div class="project-title">${esc(x.title)}</div></div>${x.version?`<span class="tech-tag" style="display:inline-block;margin-bottom:10px">${esc(x.version)}</span>`:''}<div class="project-desc">${esc(x.desc)}</div></div><div style="display:flex;flex-direction:column;gap:8px"><a href="#" class="project-btn" style="background:rgba(0,240,255,.12)" onclick="axWAView('${k}',${i});return false">ⓘ DETAILS</a>${b.join('')}</div></div>`}
+for(let i=0;i<P[k].length;i++){const x=P[k][i],u=await imgURL(gal(x)[0]),lg=await imgURL(x.logoId),b=acts(k,x);if(!b.length)b.push(`<a href="#" class="project-btn" onclick="showToast('COMING SOON');return false">COMING SOON</a>`);
+h+=`<div class="project-card"><div>${u?`<img src="${u}" alt="" loading="lazy" style="width:100%;border-radius:6px;margin-bottom:12px">`:''}<div class="project-head"><div class="project-icon">${lg?`<img src="${lg}" alt="" class="ax-lg">`:svgI(k==='apps'?'axi-app':'axi-web','ax-ico')}</div><div class="project-title">${esc(x.title)}</div></div>${x.version?`<span class="tech-tag" style="display:inline-block;margin-bottom:10px">${esc(x.version)}</span>`:''}<div class="project-desc">${esc(x.desc)}</div></div><div style="display:flex;flex-direction:column;gap:8px"><a href="#" class="project-btn" style="background:rgba(0,240,255,.12)" onclick="axWAView('${k}',${i});return false">ⓘ DETAILS</a>${b.join('')}</div></div>`}
 $('modal-'+k+'-g').innerHTML=h}
 const n1=P.apps.length,n2=P.websites.length,c1=$('axCntApps'),c2=$('axCntWeb');if(c1)c1.textContent=n1+(n1===1?' APP':' APPS');if(c2)c2.textContent=n2+(n2===1?' WEBSITE':' WEBSITES')};
-window.axWAView=async(k,i)=>{const x=P[k][i];if(!x)return;const m=mk('modal-wa-detail','','fa-circle-info',520),u=await imgURL(x.imgId),b=acts(k,x);
-m.querySelector('.modal-content').innerHTML=`<div class="modal-close" onclick="closeModal('modal-wa-detail')"><i class="fa-solid fa-xmark"></i></div><h2 class="sec-title"><i class="fa-solid fa-user-astronaut"></i> ${esc(x.title)}</h2>${u?`<img src="${u}" alt="" style="width:100%;border-radius:8px;margin-bottom:14px">`:''}<div style="margin-bottom:12px">${x.version?`<span class="tech-tag">${esc(x.version)}</span> `:''}${x.fileName?`<span class="tech-tag">${esc(x.fileName)} · ${mbs(x.size||0)}</span>`:''}</div><p style="color:var(--text-dim);line-height:1.7;margin-bottom:18px">${nl(x.details||x.desc||'')}</p><div style="display:flex;flex-direction:column;gap:10px">${b.join('')||'<span class="tech-tag">COMING SOON</span>'}</div>`;
+window.axWAView=async(k,i)=>{const x=P[k][i];if(!x)return;const m=mk('modal-wa-detail','','fa-circle-info',520),urls=(await Promise.all(gal(x).map(imgURL))).filter(Boolean),lg=await imgURL(x.logoId),b=acts(k,x);
+const hero=urls[0]?`<img src="${urls[0]}" alt="" class="ax-hero">`:'',gl=urls.length>1?`<div class="ax-gal">${urls.slice(1).map(u=>`<img src="${u}" alt="" onclick="this.classList.toggle('big')">`).join('')}</div>`:'';
+m.querySelector('.modal-content').innerHTML=`<div class="modal-close" onclick="closeModal('modal-wa-detail')"><i class="fa-solid fa-xmark"></i></div><div class="ax-dh">${lg?`<img src="${lg}" class="ax-dlogo" alt="">`:`<span class="ax-dlogo ax-dlogo-i">${svgI(k==='apps'?'axi-app':'axi-web','ax-hico')}</span>`}<div><h2 class="ax-dt">${esc(x.title)}</h2><div class="ax-dtags"><span class="tech-tag">${k==='apps'?'ANDROID APP':'WEBSITE'}</span>${x.version?`<span class="tech-tag">${esc(x.version)}</span>`:''}${x.fileName?`<span class="tech-tag">${esc(x.fileName)} · ${mbs(x.size||0)}</span>`:''}</div></div></div>${hero}${gl}<p class="ax-dp">${nl(x.details||x.desc||'')}</p><div class="ax-dbtns">${b.join('')||'<span class="tech-tag">COMING SOON</span>'}</div>`;
 requestAnimationFrame(()=>m.classList.add('active'))};
+window.axImgURL=imgURL;window.axWAActs=acts;
 axRenderWA();
+
+/* ---- viewers (visitor analytics) ---- */
+const VK='atik_vkey',EVK='atik_events_v1';
+const vkey=()=>{try{return localStorage.getItem(VK)||''}catch(e){return''}};
+const AUrl=()=>String(window.AX_ANALYTICS_URL||'').replace(/\/+$/,'');
+let vwData=null,vwList=[],vwOpen={};
+const pUA=ua=>{ua=ua||'';return{os:/Android/i.test(ua)?'Android':/iPhone|iPad|iPod/i.test(ua)?'iOS':/Windows/i.test(ua)?'Windows':/Mac OS X|Macintosh/i.test(ua)?'macOS':/Linux/i.test(ua)?'Linux':'?',br:/Edg\//.test(ua)?'Edge':/OPR\/|Opera/.test(ua)?'Opera':/SamsungBrowser/.test(ua)?'Samsung':/Firefox\//.test(ua)?'Firefox':/Chrome\//.test(ua)?'Chrome':/Safari\//.test(ua)?'Safari':'?',dv:/iPad|Tablet/i.test(ua)?'tablet':/Mobi|Android|iPhone/i.test(ua)?'mobile':'desktop'}};
+const VL={visit:'Visited the site',section:'Opened section',ai_question:'Asked the AI',link_click:'Clicked a link',view_item:'Viewed app/site',view_project:'Viewed project',download:'Downloaded a file',open_hosted:'Opened hosted page',order_open:'Opened order form',order_send:'Sent an order',voice_toggle:'Used voice agent',profile_switch:'Switched profile',play:'Played a video',leave:'Left the site'};
+const evTxt=e=>{const d=e.d||{};if(e.type==='visit'){const u=pUA(d.ua);return[u.os,u.br,u.dv,d.scr,d.lang,d.tz,d.ref?'from '+d.ref:''].filter(Boolean).join(' · ')}return Object.keys(d).map(k=>k+': '+String(d[k]).slice(0,140)).join(' · ')};
+const tstr=t=>new Date(t).toLocaleString();
+async function vwFetch(){const u=AUrl();if(u&&vkey()){const r=await fetch(u+'/data',{headers:{'X-Admin-Key':vkey()}});if(!r.ok)throw new Error(r.status===401?'Wrong admin key (server answered 401).':'Server error '+r.status);const j=await r.json();
+return{src:'server',ev:(j.events||[]).map(e=>{let d=e.d;if(typeof d==='string'){try{d=JSON.parse(d)}catch(x){d={}}}return Object.assign({},e,{d:d||{}})})}}
+let l=[];try{l=JSON.parse(localStorage.getItem(EVK)||'[]')}catch(e){}return{src:'local',ev:l}}
+function vwAgg(ev){const m=new Map();ev.forEach(e=>{const key=e.ip?e.ip:'local:'+(e.vid||'?');let g=m.get(key);if(!g){g={key,ip:e.ip||'',geo:[e.city,e.country].filter(Boolean).join(', '),org:e.org||'',vids:new Set(),sids:new Set(),ev:[],first:e.t,last:e.t,ua:''};m.set(key,g)}g.vids.add(e.vid);g.sids.add(e.sid);g.ev.push(e);if(e.t<g.first)g.first=e.t;if(e.t>g.last)g.last=e.t;const ua=(e.d&&e.d.ua)||e.ua;if(ua&&ua.length>(g.ua||'').length)g.ua=ua});return[...m.values()].sort((a,b)=>b.last-a.last)}
+const vwSetup=()=>`<div style="color:var(--text-dim);font-size:.85rem;line-height:1.7;margin-top:12px;border:1px dashed rgba(0,240,255,.3);border-radius:8px;padding:12px"><b style="color:#fff">To record ALL visitors (IP, device, actions):</b> a static website cannot see other people's visits by itself. Deploy the free Cloudflare Worker from <code>atik-analytics-worker.js</code> (steps are at the top of that file), paste its address into <code>window.AX_ANALYTICS_URL</code> near the top of <code>index.html</code>, then enter your admin key above.</div>`;
+function vwRows(){const q=(($('axVwQ')||{}).value||'').toLowerCase();vwList=vwAgg(vwData.ev.slice().sort((a,b)=>a.t-b.t));
+const rows=vwList.map((g,i)=>({g,i})).filter(({g})=>!q||(g.ip+' '+g.geo+' '+g.org+' '+g.ua+' '+g.ev.map(e=>e.type+' '+evTxt(e)).join(' ')).toLowerCase().includes(q));
+if(!rows.length)return '<p style="color:var(--text-dim)">No visitors recorded yet.</p>';
+return rows.map(({g,i})=>{const u=pUA(g.ua),open=vwOpen[g.key];return `<div class="ax-row" style="cursor:pointer" onclick="axVwTog(${i})"><b style="color:#fff">${esc(g.ip||'This device (IP unknown)')}</b> <small style="display:inline">${esc(g.geo)}${g.org?' · '+esc(g.org):''}</small><small>${u.os} · ${u.br} · ${u.dv} — ${g.sids.size} visit(s) · ${g.ev.length} action(s) · last ${tstr(g.last)}</small></div>${open?`<div style="margin:-4px 0 10px;padding:8px 12px;border-left:2px solid var(--cyan-glow);font-size:.82rem;color:var(--text-dim)">${g.ev.slice().reverse().map(e=>`<div style="padding:3px 0"><span style="color:var(--cyan-glow)">${tstr(e.t)}</span> — <b style="color:#fff">${VL[e.type]||esc(e.type)}</b> ${esc(evTxt(e))}</div>`).join('')}</div>`:''}`}).join('')}
+function vwHTML(){const all=vwData.ev,vis=all.filter(e=>e.type==='visit'),sids=new Set(all.map(e=>e.sid)),vids=new Set(all.map(e=>e.vid)),ips=new Set(all.filter(e=>e.ip).map(e=>e.ip)),day=Date.now()-864e5;
+const st=(n,l)=>`<div><b>${n}</b><span>${l}</span></div>`;
+return `<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px"><span class="tech-tag">${vwData.src==='server'?'SOURCE: SERVER':'SOURCE: THIS BROWSER ONLY'}</span><button class="filter-btn" onclick="axVwLoad()">REFRESH</button><button class="filter-btn" onclick="axVwExport('csv')">EXPORT CSV</button><button class="filter-btn" onclick="axVwExport('json')">EXPORT JSON</button><button class="filter-btn" onclick="axVwClear()">CLEAR</button></div>
+${vwKeyBox()}<div class="ax-stats">${st(sids.size,'VISITS (SESSIONS)')}${st(vids.size,'UNIQUE VISITORS')}${st(vwData.src==='server'?ips.size:'n/a','UNIQUE IP ADDRESSES')}${st(vis.filter(e=>e.t>day).length,'VISITS · LAST 24H')}${st(all.length,'TOTAL ACTIONS')}${st(all.filter(e=>e.type==='ai_question').length,'AI QUESTIONS')}</div>
+<input id="axVwQ" class="form-input" placeholder="Search IP, country, device, action..." oninput="axVwFilter()" style="margin-bottom:10px;width:100%"><div id="axVwList">${vwRows()}</div>${vwData.src==='local'?vwSetup():''}`}
+const vwKeyBox=()=>AUrl()?`<div class="form-group" style="margin-bottom:10px"><label>ADMIN KEY (for the analytics server)</label><div style="display:flex;gap:8px"><input id="axVwKey" type="password" class="form-input" style="flex:1" value="${esc(vkey())}" placeholder="Admin key"><button class="filter-btn" onclick="axVwKey()">SAVE KEY</button></div></div>`:'';
+window.axVwLoad=async()=>{const el=$('axVw');if(!el)return;try{vwData=await vwFetch();el.innerHTML=vwHTML()}catch(e){el.innerHTML=`<p style="color:#f87171">${esc(e.message||'Could not load data')}</p>${vwKeyBox()}${vwSetup()}`}};
+window.axVwTog=i=>{const g=vwList[i];if(!g)return;vwOpen[g.key]=!vwOpen[g.key];$('axVwList').innerHTML=vwRows()};
+window.axVwFilter=()=>{if(vwData)$('axVwList').innerHTML=vwRows()};
+window.axVwKey=()=>{try{localStorage.setItem(VK,$('axVwKey').value.trim())}catch(e){}axVwLoad()};
+window.axVwExport=kind=>{if(!vwData)return;const rows=vwData.ev.slice().sort((a,b)=>a.t-b.t);let txt,mime;
+if(kind==='json'){txt=JSON.stringify(rows,null,2);mime='application/json'}else{const c=v=>'"'+String(v==null?'':v).replace(/"/g,'""')+'"';txt='time,ip,country,city,visitor,session,action,detail,user_agent\n'+rows.map(e=>[new Date(e.t).toISOString(),e.ip,e.country,e.city,e.vid,e.sid,e.type,evTxt(e),(e.d&&e.d.ua)||e.ua].map(c).join(',')).join('\n');mime='text/csv'}
+const u=URL.createObjectURL(new Blob([txt],{type:mime})),a=document.createElement('a');a.href=u;a.download='atik-viewers.'+kind;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),3000)};
+window.axVwClear=async()=>{if(!vwData||!confirm(vwData.src==='server'?'Delete ALL visitor history on the server?':'Delete the visitor history stored in this browser?'))return;
+try{if(vwData.src==='server')await fetch(AUrl()+'/data',{method:'DELETE',headers:{'X-Admin-Key':vkey()}});else localStorage.removeItem(EVK)}catch(e){}axVwLoad()};
 
 /* ---- secret trigger + automatic greeting ---- */
 function autoGreet(){const ai=AI();if(!window.axAdd)return;axAdd(ai.greeting,'ai');if(!ai.auto||!ai.voice||window.axSpokeOnce)return;axSay(ai.greeting);
@@ -483,7 +567,7 @@ document.addEventListener('DOMContentLoaded',()=>{const s=$('ax-ai');if(s&&'Inte
       <div><button class="ax-ib" style="width:auto;padding:6px 10px;margin-right:6px" id="axVoice" onclick="axToggleVoice()" title="Voice replies">🔊</button><button class="ax-ib" style="width:auto;padding:6px 10px" onclick="axClear()" title="Clear">⌫</button></div></div>
     <div class="ax-msgs" id="axMsgs"></div>
     <div class="ax-chips">${['Who is Atik?','Show projects','What are his skills?','Experience & courses','Japanese journey'].map(c => `<button class="ax-chip" onclick="axAsk('${c}')">${c}</button>`).join('')}</div>
-    <div class="ax-in"><button class="ax-ib" id="axMic" onclick="axMic()" title="Speak">🎤</button>
+    <div class="ax-in"><button class="ax-ib" id="axMic" onclick="axMic()" title="Voice agent: tap to talk">🎤</button><button class="ax-ib" id="axLang" onclick="axLangToggle()" title="Voice language" style="width:52px">বাং</button>
       <input id="axInput" placeholder="Ask ATIK AI about Atik..." onkeydown="if(event.key==='Enter')axSend()"><button class="ax-send" onclick="axSend()">SEND</button></div></div>`;
 
   const ctrlHTML = `<div class="ax-panel"><div class="ax-eyebrow">— AI CONTROL CENTER</div><b style="color:#fff;font-size:1.2rem">Portfolio intelligence, safely designed.</b>
@@ -511,27 +595,231 @@ document.addEventListener('DOMContentLoaded',()=>{const s=$('ax-ai');if(s&&'Inte
   const host = document.querySelector('main') || document.body;
   host.appendChild(wrap);
 
+  /* ---------- AI AGENT: knowledge + intent engine + memory + actions (local, lightweight, bilingual) ---------- */
+  const BNd = '০১২৩৪৫৬৭৮৯', toBn = n => String(n).replace(/\d/g, d => BNd[d]), isBn = t => /[\u0980-\u09FF]/.test(t);
+  const AB = () => (window.axAbout ? window.axAbout() : {}) || {};
+  const nameEn = () => D.name || 'Md. Atikul Islam', nameBn = () => /atikul/i.test(nameEn()) ? 'মো. আতিকুল ইসলাম' : nameEn();
+  const locEn = () => AB().location || D.location || 'Mymensingh, Bangladesh', locBn = () => /mymensingh/i.test(locEn()) ? 'ময়মনসিংহ, বাংলাদেশ' : locEn();
+  const ageNum = () => (String(AB().age || '20').match(/\d+/) || ['20'])[0];
+  const profEn = () => AB().education || 'Software, Android & Web Developer';
+  const profBn = () => /software.*android/i.test(profEn()) ? 'সফটওয়্যার, অ্যান্ড্রয়েড ও ওয়েব ডেভেলপার' : profEn();
+  const bioDefault = () => !AB().bio || /^Passionate about modern web/.test(AB().bio);
+  const lst = a => (a || []).filter(Boolean).join(', ');
+  const nmOf = x => x.title || x.name || '';
+  const skillsSorted = () => (D.skills || []).slice().sort((a, b) => parseInt(b.level) - parseInt(a.level)).map(x => x.name);
+  const verList = a => (a || []).map(x => nmOf(x) + (x.version ? ' (' + x.version + ')' : ''));
+  const waDigits = () => { const m = String((D.social && D.social.whatsapp) || '').match(/wa\.me\/(\d+)/); if (m) return m[1]; const p = String(D.phone || '').replace(/\D/g, ''); return p.startsWith('880') ? p : (p.startsWith('0') ? '88' + p : p); };
+  const socials = () => ['facebook', 'youtube', 'github', 'linkedin', 'telegram', 'whatsapp'].filter(k => D.social && D.social[k]).map(k => k[0].toUpperCase() + k.slice(1));
+
+  const B = {
+    greet: b => [b ? 'আসসালামু আলাইকুম! আমি আতিকের ডিজিটাল এআই এজেন্ট। আতিক সম্পর্কে যেকোনো কিছু জিজ্ঞেস করুন, যেমন দক্ষতা, প্রজেক্ট, অ্যাপ, ওয়েবসাইট, এথিক্যাল হ্যাকিং সার্ভিস বা অর্ডার করার নিয়ম।' : 'Hello! I am Atik\'s digital AI agent. Ask me anything about Atik: skills, projects, apps, websites, ethical hacking services, or how to place an order.'],
+    about: b => { const o = [b ? `${nameBn()}, সবাই আতিক নামে চেনে। তিনি একজন ${profBn()} এবং এথিক্যাল হ্যাকার, এআই নিয়েও কাজ করেন। বয়স ${toBn(ageNum())} বছর, থাকেন ${locBn()}।` : `${nameEn()}, known as Atik, is a ${profEn()} and an ethical hacker who also works with AI. He is ${ageNum()} years old and lives in ${locEn()}.`];
+      o.push(b && bioDefault() ? 'আধুনিক ওয়েব ডেভেলপমেন্ট, ফিউচারিস্টিক ইউআই ডিজাইন, এআই অ্যাপ্লিকেশন এবং নতুন প্রযুক্তি তাঁর আগ্রহের বিষয়। প্রতিদিন নতুন কিছু শিখে তিনি শক্তিশালী ডিজিটাল প্রোডাক্ট বানান।' : (AB().bio || 'Atik is passionate about modern web development, futuristic UI design, AI applications and new technologies, and keeps learning to build powerful digital products.'));
+      return o; },
+    age: b => [b ? `আতিকের বয়স ${toBn(ageNum())} বছর।` : `Atik is ${ageNum()} years old.`],
+    location: b => [b ? `আতিক ${locBn()} থাকেন।` : `Atik lives in ${locEn()}.`],
+    profession: b => [b ? `আতিক একজন ${profBn()} এবং এথিক্যাল হ্যাকারও। তিনি অ্যান্ড্রয়েড অ্যাপ, ওয়েবসাইট ও এআই-চালিত টুল বানান।` : `Atik is a ${profEn()} and also an ethical hacker. He builds Android apps, websites and AI-powered tools.`],
+    skills: b => { const s = skillsSorted(); if (!s.length) return [b ? 'দক্ষতার তালিকা এখনো যোগ করা হয়নি।' : 'No skills have been listed yet.']; const top = s.slice(0, 6), rest = s.slice(6); const o = [b ? `আতিকের সবচেয়ে ভালো দক্ষতাগুলো: ${lst(top)}।` : `Atik's strongest skills are ${lst(top)}.`]; if (rest.length) o.push(b ? `এছাড়া তিনি কাজ করেন: ${lst(rest)}।` : `He also works with ${lst(rest)}.`); return o; },
+    projects: b => { const n = projList().map(x => x.n); return [n.length ? (b ? `আতিকের প্রজেক্টগুলো: ${lst(n)}। "প্রজেক্ট খোলো" বললে আমি দেখিয়ে দেব।` : `Atik's projects: ${lst(n)}. Say "open projects" and I will show them.`) : (b ? 'প্রজেক্ট শিগগিরই আসছে।' : 'Projects are coming soon.')]; },
+    apps: b => { const n = verList(D.apps); return [n.length ? (b ? `আতিকের অ্যাপ: ${lst(n)}। "অ্যাপ খোলো" বললে দেখিয়ে দেব, সেখান থেকে ডাউনলোড করা যাবে।` : `Atik's apps: ${lst(n)}. Say "open apps" to browse and download them.`) : (b ? 'অ্যাপ শিগগিরই আসছে।' : 'Apps are coming soon.')]; },
+    websites: b => { const n = verList(D.websites); return [n.length ? (b ? `আতিকের ওয়েবসাইট: ${lst(n)}। "ওয়েবসাইট খোলো" বললে দেখিয়ে দেব।` : `Atik's websites: ${lst(n)}. Say "open websites" to browse them.`) : (b ? 'ওয়েবসাইট শিগগিরই আসছে।' : 'Websites are coming soon.')]; },
+    volunteer: b => [b ? 'আতিকের বাংলাদেশ আনসার ও ভিডিপি (গ্রাম প্রতিরক্ষা দল)-এ স্বেচ্ছাসেবক হিসেবে কাজের অভিজ্ঞতা আছে।' : 'Atik has experience as a volunteer with the Bangladesh Ansar and VDP (Village Defence Party).'],
+    fullstack: b => { const n = skillsSorted().slice(0, 8); const o = [b ? 'আতিক একজন সফটওয়্যার ইঞ্জিনিয়ার ও ফুল-স্ট্যাক ডেভেলপার। তিনি অ্যান্ড্রয়েড অ্যাপ, ওয়েবসাইট ও ওয়েব অ্যাপ বানান এবং প্রজেক্টে এআই টুল ব্যবহার করেন।' : 'Atik is a software engineer and a full-stack developer. He builds Android apps, websites and web apps, and uses AI tools in his projects.']; if (n.length) o.push(b ? `তিনি কাজ করেন: ${lst(n)}।` : `He works with ${lst(n)}.`); return o; },
+    hacker: b => [b ? 'আতিক একজন এথিক্যাল হ্যাকারও। তিনি আইনসম্মত সাইবার সিকিউরিটি সার্ভিস দেন, যেমন ওয়েবসাইট, অ্যাপ বা সিস্টেমের সিকিউরিটি অডিট, দুর্বলতা বিশ্লেষণ এবং পেনিট্রেশন টেস্টিং। এসব শুধু আপনার নিজের বা অনুমতিপ্রাপ্ত সিস্টেমের জন্য। কোনো অবৈধ হ্যাকিং তিনি করেন না।' : 'Atik is also an ethical hacker. He offers legal cyber-security services such as security audits, vulnerability assessment and penetration testing for websites, apps and systems that you own or are authorized to test. He does not do any illegal hacking.'],
+    services: b => [b ? 'আতিক কাস্টম অ্যান্ড্রয়েড অ্যাপ, ওয়েবসাইট ও ওয়েব অ্যাপ, এআই-চালিত টুল তৈরি করেন এবং এথিক্যাল হ্যাকিং ও সিকিউরিটি সার্ভিস দেন। পেজের একদম নিচের অর্ডার বাটনে আপনার প্রয়োজন জানান।' : 'Atik builds custom Android apps, websites and web apps, and AI-powered tools, and provides ethical hacking and security services. Use the order button at the bottom of the page to tell him what you need.'],
+    order: b => [b ? 'অর্ডার করতে অর্ডার ফর্ম খুলুন, অ্যাপ, ওয়েবসাইট না সিকিউরিটি সার্ভিস সেটা বেছে নিন, বিস্তারিত লিখুন, তারপর হোয়াটসঅ্যাপ বা ইমেইলে আতিকের কাছে পাঠিয়ে দিন। খরচ কাজের ধরনের ওপর নির্ভর করে, বিস্তারিত পড়ে আতিক নিজেই জানাবেন। আমাকে বলুন "অর্ডার ফর্ম খোলো", আমি খুলে দেব।' : 'To order, open the order form, choose app, website or a security service, describe what you want, and send it to Atik on WhatsApp or email. The price depends on the work, so Atik will reply after reading your details. Say "open the order form" and I will open it for you.'],
+    experience: b => { const e = (D.education || []).map(x => x.degree + (x.inst ? ' — ' + x.inst : '')); return [e.length ? (b ? `আতিকের অভিজ্ঞতা ও কোর্স: ${e.join('; ')}।` : `Atik's experience and courses: ${e.join('; ')}.`) : (b ? 'এখনো কিছু যোগ করা হয়নি।' : 'Nothing has been added yet.')]; },
+    japan: b => [b ? 'আতিক ধাপে ধাপে জাপানি ভাষা শিখছেন।' : 'Atik is learning the Japanese language step by step.'],
+    ai: b => [b ? 'আতিক বিভিন্ন এআই কোর্স ও প্রম্পট ইঞ্জিনিয়ারিং শিখছেন এবং এই অ্যাসিস্ট্যান্টের মতো এআই-চালিত টুল বানান।' : 'Atik is taking AI courses and learning prompt engineering, and he builds AI-powered tools like this assistant.'],
+    contact: b => [b ? `ইমেইল: ${EM()}। ফোন: ${D.phone || ''}। হোয়াটসঅ্যাপেও মেসেজ করতে পারেন।` : `Email: ${EM()}. Phone: ${D.phone || ''}. You can also message him on WhatsApp.`],
+    social: b => { const n = socials(); return [n.length ? (b ? `আতিককে পাওয়া যাবে: ${lst(n)}।` : `You can find Atik on ${lst(n)}.`) : (b ? 'সোশ্যাল লিংক এখনো যোগ করা হয়নি।' : 'Social links have not been added yet.')]; },
+    goals: b => [b ? 'আতিকের লক্ষ্য: আধুনিক ওয়েব ও এআই প্রযুক্তিতে আরও দক্ষ হওয়া, ডিজিটাল প্রোডাক্ট চালু করা এবং আন্তর্জাতিক টেক প্রজেক্টে কাজ করা।' : 'Atik\'s goals: master advanced web and AI technologies, launch digital products, and join global tech projects.'],
+    self: b => [b ? 'আমি আতিকের ডিজিটাল এআই এজেন্ট। এই পোর্টফোলিওতে আতিকের সম্পর্কে যা আছে সবই আমি জানি। আপনি ভয়েসে বা লিখে জিজ্ঞেস করতে পারেন। আমি সেকশনও খুলে দিতে পারি, যেমন বলুন "প্রজেক্ট খোলো" বা "ওয়েবসাইট অর্ডার করতে চাই"।' : 'I am Atik\'s digital AI agent. I know everything on this portfolio. You can ask by voice or by typing. I can also open sections for you, for example say "open projects" or "I want to order a website".'],
+    help: b => [b ? 'আপনি জিজ্ঞেস করতে পারেন: আতিক কে, বয়স, কোথায় থাকেন, আনসার ও ভিডিপি অভিজ্ঞতা, দক্ষতা, প্রজেক্ট, অ্যাপ, ওয়েবসাইট, এথিক্যাল হ্যাকিং সার্ভিস, অভিজ্ঞতা, যোগাযোগ বা অর্ডার। "আরও বলো", "আবার বলো" আর "বন্ধ করো"ও বলতে পারেন।' : 'You can ask: who is Atik, his age, where he lives, Ansar and VDP experience, skills, projects, apps, websites, ethical hacking services, experience, contact or how to order. You can also say "more", "repeat" or "stop".']
+  };
+  const CHIP = { volunteer: ['Ansar & VDP experience', 'আনসার ও ভিডিপি অভিজ্ঞতা'], fullstack: ['Full-stack skills', 'ফুল-স্ট্যাক দক্ষতা'], about: ['Who is Atik?', 'আতিক কে?'], skills: ['What are his skills?', 'তার দক্ষতা কী কী?'], projects: ['Show projects', 'প্রজেক্ট দেখাও'], apps: ['Show apps', 'অ্যাপ দেখাও'], websites: ['Show websites', 'ওয়েবসাইট দেখাও'], hacker: ['Is he an ethical hacker?', 'সে কি এথিক্যাল হ্যাকার?'], services: ['What services does he offer?', 'কী কী সার্ভিস দেন?'], order: ['Order a project', 'অর্ডার করতে চাই'], contact: ['Contact details', 'যোগাযোগের তথ্য'], experience: ['Experience & courses', 'অভিজ্ঞতা ও কোর্স'], social: ['Social links', 'সোশ্যাল লিংক'], more: ['More', 'আরও বলো'] };
+  const SUGG = { volunteer: ['experience', 'skills', 'services'], fullstack: ['projects', 'services', 'order'], greet: ['about', 'services', 'order'], about: ['skills', 'projects', 'hacker'], age: ['about', 'skills'], location: ['contact', 'about'], profession: ['skills', 'projects', 'services'], skills: ['projects', 'experience', 'order'], projects: ['apps', 'websites', 'order'], apps: ['websites', 'order'], websites: ['apps', 'order'], hacker: ['services', 'order', 'contact'], services: ['order', 'contact'], order: ['contact', 'services'], experience: ['skills', 'projects'], japan: ['experience', 'about'], ai: ['projects', 'order'], contact: ['order', 'social'], social: ['contact', 'order'], goals: ['order', 'projects'], self: ['about', 'skills', 'order'], help: ['about', 'skills', 'order'] };
+  const INT = [
+    ['volunteer', /\b(ansar|vdp|volunteer\w*|village defen[cs]e|defen[cs]e party)\b|আনসার|ভিডিপি|ভলান্টিয়ার|স্বেচ্ছাসেবক|স্বেচ্ছাসেবী|গ্রাম প্রতিরক্ষা/g, 3],
+    ['fullstack', /full.?stack|software engineer\w*|back.?end|front.?end|ফুল.?স্ট্যাক|সফটওয়্যার ইঞ্জিনিয়ার\w*|ব্যাকএন্ড|ফ্রন্টএন্ড/g, 2.5],
+    ['hacker', /hack|security|cyber|pentest|penetration|vulnerab|ethical|হ্যাক|সিকিউরিটি|সাইবার|নিরাপত্তা|এথিক্যাল|ইথিক্যাল/g, 2],
+    ['order', /\b(order|request|price|pricing|cost|quote|budget|how much|hire|book|buy)\b|অর্ডার|রিকোয়েস্ট|আবেদন|দাম|খরচ|টাকা|মূল্য|বাজেট|হায়ার/g, 2],
+    ['services', /\b(services?|offers?|provide|freelanc\w*)\b|সার্ভিস|সেবা|ফ্রিল্যান্স|বানিয়ে দ|বানাতে পার|ডেভেলপ করে দ/g, 1.5],
+    ['apps', /\b(apps?|apk|android|applications?)\b|অ্যাপ|এ্যাপ|অ্যান্ড্রয়েড/g, 1.2],
+    ['websites', /\b(websites?|sites?|web)\b|ওয়েবসাইট|ওয়েব|সাইট/g, 1.2],
+    ['projects', /\bprojects?\b|\bportfolio\b|প্রজেক্ট|পোর্টফোলিও/g, 1.2],
+    ['skills', /\b(skills?|technolog\w*|tech stack|languages?|expertise|expert|good at|know)\b|দক্ষতা|স্কিল|প্রযুক্তি|জানেন|পারদর্শী/g, 1.3],
+    ['experience', /\b(experience|courses?|education|study|learn\w*|qualification|timeline|training)\b|অভিজ্ঞতা|কোর্স|শিক্ষা|পড়াশোনা|শিখ|যোগ্যতা|ট্রেনিং/g, 1.2],
+    ['japan', /japan|জাপান/g, 2],
+    ['ai', /\b(ai|artificial|prompt|chatgpt|llm)\b|এআই|এ আই|কৃত্রিম/g, 1],
+    ['contact', /\b(contact|email|e-mail|mail|phone|number|call|whatsapp|reach|telegram)\b|যোগাযোগ|ইমেইল|ইমেল|মেইল|ফোন|নম্বর|নাম্বার|কল|হোয়াটসঅ্যাপ|টেলিগ্রাম/g, 1.6],
+    ['social', /\b(social|facebook|youtube|github|linkedin|instagram)\b|সোশ্যাল|ফেসবুক|ইউটিউব|গিটহাব|লিংকডইন/g, 1.5],
+    ['goals', /\b(goals?|future|plans?|vision|dream)\b|লক্ষ্য|ভবিষ্যৎ|পরিকল্পনা|স্বপ্ন/g, 1.2],
+    ['age', /\b(age|old|born|birthday)\b|বয়স|কত বছর|জন্ম/g, 2],
+    ['location', /\b(where|live|lives|location|address|city|based)\b|কোথায়|কোথা|ঠিকানা|থাকেন|থাকে|শহর|জেলা|ময়মনসিংহ/g, 1.5],
+    ['profession', /\b(profession|job|occupation|developer|work as|works as|for (a )?living|his work|your work)\b|what do(es)? (you|he|atik) do|পেশা|কী করেন|কি করেন|চাকরি|ডেভেলপার|কাজ করেন/g, 1.2],
+    ['self', /\b(who are you|what are you|your name|what can you do|how do you work|are you (a )?(bot|robot|ai))\b|তুমি কে|আপনি কে|তোমার নাম|আপনার নাম|কী করতে পার|কি করতে পার|কীভাবে কাজ/g, 3],
+    ['help', /\b(help|commands?|what can i ask|options)\b|সাহায্য|কমান্ড|কী জিজ্ঞেস|কি জিজ্ঞেস/g, 2],
+    ['about', /\b(who|about|introduce|name)\b|পরিচয়|(^|\s)কে(\s|\?|$)|সম্পর্কে|নাম/g, 1],
+    ['greet', /\b(hi|hello|hey|salam|assalam\w*)\b|সালাম|হ্যালো|হাই|নমস্কার/g, 0.8]
+  ];
+  const NAV = [['apps', /\b(apps?|apk|applications?)\b|অ্যাপ|এ্যাপ/, 'apps'], ['websites', /\b(websites?|sites?)\b|ওয়েবসাইট|সাইট/, 'websites'], ['projects', /\bprojects?\b|প্রজেক্ট/, 'projects'], ['skills', /\bskills?\b|দক্ষতা|স্কিল/, 'skills'], ['experience', /\b(experience|education|timeline|courses?)\b|অভিজ্ঞতা|শিক্ষা|কোর্স/, 'education'], ['about', /\babout\b|সম্পর্কে/, 'about'], ['social', /\bsocial\b|সোশ্যাল/, 'social'], ['contact', /\bcontact\b|যোগাযোগ|কন্টাক্ট/, 'contact'], ['goals', /\b(goals?|future)\b|লক্ষ্য|ভবিষ্যৎ/, 'goals'], ['order', /\b(order|request|hire)\b|অর্ডার|রিকোয়েস্ট|আবেদন|হায়ার/, 'order']];
+  const LBL = { apps: ['My Apps', 'অ্যাপ'], websites: ['My Websites', 'ওয়েবসাইট'], projects: ['Projects', 'প্রজেক্ট'], skills: ['Skills', 'দক্ষতা'], experience: ['Experience', 'অভিজ্ঞতা'], about: ['About', 'আতিকের পরিচিতি'], social: ['Social media', 'সোশ্যাল মিডিয়া'], contact: ['Contact', 'যোগাযোগ'], goals: ['Future goals', 'ভবিষ্যৎ লক্ষ্য'], order: ['the order form', 'অর্ডার ফর্ম'] };
+  const VERB = /\b(open|show|go to|take me|visit|display|launch|view)\b|খোল|খুল|দেখাও|দেখান|দেখি|যাও|যান|ওপেন|নিয়ে যাও/;
+  const STRONG_ORDER = /\b(order|request|hire|apply)\b|অর্ডার|রিকোয়েস্ট|আবেদন|হায়ার|বানাতে চাই|বানিয়ে নিতে চাই|বানাতে চাচ্ছি|(want|need|looking).{0,25}(build|make|create|develop|app|website|site)/;
+  const UNSAFE = /(hack|crack|steal|break into|bypass|ddos|phish|spy on).{0,40}(facebook|instagram|whatsapp|account|password|wifi|wi-fi|someone|somebody|gmail|bank|girlfriend|boyfriend|phone)|(ফেসবুক|ইনস্টাগ্রাম|অ্যাকাউন্ট|পাসওয়ার্ড|আইডি|ওয়াইফাই|ব্যাংক).{0,25}(হ্যাক|চুরি|ক্র্যাক)|(হ্যাক|চুরি).{0,12}(করে দ|করতে চাই|করো|করুন)/;
+  const SAFE = /my own|my site|my website|my account|authori[sz]ed|permission|protect|secure my|audit|আমার নিজের|আমার (সাইট|ওয়েবসাইট|অ্যাকাউন্ট)|অনুমতি|সুরক্ষ|নিরাপদ/;
+  const STOP = new Set(['application', 'platform', 'concept', 'secure', 'future', 'connection', 'assistant', 'citizen', 'reporting', 'website', 'project']);
+  const ents = () => projList().map(x => ({ n: x.n, d: x.d, t: x.t, v: '' })).concat((D.apps || []).map(x => ({ n: x.title, d: x.desc, t: '', v: x.version || '' }))).concat((D.websites || []).map(x => ({ n: x.title, d: x.desc, t: '', v: '' })));
+  const entHit = l => ents().find(e => { const n = String(e.n || '').toLowerCase(); if (n.length < 3) return false; if (l.includes(n)) return true; return n.split(/[^a-z0-9]+/).some(w => w.length >= 5 && !STOP.has(w) && l.includes(w)); });
+  let ctx = { intent: null, rest: [], last: '', force: null };
+
+  function agent(q) {
+    const raw = String(q || '').trim(); if (!raw) return '';
+    const l = raw.toLowerCase();
+    if (/^(please )?(speak|talk|reply|answer|say|tell).{0,20}(bangla|bengali)$|^বাংলায়( বলো| বলুন| কথা বলো| উত্তর দাও)?$/.test(l)) ctx.force = 'bn';
+    else if (/^(please )?(speak|talk|reply|answer|say|tell).{0,20}english$|^(ইংরেজিতে|ইংলিশে)( বলো| বলুন| কথা বলো| উত্তর দাও)?$/.test(l)) ctx.force = 'en';
+    else if (/^(reset language|auto language)$/.test(l)) ctx.force = null;
+    const bn = ctx.force ? ctx.force === 'bn' : isBn(raw), T = (e, b) => bn ? b : e;
+    const ret = (text, keys, act) => { ctx.last = text; window.__axAct = act || null; window.__axChips = (keys || []).filter(k => CHIP[k]).map(k => CHIP[k][bn ? 1 : 0]); return text; };
+    const say1 = (id, chunks, act) => { ctx.intent = id; ctx.rest = chunks.slice(1); const keys = (SUGG[id] || ['about', 'skills', 'order']).slice(); if (ctx.rest.length) keys.unshift('more'); return ret(chunks[0], keys, act); };
+    const sec = id => () => switchSection(id);
+
+    if (/^(please )?(speak|talk|reply|answer|say|tell).{0,20}(bangla|bengali|english)$|^(বাংলায়|ইংরেজিতে|ইংলিশে)( বলো| বলুন| কথা বলো| উত্তর দাও)?$/.test(l))
+      return ret(T('Okay, I will reply in English. What would you like to know about Atik?', 'ঠিক আছে, এখন থেকে বাংলায় উত্তর দেব। আতিক সম্পর্কে কী জানতে চান?'), ['about', 'skills', 'order']);
+    if (/\b(bye|goodbye|stop listening|quit|exit|stop)\b|বিদায়|বন্ধ কর|থামো|থামুন|স্টপ|আল্লাহ হাফেজ/.test(l)) { if (window.axVoiceStop) setTimeout(window.axVoiceStop, 900); return ret(T('Goodbye! Tap the microphone whenever you want to talk again.', 'বিদায়! আবার কথা বলতে চাইলে মাইক্রোফোনে ট্যাপ করুন।'), []); }
+    if (/thank|ধন্যবাদ|শুকরিয়া|থ্যাংক/.test(l)) return ret(T('You are welcome! Anything else about Atik?', 'আপনাকেও ধন্যবাদ! আতিক সম্পর্কে আর কিছু জানতে চান?'), ['skills', 'order']);
+    if (/\b(repeat|say again|once more)\b|আবার বল|আবার বলো|আবার বলুন|রিপিট/.test(l)) return ret(ctx.last || T('I have not said anything yet. Ask me about Atik!', 'আমি এখনো কিছু বলিনি। আতিক সম্পর্কে জিজ্ঞেস করুন!'), []);
+    if (/^(more|continue|next|go on|tell me more|details|elaborate)\b|^(আরো|আরও|বিস্তারিত|এরপর|আর কি|আর কী|বলতে থাকো)/.test(l)) {
+      if (ctx.rest.length) { const t = ctx.rest.shift(), keys = (SUGG[ctx.intent] || []).slice(); if (ctx.rest.length) keys.unshift('more'); return ret(t, keys); }
+      return ret(T('That is everything I know about that. What else would you like to know?', 'এ বিষয়ে আমার জানা এটুকুই। আর কী জানতে চান?'), SUGG[ctx.intent] || ['about', 'skills', 'order']);
+    }
+    if (UNSAFE.test(l) && !SAFE.test(l)) return ret(T('I cannot help with hacking into other people\'s accounts, passwords or systems. Atik only does legal, authorized ethical-hacking work, such as security audits and penetration tests for systems you own or have permission to test. Would you like to request that?', 'অন্যের অ্যাকাউন্ট, পাসওয়ার্ড বা সিস্টেম হ্যাক করতে আমি সাহায্য করতে পারি না। আতিক শুধু আইনসম্মত ও অনুমতিপ্রাপ্ত এথিক্যাল হ্যাকিংয়ের কাজ করেন, যেমন আপনার নিজের সিস্টেমের সিকিউরিটি অডিট ও পেনিট্রেশন টেস্ট। সেটা অর্ডার করতে চান?'), ['hacker', 'order']);
+    const en = entHit(l);
+    if (en) { const t = en.n + (en.v ? ' (' + en.v + ')' : '') + (en.d ? ': ' + en.d : '') + (en.t ? (bn ? ' প্রযুক্তি: ' : ' Tech: ') + en.t + '.' : ''); ctx.intent = 'projects'; ctx.rest = []; return ret(t, ['apps', 'websites', 'order']); }
+    const nv = NAV.find(n => n[1].test(l));
+    if (nv && VERB.test(l)) {
+      const [key, , id] = nv;
+      if (key === 'order') { ctx.intent = 'order'; ctx.rest = []; return ret(T('Opening the order form. Describe what you need and send it to Atik on WhatsApp or email.', 'অর্ডার ফর্ম খুলছি। কী লাগবে বিস্তারিত লিখে হোয়াটসঅ্যাপ বা ইমেইলে আতিকের কাছে পাঠান।'), ['contact', 'services'], () => window.axOpenOrder(orderType(l))); }
+      return say1(key, [T(`Opening ${LBL[key][0]}. `, `${LBL[key][1]} খুলছি। `) + B[key](bn)[0]].concat(B[key](bn).slice(1)), sec(id));
+    }
+    if (STRONG_ORDER.test(l)) { ctx.intent = 'order'; ctx.rest = []; return ret(T('Great! Opening the order form. Tell Atik exactly what you want and send it on WhatsApp or email.', 'চমৎকার! অর্ডার ফর্ম খুলছি। আতিককে বিস্তারিত জানিয়ে হোয়াটসঅ্যাপ বা ইমেইলে পাঠিয়ে দিন।'), ['contact', 'services'], () => window.axOpenOrder(orderType(l))); }
+    let best = null, bs = 0;
+    for (const [id, re, w] of INT) { const m = l.match(re); const sc = m ? m.length * w : 0; if (sc > bs) { bs = sc; best = id; } }
+    if (best && bs >= 0.8) return say1(best, B[best](bn));
+    ctx.intent = null; ctx.rest = [];
+    return ret(window.axFallbackText || T('I am not sure about that yet. You can ask me about Atik\'s skills, projects, apps, websites, ethical hacking services, experience, contact details, or how to order.', 'এ বিষয়ে আমি এখনো নিশ্চিত নই। আতিকের দক্ষতা, প্রজেক্ট, অ্যাপ, ওয়েবসাইট, এথিক্যাল হ্যাকিং সার্ভিস, অভিজ্ঞতা, যোগাযোগ বা অর্ডার সম্পর্কে জিজ্ঞেস করতে পারেন।'), ['skills', 'projects', 'order']);
+  }
+  const orderType = l => /hack|security|cyber|pentest|হ্যাক|সিকিউরিটি|সাইবার/.test(l) ? 'security' : /\bai\b|এআই/.test(l) ? 'ai' : /app|apk|android|অ্যাপ|অ্যান্ড্রয়েড/.test(l) ? 'app' : /web|site|ওয়েব|সাইট/.test(l) ? 'website' : '';
+
+  /* ---------- VOICE AGENT LOOP: listen -> answer by voice -> listen again ---------- */
+  const SRc = window.SpeechRecognition || window.webkitSpeechRecognition;
+  let agentOn = false, rec = null, voiceLang = 'bn-BD', idle = 0, busy = false;
+  window.axAgentOn = () => agentOn;
+  const markMic = () => { const b = document.getElementById('axMic'); if (b) b.classList.toggle('on', agentOn); };
+  function listen() {
+    if (!agentOn || busy) return;
+    if (!SRc) { agentOn = false; markMic(); add('Voice input is not supported in this browser. Please type instead.', 'ai'); return; }
+    if ('speechSynthesis' in window && speechSynthesis.speaking) return;
+    try { rec = new SRc(); } catch (e) { return; }
+    rec.lang = voiceLang; rec.interimResults = false; rec.maxAlternatives = 1; busy = true;
+    let got = false;
+    rec.onstart = () => { if (window.axSetListen) axSetListen(true); };
+    rec.onresult = e => { got = true; idle = 0; const t = ((e.results[0] && e.results[0][0] && e.results[0][0].transcript) || '').trim(); if (t) axAsk(t, true); };
+    rec.onerror = e => { if (e.error === 'not-allowed' || e.error === 'service-not-allowed') { agentOn = false; markMic(); add('Microphone permission is blocked. Please allow the microphone, or type your question.', 'ai'); } else if (e.error === 'no-speech') idle++; };
+    rec.onend = () => { busy = false; if (window.axSetListen) axSetListen(false); if (!agentOn || got) return; if (idle >= 3) { agentOn = false; markMic(); add('I stopped listening because it was quiet. Tap the microphone to talk again.', 'ai'); return; } setTimeout(listen, 350); };
+    try { rec.start(); } catch (e) { busy = false; }
+  }
+  window.axAfterSpeak = () => { if (agentOn) setTimeout(listen, 300); };
+  window.axVoiceStop = () => { agentOn = false; try { rec && rec.abort(); } catch (e) {} busy = false; if (window.axSetListen) axSetListen(false); markMic(); };
+  window.axVoiceToggle = () => {
+    if (agentOn) { axVoiceStop(); add('Voice agent is off.', 'ai'); return; }
+    if (!SRc) { add('Voice input is not supported in this browser. Please type instead.', 'ai'); return; }
+    agentOn = true; idle = 0; markMic();
+    const spk = window.axCfgVoice !== false && 'speechSynthesis' in window;
+    if (!window.axSpokeOnce) { axGreet(); if (!spk) listen(); }
+    else { const m = ctx.force === 'en' || !isBn(ctx.last || '') ? 'I am listening. Ask me anything about Atik.' : 'শুনছি, বলুন।'; add(m, 'ai'); if (spk && voiceOn) say(m); else listen(); }
+  };
+  window.axMic = window.axVoiceToggle;
+  window.axLangToggle = () => { voiceLang = voiceLang === 'bn-BD' ? 'en-US' : 'bn-BD'; const b = document.getElementById('axLang'); if (b) b.textContent = voiceLang === 'bn-BD' ? 'বাং' : 'EN'; if (agentOn && rec) { try { rec.abort(); } catch (e) {} } };
+  window.axAutoListen = async () => { if (!SRc || !navigator.permissions || !navigator.permissions.query) return; try { const p = await navigator.permissions.query({ name: 'microphone' }); if (p.state === 'granted') { agentOn = true; idle = 0; markMic(); } } catch (e) {} };
+  document.addEventListener('visibilitychange', () => { if (document.hidden && agentOn) axVoiceStop(); });
+
+  /* ---------- ORDER / REQUEST FORM ---------- */
+  const om = document.createElement('div'); om.className = 'section-modal'; om.id = 'modal-order';
+  om.innerHTML = `<div class="modal-content"><div class="modal-close" onclick="closeModal('modal-order')"><i class="fa-solid fa-xmark"></i></div>
+    <h2 class="sec-title"><svg class="ax-hico" aria-hidden="true"><use href="#axi-order"/></svg> ORDER / REQUEST</h2>
+    <p style="color:var(--text-dim);line-height:1.7;margin-bottom:14px">Tell Atik what you need: an Android app, a website, an AI tool, or ethical hacking and security work. Atik is also an <b style="color:#fff">Ethical Hacker</b>. Security work is accepted only for systems you own or are authorized to test.</p>
+    <div class="contact-form">
+      <div class="form-group"><label>YOUR NAME *</label><input id="ordN" class="form-input" placeholder="Full name"></div>
+      <div class="form-group"><label>WHATSAPP / PHONE / EMAIL *</label><input id="ordC" class="form-input" placeholder="How can Atik reach you?"></div>
+      <div class="form-group"><label>WHAT DO YOU NEED? *</label><select id="ordT" class="form-input"><option value="app">Android App</option><option value="website">Website / Web App</option><option value="ai">AI-powered Tool</option><option value="security">Ethical Hacking / Security Service</option><option value="other">Something else</option></select></div>
+      <div class="form-group"><label>BUDGET (optional)</label><input id="ordB" class="form-input" placeholder="e.g. 5000 BDT"></div>
+      <div class="form-group"><label>DEADLINE (optional)</label><input id="ordD" class="form-input" placeholder="e.g. within 2 weeks"></div>
+      <div class="form-group"><label>DETAILED DESCRIPTION *</label><textarea id="ordM" class="form-input" placeholder="Describe the app / website / service you want in detail..."></textarea></div>
+      <label style="color:var(--text-dim);font-size:.85rem"><input type="checkbox" id="ordL"> I confirm this request is legal and, for security work, the system belongs to me or I have permission to test it.</label>
+      <button class="ai-btn ai-btn-primary" style="justify-content:center;padding:12px" onclick="axOrderSend('wa')"><i class="fa-brands fa-whatsapp"></i> SEND VIA WHATSAPP</button>
+      <button class="ai-btn" style="justify-content:center;padding:12px" onclick="axOrderSend('mail')"><i class="fa-solid fa-envelope"></i> SEND VIA EMAIL</button>
+    </div></div>`;
+  document.body.appendChild(om);
+  window.axOpenOrder = type => { const t = document.getElementById('ordT'); if (type && t) t.value = type; switchSection('order'); };
+  window.axOrderSend = kind => {
+    const v = id => document.getElementById(id).value.trim(), sel = document.getElementById('ordT');
+    const name = v('ordN'), contact = v('ordC'), msg = v('ordM');
+    if (!name || !contact || !msg) { showToast('Please fill name, contact and description'); return; }
+    if (sel.value === 'security' && !document.getElementById('ordL').checked) { showToast('Please confirm the request is legal and authorized'); return; }
+    const text = `New Project Request\nName: ${name}\nContact: ${contact}\nService: ${sel.options[sel.selectedIndex].text}\nBudget: ${v('ordB') || '-'}\nDeadline: ${v('ordD') || '-'}\nLegal/authorized confirmed: ${document.getElementById('ordL').checked ? 'yes' : 'n/a'}\n\nDetails:\n${msg}`;
+    const url = kind === 'wa' ? 'https://wa.me/' + waDigits() + '?text=' + encodeURIComponent(text) : 'mailto:' + EM() + '?subject=' + encodeURIComponent('Project request from ' + name) + '&body=' + encodeURIComponent(text);
+    const a = document.createElement('a'); a.href = url; if (kind === 'wa') { a.target = '_blank'; a.rel = 'noopener'; } document.body.appendChild(a); a.click(); a.remove();
+    showToast(kind === 'wa' ? 'Opening WhatsApp. Press send to deliver your request.' : 'Opening your email app. Press send to deliver your request.');
+  };
+  const ordSec = document.createElement('section'); ordSec.className = 'ax'; ordSec.id = 'ax-order'; ordSec.style.cssText = 'padding-top:10px;text-align:center';
+  ordSec.innerHTML = `<button class="ax-d2b ax-obtn" onclick="axOpenOrder()"><svg class="ax-big"><use href="#axi-order"/></svg><b>ORDER / REQUEST</b><small>Custom Apps · Websites · Ethical Hacking</small></button><p class="ax-sub" style="margin:16px auto 0;max-width:520px">Need an app, a website or security work? Tell Atik exactly what you want. <b style="color:#fff">Atik is also an Ethical Hacker</b> — legal, authorized security services only.</p>`;
+  host.appendChild(ordSec);
+
   /* ---------- LIVE RENDER (reflects admin changes) ---------- */
   const PAL = ['#0e7490,#1e3a8a','#4338ca,#7e22ce','#0f766e,#1e40af','#9a3412,#9d174d','#155e75,#0f766e','#9f1239,#3730a3'];
   const CATL = { WEB: 'WEB PROJECT', AI: 'ARTIFICIAL INTELLIGENCE', APP: 'APPLICATION', GAME: 'GAME CONCEPT', SECURITY: 'SECURITY' };
+  function waCards() {
+    const o = [];
+    [['apps', 'ANDROID APP'], ['websites', 'WEBSITE']].forEach(([k, lab]) => (D[k] || []).forEach((x, i) => {
+      if (x._seed && !(x.link || x.open || x.fileId || x.imgId || (x.imgs && x.imgs.length) || x.logoId || x.details)) return;
+      const ids = (x.imgs && x.imgs.length) ? x.imgs : (x.imgId ? [x.imgId] : []);
+      const q = window.axWAActs ? axWAActs(k, x).slice(0, 2).join('') : '';
+      o.push([(x.title || '?').split(/\s+/).filter(Boolean).slice(0, 2).map(w => w[0]).join('').toUpperCase() || '?', Eh(x.title), lab, x.link ? 'LIVE' : (x.fileId ? 'FREE DOWNLOAD' : (x.version || 'COMING SOON')), Eh(x.desc), [lab === 'WEBSITE' ? 'Website' : 'Android App'].concat(x.version ? [Eh(x.version)] : []), PAL[(i + (k === 'apps' ? 0 : 3)) % PAL.length], '', String(x.title || '').replace(/["'\\<>&]/g, ''), { k, i, img: ids[0] || '', logo: x.logoId || '', quick: q }]);
+    }));
+    return o;
+  }
   function buildCards() {
-    if (!custom()) return projects.map(p => p.concat(['', '']));
-    return (D.projects || []).map((p, i) => {
+    let base;
+    if (!custom()) base = projects.map(p => p.concat(['', '']));
+    else base = (D.projects || []).map((p, i) => {
       const mono = (p.name || '?').split(/\s+/).filter(Boolean).slice(0, 2).map(w => w[0]).join('').toUpperCase() || '?';
       const bt = [];
       if (p.link) bt.push(`<a class="ax-btn" style="display:block;text-align:center;text-decoration:none;margin-bottom:8px" href="${Eh(p.link)}" target="_blank" rel="noopener">VIEW LIVE ↗</a>`);
       (p.files || []).forEach(f => bt.push(f.kind === 'video' ? `<button class="ax-btn" style="margin-bottom:8px" onclick="axPlay('${f.id}')">▶ WATCH: ${Eh(f.name)}</button>` : `<button class="ax-btn" style="margin-bottom:8px" onclick="axDl('${f.id}')">⬇ FREE DOWNLOAD: ${Eh(f.name)}</button>`));
       return [mono, Eh(p.name), Eh(CATL[p.category] || p.category || 'PROJECT'), p.link ? 'LIVE' : ((p.files || []).length ? 'FREE DOWNLOAD' : 'IN DEVELOPMENT'), Eh(p.desc), (p.tech || []).map(Eh), PAL[i % PAL.length], bt.join(''), String(p.name || '').replace(/["'\\<>&]/g, '')];
     });
+    const rawN = c => String(c[8] !== undefined && c[8] !== '' ? c[8] : c[1]).toLowerCase().trim();
+    waCards().forEach(c => { const n = String(c[8]).toLowerCase().trim(), ix = base.findIndex(b => !b[9] && rawN(b) === n); if (ix >= 0) base[ix] = c; else base.push(c); });
+    return base;
+  }
+  function hydrate(g) {
+    g.querySelectorAll('.ax-banner').forEach(async b => {
+      const i = b.dataset.i, l = b.dataset.l; if (!window.axImgURL) return;
+      if (i) { const u = await axImgURL(i); if (u) b.style.background = `linear-gradient(180deg,rgba(3,7,18,.05),rgba(3,7,18,.78)),url(${u}) center/cover`; }
+      if (l) { const u = await axImgURL(l), mo = b.querySelector('.ax-mono'); if (u && mo) { mo.innerHTML = `<img src="${u}" alt="" class="ax-clogo">`; mo.style.opacity = '1'; } }
+    });
   }
   function renderProj() {
     cards = buildCards(); const g = document.getElementById('axProjGrid'); if (!g) return;
-    g.innerHTML = cards.length ? cards.map((p, i) => `
-    <div class="ax-card"><div class="ax-banner" style="background:linear-gradient(135deg,${p[6]})">
+    g.innerHTML = cards.length ? cards.map((p, i) => { const m = p[9]; return `
+    <div class="ax-card"><div class="ax-banner"${m ? ` data-i="${m.img}" data-l="${m.logo}"` : ''} style="background:linear-gradient(135deg,${p[6]})">
       <div style="display:flex;justify-content:space-between"><span class="ax-pill">${p[2]}</span><span class="ax-pill">● ${p[3]}</span></div>
       <div class="ax-mono">${p[0]}</div><div class="ax-bt">${p[1]}</div></div>
       <div class="ax-body"><p>${p[4]}</p><div class="project-tech">${p[5].map(t => `<span class="tech-tag">${t}</span>`).join('')}</div>
-      <button class="ax-btn" onclick="axProject(${i})">ENTER PROJECT INTERFACE →</button></div></div>`).join('') : '<p class="ax-sub">Projects coming soon.</p>';
+      <button class="ax-btn" onclick="${m ? `axWAView('${m.k}',${m.i})` : `axProject(${i})`}">ENTER PROJECT INTERFACE →</button>${m && m.quick ? `<div class="ax-quick">${m.quick}</div>` : ''}</div></div>`; }).join('') : '<p class="ax-sub">Projects coming soon.</p>';
+    hydrate(g);
   }
   function renderTl() {
     const t = document.getElementById('axTl'); if (!t) return;
@@ -556,7 +844,9 @@ document.addEventListener('DOMContentLoaded',()=>{const s=$('ax-ai');if(s&&'Inte
     msgs().appendChild(d); msgs().scrollTop = msgs().scrollHeight;
   }
   function reply(q) {
+    window.__axAct = null; window.__axChips = null;
     if (window.axCustomReply) { const c = window.axCustomReply(q); if (c) return c; }
+    { const r = agent(q); if (r) return r; }
     const ql = q.toLowerCase();
     const hit = projList().find(p => p.n && ql.includes(p.n.toLowerCase()));
     if (hit) return hit.n + (hit.d ? ': ' + hit.d : '') + (hit.t ? ' Tech: ' + hit.t + '.' : '');
@@ -570,9 +860,20 @@ document.addEventListener('DOMContentLoaded',()=>{const s=$('ax-ai');if(s&&'Inte
     if (typeof speakText === 'function') speakText(t);
     else if ('speechSynthesis' in window) speechSynthesis.speak(new SpeechSynthesisUtterance(t));
   }
-  window.axAsk = q => {
-    add(q, 'u'); const a = reply(q); setTimeout(() => { add(a, 'ai'); say(a); }, 250);
-    document.getElementById('ax-ai').scrollIntoView({ behavior: 'smooth' });
+  window.axAsk = (q, fromVoice) => {
+    add(q, 'u'); const a = reply(q); const act = window.__axAct, chips = window.__axChips; window.__axAct = null; window.__axChips = null;
+    setTimeout(() => {
+      add(a, 'ai');
+      if (chips && chips.length) {
+        const row = document.createElement('div'); row.className = 'ax-cr'; row.style.cssText = 'align-self:flex-start;display:flex;flex-wrap:wrap;gap:6px;max-width:94%';
+        chips.forEach(c => { const b = document.createElement('button'); b.className = 'ax-chip'; b.textContent = c; b.onclick = () => axAsk(c); row.appendChild(b); });
+        msgs().appendChild(row); msgs().scrollTop = msgs().scrollHeight;
+      }
+      say(a);
+      if (act) setTimeout(act, 500);
+      if (window.axAgentOn && window.axAgentOn() && !(voiceOn && window.axCfgVoice !== false && 'speechSynthesis' in window)) setTimeout(() => window.axAfterSpeak && window.axAfterSpeak(), 600);
+    }, 250);
+    if (!fromVoice && !act) document.getElementById('ax-ai').scrollIntoView({ behavior: 'smooth' });
   };
   window.axSend = () => { const i = document.getElementById('axInput'); const v = i.value.trim(); if (v) { i.value = ''; axAsk(v); } };
   window.axClear = () => { msgs().innerHTML = ''; add('Chat cleared. Ask me anything about Atik.', 'ai'); };
@@ -583,16 +884,6 @@ document.addEventListener('DOMContentLoaded',()=>{const s=$('ax-ai');if(s&&'Inte
   window.axGreet = () => {
     const g = (D.aiSpeech && D.aiSpeech.greeting) || 'Hello! I am Atik\'s digital AI assistant.';
     add(g, 'ai'); const was = voiceOn; voiceOn = true; say(g); voiceOn = was;
-  };
-  window.axMic = () => {
-    const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
-    if (!SR) { add('Voice input is not supported in this browser. Please type instead.', 'ai'); return; }
-    const r = new SR(), b = document.getElementById('axMic');
-    r.lang = 'bn-BD'; r.interimResults = false;
-    r.onstart = () => b.classList.add('on'); r.onend = () => b.classList.remove('on');
-    r.onresult = e => { document.getElementById('axInput').value = e.results[0][0].transcript; axSend(); };
-    r.onerror = () => add('Could not hear you. Please allow microphone access and try again.', 'ai');
-    r.start();
   };
   window.axMail = () => {
     const n = axN.value, e = axE.value, m = axM.value;
@@ -644,6 +935,7 @@ const live=$('axLive'),T=$('axLiveT'),S=$('axLiveS');
 const setTalk=on=>{live.classList.toggle('talk',on);document.body.classList.toggle('ax-talking',on);T.textContent=on?'SPEAKING':'AI ACTIVE';S.textContent=on?'LISTEN...':'READY TO TALK';
 if(typeof setVisualizerActive==='function')setVisualizerActive(on);
 const st=$('speech-status'),tg=$('ai-status-tag');if(st)st.innerText=on?'● AI SPEAKING...':'● AI ONLINE';if(tg)tg.innerText=on?'ATIK AI • SPEAKING':'ATIK AI • ONLINE'};
+window.axSetListen=on=>{live.classList.toggle('listen',on);document.body.classList.toggle('ax-talking',on);T.textContent=on?'LISTENING':'AI ACTIVE';S.textContent=on?'SPEAK NOW':'READY TO TALK'};
 let voices=[];const lv=()=>{voices=speechSynthesis.getVoices()};
 if('speechSynthesis' in window){lv();speechSynthesis.onvoiceschanged=lv}
 window.speakText=function(text){
@@ -652,27 +944,36 @@ if(window.axCfgVoice===false)return;
 speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text),bn=/[\u0980-\u09FF]/.test(text);
 const v=bn?voices.find(x=>/bn/i.test(x.lang)):(voices.find(x=>/en/i.test(x.lang)&&/google|david|daniel|male/i.test(x.name))||voices.find(x=>/en/i.test(x.lang)));
 if(v)u.voice=v;u.lang=bn?'bn-BD':'en-US';u.pitch=.55;u.rate=.92;
-u.onstart=()=>{window.axSpokeOnce=true;setTalk(true)};u.onend=u.onerror=()=>setTalk(false);
+u.onstart=()=>{window.axSpokeOnce=true;setTalk(true)};u.onend=u.onerror=()=>{setTalk(false);setTimeout(()=>{if(!speechSynthesis.speaking&&window.axAfterSpeak)window.axAfterSpeak()},250)};
 speechSynthesis.speak(u)};
 if(typeof stopSpeaking==='function'){const _s=stopSpeaking;window.stopSpeaking=function(){_s();setTalk(false)}}
 const greet=()=>(typeof AIgreet==='function'?AIgreet():window.AX_GREET)||'';
-live.onclick=()=>{const t=greet();if(typeof updateAIDisplay==='function')updateAIDisplay(t);speakText(t)};
-function entry(){const t=greet();if(!t)return;if(typeof updateAIDisplay==='function')updateAIDisplay(t);speakText(t);
+live.onclick=()=>{if(window.axVoiceToggle)axVoiceToggle();else{const t=greet();if(typeof updateAIDisplay==='function')updateAIDisplay(t);speakText(t)}};
+function entry(){const t=greet();if(!t)return;if(typeof updateAIDisplay==='function')updateAIDisplay(t);speakText(t);if(window.axAutoListen)axAutoListen();
 setTimeout(()=>{if(window.axSpokeOnce)return;S.textContent='TAP ANYWHERE TO HEAR';
-const ev=['pointerdown','keydown','touchstart'],go=()=>{ev.forEach(e=>removeEventListener(e,go,true));if(!window.axSpokeOnce)speakText(t)};ev.forEach(e=>addEventListener(e,go,true))},1500)}
+const ev=['pointerdown','keydown','touchstart'],go=ev0=>{ev.forEach(x=>removeEventListener(x,go,true));if(ev0&&ev0.target&&ev0.target.closest&&ev0.target.closest('.ax-live'))return;if(!window.axSpokeOnce)speakText(t)};ev.forEach(e=>addEventListener(e,go,true))},1500)}
 const start=()=>setTimeout(entry,1500);
 if(document.readyState==='complete')start();else addEventListener('load',start);
 })();
 </script>
 <style>
 .ax-dual{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:560px;width:100%;margin:6px auto 0;position:relative;z-index:6}
-.ax-dbtn{background:var(--card-bg);border:1px solid var(--cyan-glow);border-radius:14px;padding:16px 8px;color:#fff;font-family:var(--font-head);cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;box-shadow:0 0 18px rgba(0,240,255,.25);backdrop-filter:blur(5px);transition:.3s}
-.ax-dbtn i{font-size:2rem;color:var(--cyan-glow);filter:drop-shadow(0 0 8px var(--cyan-glow))}
-.ax-dbtn b{font-size:.85rem;letter-spacing:1px}.ax-dbtn small{font-family:var(--font-mono);font-size:.65rem;color:var(--text-dim)}
-.ax-dbtn:hover,.ax-dbtn:active{background:rgba(0,240,255,.15);box-shadow:0 0 28px rgba(0,240,255,.5);transform:translateY(-3px)}
 .modal-content .sec-title{padding-right:52px}
 @media(max-width:992px){.avatar-center-wrapper{margin:78px 0 84px}}
 .avatar-center-wrapper{pointer-events:auto}
+.ax-dual{pointer-events:auto}
+.hud-nodes-container .ax-dual{margin:0}
+.ax-dual.ax-after{margin:56px auto 0}
+.ax-obtn{max-width:420px;width:100%;margin:0 auto}
+.ax-d2b{background:none;border:0;color:#aef6ff;font-family:var(--font-head);cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:10px;padding:6px 4px;transition:.3s}
+.ax-d2b b{font-size:1.45rem;font-weight:500;letter-spacing:3px;text-shadow:0 0 12px rgba(0,240,255,.55)}
+.ax-d2b small{font-family:var(--font-mono);font-size:.68rem;color:var(--text-dim);letter-spacing:1px}
+.ax-big{width:150px;height:150px;filter:drop-shadow(0 0 14px rgba(0,240,255,.55));transition:.3s}
+.ax-d2b:hover .ax-big,.ax-d2b:active .ax-big{transform:translateY(-4px) scale(1.04);filter:drop-shadow(0 0 22px rgba(0,240,255,.9))}
+.ax-ico{width:26px;height:26px;display:block}.ax-hico{width:1.15em;height:1.15em;vertical-align:-.18em}
+@media(max-width:480px){.ax-big{width:132px;height:132px}.ax-d2b b{font-size:1.25rem}}
+.ax-live.listen .ax-wv i{animation-duration:.5s}
+.ax-live.listen{box-shadow:0 0 26px var(--cyan-glow)}
 @media(max-width:768px){.modal-content .sec-title{font-size:1.25rem}
 .nav-links{top:var(--hdr-h,70px)!important;height:calc(100vh - var(--hdr-h,70px))!important;width:min(72vw,280px)!important;background:rgba(3,7,18,.985)!important;box-shadow:-8px 0 30px rgba(0,0,0,.6);gap:6px}
 .nav-links a{display:block}}
@@ -681,4 +982,85 @@ if(document.readyState==='complete')start();else addEventListener('load',start);
 document.addEventListener('click',e=>{const n=document.getElementById('nav-links');if(n&&n.classList.contains('open')&&!e.target.closest('#nav-links')&&!e.target.closest('.menu-btn'))closeMenu()});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()})})();</script>
 <script>(function(){const im=document.getElementById('avatar-img');const chk=()=>{if(im&&im.complete&&!im.naturalWidth&&typeof handleImageError==='function')handleImageError(im)};addEventListener('load',()=>setTimeout(chk,300))})();</script>
+<script>(function(){const d=document.querySelector('.ax-dual'),w=document.querySelector('.avatar-center-wrapper'),sec=document.querySelector('.avatar-matrix-section'),mq=matchMedia('(max-width:992px)');
+function place(){if(!d||!w||!sec)return;if(mq.matches){if(d.previousElementSibling!==w)w.after(d);d.classList.remove('ax-after')}else{if(d.previousElementSibling!==sec)sec.after(d);d.classList.add('ax-after')}}
+place();if(mq.addEventListener)mq.addEventListener('change',place);else mq.addListener(place)})();</script>
+<style>
+.ax-iris{position:absolute;inset:-12px;border-radius:50%;pointer-events:none;z-index:0;background:radial-gradient(circle,rgba(0,240,255,0) 58%,rgba(0,240,255,.28) 68%,rgba(0,102,255,.18) 78%,transparent 82%);animation:axBreath 4.2s ease-in-out infinite}
+.ax-iris::before,.ax-iris::after{content:'';position:absolute;inset:10px;border-radius:50%;border:2px solid rgba(0,240,255,.7);opacity:0}
+body.ax-talking .ax-iris{animation:axTalk 1s ease-in-out infinite}
+body.ax-talking .ax-iris::before{animation:axRip 1.9s ease-out infinite}
+body.ax-talking .ax-iris::after{animation:axRip 1.9s ease-out .95s infinite}
+@keyframes axBreath{0%,100%{transform:scale(.98);opacity:.55}50%{transform:scale(1.04);opacity:.95}}
+@keyframes axTalk{0%,100%{transform:scale(1);opacity:.8}50%{transform:scale(1.08);opacity:1}}
+@keyframes axRip{0%{transform:scale(1);opacity:.65}100%{transform:scale(1.45);opacity:0}}
+.ring-glow{transition:box-shadow .5s ease}
+</style>
+<script>(function(){const w=document.querySelector('.avatar-center-wrapper');if(w&&!w.querySelector('.ax-iris'))w.insertAdjacentHTML('afterbegin','<div class="ax-iris"></div>')})();</script>
+<style>
+html,body{overflow-x:hidden;max-width:100%}
+.scanline{top:0!important;animation:axScan 8s linear infinite!important;will-change:transform}
+@keyframes axScan{0%{transform:translateY(-10px)}100%{transform:translateY(100vh)}}
+.v-bar.active{animation-name:axWave}@keyframes axWave{0%{transform:scaleY(.2)}100%{transform:scaleY(1)}}
+.ax-wv i{height:100%;animation-name:axw2}@keyframes axw2{0%{transform:scaleY(.2)}100%{transform:scaleY(1)}}
+header,.hud-card-btn,.ai-assistant-wrapper,.nav-links{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+header{background:rgba(3,7,18,.93)}
+.hud-card-btn,.ai-assistant-wrapper{background:rgba(8,15,30,.84)}
+.section-modal{visibility:hidden;transition:opacity .4s,visibility 0s linear .4s}
+.section-modal.active{visibility:visible;transition:opacity .4s}
+.ax{content-visibility:auto;contain-intrinsic-size:auto 640px}
+body.ax-modal-open :is(.scanline,.ring-outer,.ring-middle,.ax-iris,.ax-live,.ax-wv i,.status-dot,.v-bar){animation-play-state:paused!important}
+@media(max-width:420px){.ax-live{right:-6px}}
+.main-container>*{min-width:0;max-width:100%}
+.ax{min-width:0;max-width:100%;overflow-wrap:anywhere}
+.ax-obtn{white-space:normal}.ax-obtn b,.ax-obtn small{max-width:100%;text-align:center}
+.ax-sub{max-width:100%}
+.ax-grid[style*="300px"]{grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr))!important}
+.ax-panel{min-width:0;max-width:100%}
+.ax-lg{width:100%;height:100%;object-fit:cover;border-radius:5px;display:block}
+.ax-clogo{width:56px;height:56px;border-radius:12px;object-fit:cover;border:1px solid rgba(255,255,255,.35);display:block}
+.ax-quick{display:flex;flex-direction:column;gap:8px;margin-top:10px}.ax-quick .project-btn{display:block}
+.ax-hero{width:100%;border-radius:10px;margin:14px 0;max-height:360px;object-fit:cover;border:1px solid rgba(0,240,255,.25)}
+.ax-gal{display:flex;gap:10px;overflow-x:auto;padding-bottom:6px;margin-bottom:12px}.ax-gal img{height:120px;border-radius:8px;flex:none;cursor:zoom-in;border:1px solid rgba(0,240,255,.2)}.ax-gal img.big{height:280px}
+.ax-dh{display:flex;align-items:center;gap:14px;padding-right:48px}
+.ax-dlogo{width:64px;height:64px;border-radius:14px;object-fit:cover;border:1px solid var(--cyan-glow);flex:none;box-shadow:0 0 14px rgba(0,240,255,.3)}
+.ax-dlogo-i{display:flex;align-items:center;justify-content:center;background:rgba(0,240,255,.08)}.ax-dlogo-i svg{width:40px;height:40px}
+.ax-dt{font-family:var(--font-head);font-size:1.3rem;color:#fff;margin-bottom:6px;word-break:break-word}
+.ax-dtags{display:flex;flex-wrap:wrap;gap:6px}
+.ax-dp{color:var(--text-dim);line-height:1.8;margin:14px 0 18px;user-select:text;-webkit-user-select:text}
+.ax-dbtns{display:flex;flex-direction:column;gap:10px}.ax-dbtns .project-btn{display:block}
+</style>
+<script>(function(){const b=document.body;let q=0;const sync=()=>{q=0;b.classList.toggle('ax-modal-open',!!document.querySelector('.section-modal.active'))};
+new MutationObserver(()=>{if(!q)q=requestAnimationFrame(sync)}).observe(b,{subtree:true,attributes:true,attributeFilter:['class']})})();</script>
+<script>
+/* ---- visitor tracker: records actions locally, and on your analytics server when AX_ANALYTICS_URL is set ---- */
+(function(){
+const U=String(window.AX_ANALYTICS_URL||'').replace(/\/+$/,''),LSK='atik_events_v1',MAX=1500;
+const rid=()=>(window.crypto&&crypto.randomUUID?crypto.randomUUID():Date.now().toString(36)+Math.random().toString(36).slice(2,10));
+let vid='',sid='';try{vid=localStorage.getItem('atik_vid');if(!vid){vid=rid();localStorage.setItem('atik_vid',vid)}sid=sessionStorage.getItem('atik_sid');if(!sid){sid=rid();sessionStorage.setItem('atik_sid',sid)}}catch(e){vid=vid||rid();sid=sid||rid()}
+const owner=()=>{try{return localStorage.getItem('atik_owner')==='1'}catch(e){return false}};
+const dnt=navigator.doNotTrack==='1'||window.doNotTrack==='1';
+let local=[];try{local=JSON.parse(localStorage.getItem(LSK)||'[]')}catch(e){}
+let q=[],lt=0;
+const saveLocal=()=>{try{localStorage.setItem(LSK,JSON.stringify(local.slice(-MAX)))}catch(e){}};
+function flush(beacon){if(!U||dnt||!q.length)return;const body=JSON.stringify({vid,sid,events:q.splice(0,50)});try{if(beacon&&navigator.sendBeacon)navigator.sendBeacon(U+'/track',new Blob([body],{type:'text/plain'}));else fetch(U+'/track',{method:'POST',body,keepalive:true,headers:{'Content-Type':'text/plain'}}).catch(()=>{})}catch(e){}}
+window.axTrack=(type,d)=>{if(owner()||dnt)return;const e={t:Date.now(),vid,sid,type,d:d||{}};local.push(e);if(local.length>MAX)local.shift();clearTimeout(lt);lt=setTimeout(saveLocal,1200);if(U){q.push({t:e.t,type,d:e.d});if(q.length>=10)flush(false)}};
+setInterval(()=>flush(false),8000);
+addEventListener('pagehide',()=>{axTrack('leave',{sec:Math.round(performance.now()/1000)});saveLocal();flush(true)});
+document.addEventListener('visibilitychange',()=>{if(document.hidden){saveLocal();flush(true)}});
+try{if(!sessionStorage.getItem('atik_visit')){sessionStorage.setItem('atik_visit','1');const c=navigator.connection||{};let tz='';try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone}catch(e){}
+axTrack('visit',{ua:navigator.userAgent,lang:navigator.language,tz,scr:screen.width+'x'+screen.height,vp:innerWidth+'x'+innerHeight,dpr:window.devicePixelRatio||1,ref:document.referrer||'',conn:c.effectiveType||'',touch:navigator.maxTouchPoints>0,page:location.pathname+location.search})}}catch(e){}
+const wrap=(n,f)=>{const o=window[n];if(typeof o!=='function')return;window[n]=function(){try{f.apply(null,arguments)}catch(e){}return o.apply(this,arguments)}};
+wrap('switchSection',id=>{if(id&&id!=='home')axTrack('section',{id})});
+wrap('axAsk',(q,v)=>axTrack('ai_question',{q:String(q).slice(0,200),voice:!!v}));
+wrap('axOpenOrder',t=>axTrack('order_open',{type:t||''}));
+wrap('axOrderSend',k=>axTrack('order_send',{via:k}));
+wrap('axWAView',(k,i)=>{const x=(portfolioData[k]||[])[i];axTrack('view_item',{kind:k,title:x&&x.title})});
+wrap('axWADl',id=>axTrack('download',{id}));wrap('axDl',id=>axTrack('download',{id}));
+wrap('axWAOpen',id=>axTrack('open_hosted',{id}));wrap('axPlay',id=>axTrack('play',{id}));
+wrap('axVoiceToggle',()=>axTrack('voice_toggle'));wrap('cycleProfileImage',()=>axTrack('profile_switch'));
+wrap('axProject',n=>axTrack('view_project',{n:typeof n==='number'?n:String(n).slice(0,80)}));
+document.addEventListener('click',e=>{const a=e.target.closest&&e.target.closest('a[href]');if(!a)return;const h=a.getAttribute('href')||'';if(/^(https?:|mailto:|tel:)/i.test(h))axTrack('link_click',{href:h.slice(0,200),text:(a.textContent||'').trim().slice(0,60)})},true);
+})();
+</script>
 </body></html>
